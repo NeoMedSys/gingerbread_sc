@@ -21,17 +21,13 @@ jobs:
         id: docker_login
         run: |
           docker-compose up test_service
+          echo "::set-output name=logs::$(docker-compose logs test_service)"
 
       - name: post PR comment with docker logs
         uses: mshick/add-pr-comment@v2
         with:
-          message: |
-            ```
-            ${{ steps.docker_logs.outputs.logs }}
-            ```
-        if: failure()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: ${{ steps.docker_login.outputs.logs }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   doc_building:
     needs: test_docker_compose
