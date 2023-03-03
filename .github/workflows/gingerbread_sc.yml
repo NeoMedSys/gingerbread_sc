@@ -21,14 +21,14 @@ jobs:
         id: docker_log
         run: |
           docker-compose up test_service
-          echo "issue=$(docker-compose logs test_service)" >> $GITHUB_OUTPUT
+          echo "$(docker-compose logs test_service)" >> comment.md
 
       - name: post PR comment with docker logs
-        uses: mshick/add-pr-comment@v2
+        uses: NejcZdovc/comment-pr@v2
         with:
-          message: |
-            ${{ steps.docker_log.outputs.issue }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          file: "comment.md"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   doc_building:
     needs: test_docker_compose
