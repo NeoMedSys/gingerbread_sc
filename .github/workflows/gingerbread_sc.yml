@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and test
-        id: docker_logs
+        id: docker_login
         run: |
           docker-compose up test_service
 
@@ -32,7 +32,6 @@ jobs:
         if: failure()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        id: docker_logs
 
   doc_building:
     needs: test_docker_compose
