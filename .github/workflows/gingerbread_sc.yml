@@ -40,9 +40,15 @@ jobs:
         run: |
           docker-compose up test_service
 
-      - uses: mshick/add-pr-comment@v2
+      - name: post PR comment with docker logs
+        uses: peter-evans/create-or-update-comment@v1
         with:
-          message: docker-compose logs test_service
-        if: ${{ success() }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ```
+            ${{ steps.docker_logs.outputs.logs }}
+            ```
+        if: ${{ failure() }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: docker_logs
