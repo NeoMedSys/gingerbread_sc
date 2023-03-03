@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "gingerbread"
+version = "0.1.0"
+description = "Researcher template that fits with NeoMedSys"
+authors = ["Martin Rovang <martinrovang@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.24.2"
+verboselogs = "^1.7"
+pymedquery = "^2.11.3b0"
+coloredlogs = "^15.0.1"
+wandb = "^0.13.10"
+scikit-learn = "^1.2.1"
+furo = "^2022.12.7"
+monai = "^1.1.0"
+blosc = "^1.11.1"
+h5py = "^3.8.0"
+beaker = "^1.12.1"
+nibabel = "^5.0.1"
+pytest = "^7.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
