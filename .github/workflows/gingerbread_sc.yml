@@ -36,5 +36,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and test
         run: |
-          docker-compose up -d test_service
-          docker-compose exec test_service poetry run pytest
+          docker-compose up test_service

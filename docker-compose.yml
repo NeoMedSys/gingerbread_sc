@@ -30,3 +30,5 @@ services:
 
     stdin_open: true # docker run -i
     tty: true # docker run -t
+
+    command: poetry run pytest
