@@ -26,7 +26,7 @@ jobs:
       - name: post PR comment with docker logs
         uses: mshick/add-pr-comment@v2
         with:
-          message: ${{ steps.docker_login.outputs.logs }}
+          message: "HELLO"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   doc_building:
