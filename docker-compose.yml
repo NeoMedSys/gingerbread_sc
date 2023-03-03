@@ -30,8 +30,3 @@ services:
 
     stdin_open: true # docker run -i
     tty: true # docker run -t
-
-    command:
-      - cd /gingerbread
-      - poetry update
-      - poetry run pytest
