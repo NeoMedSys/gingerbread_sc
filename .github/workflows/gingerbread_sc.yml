@@ -21,12 +21,12 @@ jobs:
         id: docker_log
         run: |
           docker-compose up test_service
-          echo "$(docker-compose logs test_service)" >> ${GITHUB_WORKSPACE}/comment.md
+          echo "$(docker-compose logs test_service)" >> /.github/workflows/comment.md
 
       - name: post PR comment with docker logs
         uses: NejcZdovc/comment-pr@v2
         with:
-          file: "${GITHUB_WORKSPACE}/comment.md"
+          file: "comment.md"
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
