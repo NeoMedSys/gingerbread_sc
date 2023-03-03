@@ -27,8 +27,6 @@ jobs:
   test_docker_compose:
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
