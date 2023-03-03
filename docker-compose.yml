@@ -18,3 +18,15 @@ services:
 
     stdin_open: true # docker run -i
     tty: true # docker run -t
+
+  test_service:
+    image: neomedsys01/gingerbread:latest
+
+    env_file:
+      - environment.env
+
+    volumes:
+      - .:/gingerbread
+
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
