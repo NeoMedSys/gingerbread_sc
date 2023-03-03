@@ -18,16 +18,16 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and test
-        id: docker_login
+        id: docker_log
         run: |
           docker-compose up test_service
-          echo "issue=$(docker-compose logs test_service)" >> $GITHUB_ENV
+          echo "issue=$(docker-compose logs test_service)" >> $GITHUB_OUTPUT
 
       - name: post PR comment with docker logs
         uses: mshick/add-pr-comment@v2
         with:
           message: |
-            ${{ env.issue }}
+            ${{ steps.docker_log.outputs.issue }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   doc_building:
