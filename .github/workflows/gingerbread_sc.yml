@@ -21,6 +21,7 @@ jobs:
         id: docker_log
         run: |
           docker-compose up test_service
+          echo "LOG FROM CONTAINER: \n" >> /home/runner/work/Gingerbread_sc/Gingerbread_sc/.github/workflows/comment.md
           echo "$(docker-compose logs test_service)" >> /home/runner/work/Gingerbread_sc/Gingerbread_sc/.github/workflows/comment.md
 
       - name: post PR comment with docker logs

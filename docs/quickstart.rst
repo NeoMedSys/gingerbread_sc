@@ -11,17 +11,21 @@ Quickstart
 
 2. Pull the latest version of the docker image:
 
-   ``docker pull gingerbread:latest``
+   ``docker pull neomedsys01/gingerbread:latest``
+
+.. note::
+   The docker image is the OS part of the template. It contains all the OS related dependencies that is needed in production.
+
 
 3. Run the docker image, use enable all gpus and mount the current directory to your project directory:
 
-   ``docker run -it --gpus all gingerbread:latest /bin/bash``
+   ``docker run -it --gpus all neomedsys01/gingerbread:latest /bin/bash``
 
 .. hint::
     
         You can use VSCode to connect to the docker container and edit the code in the container.
 
-        If you do not use VSCode or have access to the docker through VSCode, you can use argument ``-v <path to your project>:/project`` to mount your project directory to the docker container. You can now move ``/gingerbread/*`` to ``/project`` and edit the code in your project directory. 
+        If you do not use VSCode or have access to the docker through VSCode, you can use argument ``-v <path to your project>:/project`` to mount your project directory to the docker container.
 
         .. important::
             
@@ -40,3 +44,6 @@ Quickstart
         You can find the lightning template in /lightning with the corresponding data loader templates.
    
 
+5. Download the source code from github and mount the folder to the path ``/gingerbread`` in the docker container.
+
+   ``git clone https://github.com/NeoMedSys/Gingerbread_sc.git``
