@@ -20,9 +20,10 @@ jobs:
       - name: Build and test
         id: docker_log
         run: |
-          docker-compose up test_service
+          docker-compose up -d test_service
           echo "LOG FROM CONTAINER: \n" >> /home/runner/work/Gingerbread_sc/Gingerbread_sc/.github/workflows/comment.md
           echo "$(docker-compose logs test_service)" >> /home/runner/work/Gingerbread_sc/Gingerbread_sc/.github/workflows/comment.md
+          docker-compose down
 
       - name: post PR comment with docker logs
         uses: NejcZdovc/comment-pr@v2
