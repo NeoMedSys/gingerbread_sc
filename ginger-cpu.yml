@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  dev_cpu:
+    container_name: ginger
+    working_dir: /gingerbread
+    user: $DOCKER_USER
+    image: neomedsys01/gingerbread:latest
+
+    env_file:
+      - environment.env
+      
+    volumes:
+      - .:/gingerbread
+
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+
