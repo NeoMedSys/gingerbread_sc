@@ -3,7 +3,7 @@ Quickstart
 
 1. Make sure you are logged in with a dockerhub account that can access our private dockerhub repository.
 
-    ``docker login -u gingerbread01``
+   ``docker login -u gingerbread01``
 
 .. important::
         
@@ -13,7 +13,7 @@ Quickstart
 
    ``git clone https://github.com/NeoMedSys/Gingerbread_sc.git``
 
-3. make sure you are in the root directory of the project:
+3. Make sure you are in the root directory of the project:
 
    ``cd Gingerbread_sc``
 

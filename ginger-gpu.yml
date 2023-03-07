@@ -2,6 +2,8 @@ version: '3.9'
 
 services:
   dev_gpu:
+    user: $DOCKER_USER
+    container_name: ginger
     image: neomedsys01/gingerbread:latest
 
     env_file:

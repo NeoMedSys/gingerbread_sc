@@ -1,7 +1,8 @@
 version: '3.9'
 
 services:
-    
+  container_name: ginger
+  user: $DOCKER_USER
   dev_cpu:
     image: neomedsys01/gingerbread:latest
 
