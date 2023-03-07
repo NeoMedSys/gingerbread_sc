@@ -104,19 +104,18 @@ class MedqueryDataDownloader:
             # make output directory if it does not exist
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
-            with h5py.File(hdf5_path, 'r') as f:
-                for id_, value_ in f.items():
-                    if "affine" in id_:
+            with h5py.File(hdf5_path, 'r') as hdf5:
+                for series_uid, value_ in hdf5.items():
+                    if "affine" in series_uid:
                         continue
-                    series_uid = id_
                     affine_uid = series_uid.replace("series", "affine")
-                    data = f[series_uid]
-                    affine = f[affine_uid]
-                    self.log.info(f"Converting {id_} file to nifti file...")
+                    data = hdf5[series_uid]
+                    affine = hdf5[affine_uid]
+                    self.log.info(f"Converting {series_uid} file to nifti file...")
                     img = nib.Nifti1Image(data, affine)
                     nib.save(img, os.path.join(output_dir, f"{series_uid}.nii.gz"))
-        except Exception as e:
-            self.log.error(f"Error while converting hdf5 to nifti: {e}")
+        except IndexError as e:
+            self.log.error(f"Error with hdf5 indexing: {e}")
     
     def hdf5_to_nifti_single(self, hdf5_path: str, output_dir: str, series_uid: str) -> NoReturn:
         """Convert single series to nifti file.

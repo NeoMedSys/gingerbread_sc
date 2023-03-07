@@ -13,24 +13,14 @@ class DataHandler:
     
     Attributes
     ----------
-    size: int
-        The size of the image, e.g. 32x32
-    length: int
-        The length of the dataset
-    data: np.ndarray
-        The data to be injected
-    medquery_pipe: None
-        The medical query pipeline
-    local_pipe: None
-        The local pipeline
+    logga : verboselogs.VerboseLogger
+        Logger for the data handler.
     
     Note
     ----
     You probably have to change this as you see fit, but make sure to return a dictionary with the keys "x" and "y".
+
     """
-    size: int = 32
-    length: int = 64*4
-    data: np.ndarray = np.ones((length, 2, size, size))
 
     coloredlogs.install()
     logga = verboselogs.VerboseLogger(__name__)
@@ -42,3 +32,15 @@ class DataHandler:
 
     def __len__(self) -> int:
         return len(self.data)
+
+
+    def add_data(self, data: Dict[str,Union[float,int]]) -> None:
+        """
+        Add data to the data handler.
+        """
+
+        assert type(data) == dict, "Data must be a dictionary."
+        assert "x" in data.keys(), "Data must have a key 'x'."
+        assert "y" in data.keys(), "Data must have a key 'y'."
+
+        self.data = data
