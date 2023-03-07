@@ -1,7 +1,7 @@
-version: "3.9"
+version: '3.9'
 
 services:
-  dev_docker_service:
+  dev_gpu:
     image: neomedsys01/gingerbread:latest
 
     env_file:
@@ -13,18 +13,6 @@ services:
           devices:
             - driver: nvidia
               capabilities: [ gpu ]
-    volumes:
-      - .:/gingerbread
-
-    stdin_open: true # docker run -i
-    tty: true # docker run -t
-
-  test_service:
-    image: neomedsys01/gingerbread:latest
-
-    env_file:
-      - environment.env
-
     volumes:
       - .:/gingerbread
 

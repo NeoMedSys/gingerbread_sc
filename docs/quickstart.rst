@@ -9,34 +9,32 @@ Quickstart
         
         You need a password to login, please contact us if you don't have one.
 
-2. Pull the latest version of the docker image:
+2. Download the source code from github.
 
-   ``docker pull neomedsys01/gingerbread:latest``
+   ``git clone https://github.com/NeoMedSys/Gingerbread_sc.git``
 
-.. note::
-   The docker image is the OS part of the template. It contains all the OS related dependencies that is needed in production.
+3. make sure you are in the root directory of the project:
 
+   ``cd Gingerbread_sc``
 
-3. Run the docker image, use enable all gpus and mount the current directory to your project directory:
+4. Run docker compose to start the container:
 
-   ``docker run -it --gpus all neomedsys01/gingerbread:latest /bin/bash``
+   with cpu: ``docker compose -f ginger-cpu.yml up -d``
 
-.. hint::
-    
-        You can use VSCode to connect to the docker container and edit the code in the container.
+   with gpu: ``docker compose -f ginger-gpu.yml up -d``
 
-        If you do not use VSCode or have access to the docker through VSCode, you can use argument ``-v <path to your project>:/project`` to mount your project directory to the docker container.
+5. Open a terminal in the container:
 
-        .. important::
-            
-            If you use this method, you put this folder back to ``/gingerbread`` before you commit your image. In production we will use the docker image without your project directory mounted.
+   ``docker exec -it ginger /bin/bash``
 
-            When you move a folder with poetry environment you will need to run ``poetry update`` in your new folder to update the poetry environment.
-
-4. The docker image contains a poetry environment, you can activate it with:
+.. attention::
+   The docker image contains a poetry environment, you can activate it with:
 
    To run code use: ``poetry run python main.py``, this will run the code in the poetry environment. To install new packages, use ``poetry add <package>`` and to remove packages use ``poetry remove <package>``. Read more on poetry here: https://python-poetry.org/docs/basic-usage/.
 
+6. Install the poetry environment:
+
+   ``poetry install``
 
 .. hint::
         
@@ -44,6 +42,17 @@ Quickstart
         You can find the lightning template in /lightning with the corresponding data loader templates.
    
 
-5. Download the source code from github and mount the folder to the path ``/gingerbread`` in the docker container.
+You are now ready to start coding!
 
-   ``git clone https://github.com/NeoMedSys/Gingerbread_sc.git``
+Here is a breakdown of the files in the project:
+
+``central_processing.py``: This is the model template, it uses the basic ``pytorch.nn`` module to define the model. You can work as you would normally do with ``pytorch``, the only difference is that you need to define the ``preprocessing``, ``postprocessing`` and ``predict_step``. We will be using these functions in production, so make sure they are defined correctly and do not change their method names.
+
+``cli_main.py``: This a template for using cli arguments. You can costumize as you want and if you want to use it.
+
+``data_download.py``: With this you can download data from medquery, check out the documentation here: .. _medquery:
+
+``central_processing_handler.py``: This is the bridge between the researchers model and production. 
+
+.. danger::
+   Do not make any changes to this file.
