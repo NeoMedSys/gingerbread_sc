@@ -23,8 +23,7 @@ jobs:
           docker compose -f ginger-cpu.yml up -d
           docker exec ginger poetry install
           docker exec ginger poetry run pytest
-          echo "LOG FROM CONTAINER" >> /home/runner/work/Gingerbread_sc/Gingerbread_sc/.github/workflows/comment.md
-          echo "$(docker logs ginger)" >> /home/runner/work/Gingerbread_sc/Gingerbread_sc/.github/workflows/comment.md
+          echo "$(docker exec ginger poetry run pytest)" >> /home/runner/work/Gingerbread_sc/Gingerbread_sc/.github/workflows/comment.md
 
       - name: post PR comment with docker logs
         uses: NejcZdovc/comment-pr@v2
