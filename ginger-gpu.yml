@@ -4,6 +4,7 @@ services:
   dev_gpu:
     user: $DOCKER_USER
     container_name: ginger
+    working_dir: /gingerbread
     image: neomedsys01/gingerbread:latest
 
     env_file:
