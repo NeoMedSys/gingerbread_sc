@@ -21,7 +21,7 @@ jobs:
         id: docker_log
         run: |
           docker compose -f ginger-cpu.yml up -d
-          echo "LOG FROM CONTAINER: \n" >> /home/runner/work/Gingerbread_sc/Gingerbread_sc/.github/workflows/comment.md
+          echo "LOG FROM CONTAINER" >> /home/runner/work/Gingerbread_sc/Gingerbread_sc/.github/workflows/comment.md
           echo "$(docker logs ginger)" >> /home/runner/work/Gingerbread_sc/Gingerbread_sc/.github/workflows/comment.md
 
       - name: post PR comment with docker logs
