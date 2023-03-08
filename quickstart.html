@@ -225,10 +225,13 @@
 </div>
 <ol class="arabic" start="2">
 <li><p>Download the source code from github.</p>
-<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/NeoMedSys/Gingerbread_sc.git</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/NeoMedSys/gingerbread_sc.git</span></code></p>
 </li>
 <li><p>Make sure you are in the root directory of the project:</p>
-<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Gingerbread_sc</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">gingerbread_sc</span></code></p>
+</li>
+<li><p>Add the UID and GID to the docker container by sourcing the <code class="docutils literal notranslate"><span class="pre">environment.env</span></code> file with shell:</p>
+<p><code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">environment.env</span></code></p>
 </li>
 <li><p>Run docker compose to start the container:</p>
 <p>with cpu: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">cpu</span></code></p>
@@ -243,7 +246,7 @@
 <p>The docker image contains a poetry environment, you can activate it with:</p>
 <p>To run code use: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">python</span> <span class="pre">main.py</span></code>, this will run the code in the poetry environment. To install new packages, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&lt;package&gt;</span></code> and to remove packages use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">remove</span> <span class="pre">&lt;package&gt;</span></code>. Read more on poetry here: <a class="reference external" href="https://python-poetry.org/docs/basic-usage/">https://python-poetry.org/docs/basic-usage/</a>.</p>
 </div>
-<ol class="arabic" start="6">
+<ol class="arabic" start="7">
 <li><p>Install the poetry environment:</p>
 <p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code></p>
 </li>

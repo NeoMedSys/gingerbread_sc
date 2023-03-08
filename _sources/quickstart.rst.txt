@@ -11,20 +11,24 @@ Quickstart
 
 2. Download the source code from github.
 
-   ``git clone https://github.com/NeoMedSys/Gingerbread_sc.git``
+   ``git clone https://github.com/NeoMedSys/gingerbread_sc.git``
 
 3. Make sure you are in the root directory of the project:
 
-   ``cd Gingerbread_sc``
+   ``cd gingerbread_sc``
 
-4. Run docker compose to start the container:
+4. Add the UID and GID to the docker container by sourcing the ``environment.env`` file with shell:
+
+   ``. environment.env``
+
+5. Run docker compose to start the container:
 
    with cpu: ``docker compose up -d cpu``
 
    with gpu: ``docker compose up -d gpu``
    
 
-5. Open a terminal in the container:
+6. Open a terminal in the container:
 
    ``docker exec -it ginger /bin/bash``
 
@@ -33,7 +37,7 @@ Quickstart
 
    To run code use: ``poetry run python main.py``, this will run the code in the poetry environment. To install new packages, use ``poetry add <package>`` and to remove packages use ``poetry remove <package>``. Read more on poetry here: https://python-poetry.org/docs/basic-usage/.
 
-6. Install the poetry environment:
+7. Install the poetry environment:
 
    ``poetry install``
 
