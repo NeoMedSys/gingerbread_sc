@@ -1,0 +1,7 @@
+central\_processing module
+==========================
+
+.. automodule:: central_processing
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,21 @@
+data\_loader package
+====================
+
+Submodules
+----------
+
+data\_loader.data\_handling module
+----------------------------------
+
+.. automodule:: data_loader.data_handling
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: data_loader
+   :members:
+   :undoc-members:
+   :show-inheritance:

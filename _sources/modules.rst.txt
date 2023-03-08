@@ -1,0 +1,16 @@
+gingerbread_sc
+==============
+
+.. toctree::
+   :maxdepth: 4
+
+   central_processing
+   central_processing_handler
+   cli_main
+   data_download
+   data_loader
+   neotemplate
+   optimizers
+   schedulers
+   tests
+   utils
