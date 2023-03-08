@@ -25,6 +25,20 @@ I will try guide you through the process of creating a new project, and how to u
 
     This template is based on docker, and uses poetry to manage the python dependencies.
 
+The template consists of three parts. 
+
+The ``first`` part is the source files, these make up the code template for the researcher to use and works in tandem with the production pipeline. This makes it easier for the production team to work with the researchers and vice versa. 
+
+This means that it's easier for the researchers to keep themselves updated on the standardization of the code.
+
+The ``second`` part is the documentation, this is a guide for the researchers to follow to make sure that they are using the template correctly. By using this type of documentation for all projects makes it easier to reproduce the results, for new employees to get into the workflow and for everyone to understand what is going on.
+
+The ``third`` part is the docker image, or the ``operating system`` if you will. This is the environment that the researchers will be working in. This makes it easier for the researchers work to fit more easily into the production pipeline.
+
+
+Extra information
+----
+
 You just read a *note* block. You can use these to highlight information that is interesting. The documentation has all kinds of different block types, and you can use them to highlight different degrees of importance.
 
 With Gingerbread, you use a docker container to containerize your project. This means that you can run your project on any machine, without having to worry about installing dependencies. You can also use the same container to run your project on a server, or on a cluster. This is very handy when setting up arbitrary models and experiments into a pipeline.
