@@ -19,9 +19,10 @@ Quickstart
 
 4. Run docker compose to start the container:
 
-   with cpu: ``docker compose -f ginger-cpu.yml up -d``
+   with cpu: ``docker compose up -d cpu``
 
-   with gpu: ``docker compose -f ginger-gpu.yml up -d``
+   with gpu: ``docker compose up -d gpu``
+   
 
 5. Open a terminal in the container:
 
