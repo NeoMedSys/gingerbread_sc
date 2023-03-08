@@ -6,7 +6,13 @@
 
 import os
 import sys
+import toml
+
 sys.path.insert(0, os.path.abspath('..'))
+
+# get version from pyproject.toml
+with open('../pyproject.toml') as f:
+    pyproject = toml.load(f)
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -14,7 +20,7 @@ sys.path.insert(0, os.path.abspath('..'))
 project = 'Gingerbread'
 copyright = '2023, Martin Soria Røvang'
 author = 'Martin Soria Røvang'
-release = '0.1'
+release = pyproject['tool']['poetry']['version']
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
