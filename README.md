@@ -18,7 +18,7 @@ The ``second`` part is the documentation, this is a guide for the researchers to
 The ``third`` part is the docker image, or the ``operating system`` if you will. This is the environment that the researchers will be working in. This makes it easier for the researchers work to fit more easily into the production pipeline.
 
 
-Check out the documentation for more information.
+Check out the documentation for more information https://neomedsys.github.io/gingerbread_sc/.
 
 
 ![Untitled-2023-02-13-1036(3)](https://user-images.githubusercontent.com/24882057/223761751-fb30e360-9fb8-4340-bd69-d557b68601f3.png)
