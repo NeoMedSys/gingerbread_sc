@@ -39,6 +39,10 @@ The docker image, or ``operating system``, if you will, is the ``third`` compone
 Extra information
 ----
 
+.. note::
+
+    This is a block of notes
+
 Just now, you read a *block of notes*. They can be used to draw attention to noteworthy information. You may utilize the various block types in the documentation to emphasize varying levels of relevance.
 
 While using Gingerbread, you containerize your project using a docker container. As a result, you may execute your project without worrying about installing dependencies on any computer. The same container may be used to execute your project on a server or in a cluster as well. For putting up arbitrary models and experiments in a pipeline, this is quite useful.
