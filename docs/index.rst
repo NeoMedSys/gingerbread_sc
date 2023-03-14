@@ -61,6 +61,7 @@ Documentation
 
     quickstart
     medquery
+    conduct_and_info
     modules
 
 .. toctree::
@@ -68,6 +69,7 @@ Documentation
     :titlesonly:
     
     https://neomedsys.io/ <https://neomedsys.io/>
+    https://github.com/NeoMedSys/gingerbread_sc <https://github.com/NeoMedSys/gingerbread_sc>
 
 .. -----
 

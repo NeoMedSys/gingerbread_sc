@@ -5,15 +5,14 @@ services:
     container_name: ginger
     working_dir: /gingerbread
     user: ${DOCKER_USER}
-    
-    image: neomedsys01/gingerbread:latest  
-      
+
+    image: neomedsys01/gingerbread:latest
+
     volumes:
       - .:/gingerbread:rw
 
     stdin_open: true # docker run -i
     tty: true # docker run -t
-  
 
   gpu:
     container_name: ginger
