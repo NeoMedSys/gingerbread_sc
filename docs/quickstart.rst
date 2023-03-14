@@ -17,9 +17,14 @@ Quickstart
 
    ``cd gingerbread_sc``
 
-4. Add the UID and GID to the docker container by sourcing the ``environment.env`` file with shell:
 
-   ``. environment.env``
+.. attention::
+         If you are working on unix based systems, you need to make sure that the ``environment.env`` file has the correct UID and GID. You can find the UID and GID by running ``id -u`` and ``id -g``. If you are working on windows, you can skip this step.
+
+         4. Add the UID and GID to the docker container by sourcing the ``environment.env`` file with shell:
+
+            ``. environment.env``
+
 
 5. Run docker compose to start the container:
 
@@ -32,11 +37,6 @@ Quickstart
 
    ``docker exec -it ginger /bin/bash``
 
-.. attention::
-   The docker image contains a poetry environment, you can activate it with:
-
-   To run code use: ``poetry run python main.py``, this will run the code in the poetry environment. To install new packages, use ``poetry add <package>`` and to remove packages use ``poetry remove <package>``. Read more on poetry here: https://python-poetry.org/docs/basic-usage/.
-
 7. Install the poetry environment:
 
    ``poetry install``
@@ -47,6 +47,12 @@ Quickstart
         You can find the lightning template in /lightning with the corresponding data loader templates.
    
 
+.. attention::
+   The docker image contains a poetry environment, you can activate it with:
+
+   To run code use: ``poetry run python main.py``, this will run the code in the poetry environment. To install new packages, use ``poetry add <package>`` and to remove packages use ``poetry remove <package>``. Read more on poetry here: https://python-poetry.org/docs/basic-usage/.
+
+
 You are now ready to start coding!
 
 Here is a breakdown of the files in the project:
@@ -55,9 +61,9 @@ Here is a breakdown of the files in the project:
 
 ``cli_main.py``: This a template for using cli arguments. You can costumize as you want and if you want to use it.
 
-``data_download.py``: With this you can download data from medquery, check out the documentation here: .. _medquery:
+``data_download.py``: With this you can download data from medquery, check out the documentation here: :doc:`medquery`
 
 ``central_processing_handler.py``: This is the bridge between the researchers model and production. 
 
 .. danger::
-   Do not make any changes to this file.
+   Do not make any changes to ``central_processing_handler.py``.

@@ -78,6 +78,7 @@ docs/*
 !docs/Makefile
 !docs/quickstart.rst
 !docs/medquery.rst
+!docs/conduct_and_info.rst
 
 # PyBuilder
 target/
