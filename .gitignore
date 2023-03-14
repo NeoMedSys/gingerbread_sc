@@ -79,7 +79,7 @@ docs/*
 !docs/quickstart.rst
 !docs/medquery.rst
 !docs/conduct_and_info.rst
-
+!docs/whatsnew.rst
 # PyBuilder
 target/
 

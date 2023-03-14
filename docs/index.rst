@@ -62,7 +62,10 @@ Documentation
     quickstart
     medquery
     conduct_and_info
+
+.. toctree::
     :caption: Reference Api
+    :titlesonly:
     modules
 
 .. toctree::
