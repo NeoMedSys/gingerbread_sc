@@ -13,7 +13,7 @@ Gingerbread
 
 .. important::
 
-    This sample documentation was generated on today, and is rebuilt weekly.
+    Last change: |today|
 
 Introduction
 =============
@@ -79,3 +79,4 @@ Documentation
 ..     file of that documentation. These are usually ``html_sidebars``,
 ..     ``html_theme_path`` or ``html_theme_config``. Unsetting those will likely
 ..     allow the build to proceed.
+
