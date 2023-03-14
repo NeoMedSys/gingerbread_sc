@@ -21,6 +21,10 @@ Quickstart
 
    ``. environment.env``
 
+.. hint::
+         
+         If you are using powershell, use ``source environment.env`` instead.
+
 5. Run docker compose to start the container:
 
    with cpu: ``docker compose up -d cpu``
@@ -55,9 +59,9 @@ Here is a breakdown of the files in the project:
 
 ``cli_main.py``: This a template for using cli arguments. You can costumize as you want and if you want to use it.
 
-``data_download.py``: With this you can download data from medquery, check out the documentation here: .. _medquery:
+``data_download.py``: With this you can download data from medquery, check out the documentation here: :doc:`medquery`
 
 ``central_processing_handler.py``: This is the bridge between the researchers model and production. 
 
 .. danger::
-   Do not make any changes to this file.
+   Do not make any changes to ``central_processing_handler.py``.

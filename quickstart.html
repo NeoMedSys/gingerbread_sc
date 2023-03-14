@@ -233,6 +233,12 @@
 <li><p>Add the UID and GID to the docker container by sourcing the <code class="docutils literal notranslate"><span class="pre">environment.env</span></code> file with shell:</p>
 <p><code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">environment.env</span></code></p>
 </li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you are using powershell, use <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">environment.env</span></code> instead.</p>
+</div>
+<ol class="arabic" start="5">
 <li><p>Run docker compose to start the container:</p>
 <p>with cpu: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">cpu</span></code></p>
 <p>with gpu: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">gpu</span></code></p>
@@ -260,11 +266,11 @@ You can find the lightning template in /lightning with the corresponding data lo
 <p>Here is a breakdown of the files in the project:</p>
 <p><code class="docutils literal notranslate"><span class="pre">central_processing.py</span></code>: This is the model template, it uses the basic <code class="docutils literal notranslate"><span class="pre">pytorch.nn</span></code> module to define the model. You can work as you would normally do with <code class="docutils literal notranslate"><span class="pre">pytorch</span></code>, the only difference is that you need to define the <code class="docutils literal notranslate"><span class="pre">preprocessing</span></code>, <code class="docutils literal notranslate"><span class="pre">postprocessing</span></code> and <code class="docutils literal notranslate"><span class="pre">predict_step</span></code>. We will be using these functions in production, so make sure they are defined correctly and do not change their method names.</p>
 <p><code class="docutils literal notranslate"><span class="pre">cli_main.py</span></code>: This a template for using cli arguments. You can costumize as you want and if you want to use it.</p>
-<p><code class="docutils literal notranslate"><span class="pre">data_download.py</span></code>: With this you can download data from medquery, check out the documentation here: .. _medquery:</p>
+<p><code class="docutils literal notranslate"><span class="pre">data_download.py</span></code>: With this you can download data from medquery, check out the documentation here: <a class="reference internal" href="medquery.html"><span class="doc">Using Medquery</span></a></p>
 <p><code class="docutils literal notranslate"><span class="pre">central_processing_handler.py</span></code>: This is the bridge between the researchers model and production.</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>Do not make any changes to this file.</p>
+<p>Do not make any changes to <code class="docutils literal notranslate"><span class="pre">central_processing_handler.py</span></code>.</p>
 </div>
 </section>
 
