@@ -33,7 +33,7 @@ The documentation is the ``second`` component; it serves as a manual for the res
 
 The docker image, or ``operating system``, if you will, is the ``third`` component. The setting in which the researchers will operate is as described. The work of the researchers can more readily integrate into the production process as a result.
 
-.. image:: https://user-images.githubusercontent.com/24882057/223761751-fb30e360-9fb8-4340-bd69-d557b68601f3.png
+.. image:: https://user-images.githubusercontent.com/24882057/225026458-f80a82cc-f019-4b25-ac3e-7d465ebba073.png
     :align: center
 
 Extra information
