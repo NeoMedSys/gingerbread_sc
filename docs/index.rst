@@ -13,13 +13,13 @@ Gingerbread
 
 .. important::
 
-    This sample documentation was generated on today, and is rebuilt weekly.
+    Last change: |today|
 
 Introduction
 =============
 
-Hi, I'm Gingerbread, I am a template for researchers to to interact better with NeoMedSys.
-I will try guide you through the process of creating a new project, and how to use the template.
+Hello, my name is Gingerbread, and I am a template enabling researchers to better engage with NeoMedSys. 
+I'll do my best to walk you through the steps involved in creating a new project and utilizing the template. 
 
 .. note::
 
@@ -27,25 +27,25 @@ I will try guide you through the process of creating a new project, and how to u
 
 The template consists of three parts. 
 
-The ``first`` part is the source files, these make up the code template for the researcher to use and works in tandem with the production pipeline. This makes it easier for the production team to work with the researchers and vice versa. 
+The ``initial`` element consists of the source files, which together with the production process form the researcher's code template. This makes it simpler for both the production team and the research team to collaborate.
 
-This means that it's easier for the researchers to keep themselves updated on the standardization of the code.
+The documentation is the ``second`` component; it serves as a manual for the researchers to use in order to ensure proper use of the template. It is simpler to duplicate the findings, for new hires to learn the workflow, and for everyone to comprehend what is happening when this sort of documentation is used for all projects.
 
-The ``second`` part is the documentation, this is a guide for the researchers to follow to make sure that they are using the template correctly. By using this type of documentation for all projects makes it easier to reproduce the results, for new employees to get into the workflow and for everyone to understand what is going on.
+The docker image, or ``operating system``, if you will, is the ``third`` component. The setting in which the researchers will operate is as described. The work of the researchers can more readily integrate into the production process as a result.
 
-The ``third`` part is the docker image, or the ``operating system`` if you will. This is the environment that the researchers will be working in. This makes it easier for the researchers work to fit more easily into the production pipeline.
-
-.. image:: https://user-images.githubusercontent.com/24882057/223761751-fb30e360-9fb8-4340-bd69-d557b68601f3.png
+.. image:: https://user-images.githubusercontent.com/24882057/225026458-f80a82cc-f019-4b25-ac3e-7d465ebba073.png
     :align: center
 
 Extra information
 ----
 
-You just read a *note* block. You can use these to highlight information that is interesting. The documentation has all kinds of different block types, and you can use them to highlight different degrees of importance.
+.. note::
 
-With Gingerbread, you use a docker container to containerize your project. This means that you can run your project on any machine, without having to worry about installing dependencies. You can also use the same container to run your project on a server, or on a cluster. This is very handy when setting up arbitrary models and experiments into a pipeline.
+    This is a block of notes
 
-The template allows you to use pytorch or pytorch-lightning, the template is not complex, we added a class that inherits from a template which throws errors if certain functions are not implemented which are critical for the pipeline. 
+Just now, you read a *block of notes*. They can be used to draw attention to noteworthy information. You may utilize the various block types in the documentation to emphasize varying levels of relevance.
+
+While using Gingerbread, you containerize your project using a docker container. As a result, you may execute your project without worrying about installing dependencies on any computer. The same container may be used to execute your project on a server or in a cluster as well. For putting up arbitrary models and experiments in a pipeline, this is quite useful.
 
 So, if you feel ready, let's get started!
 Head over to the :doc:`quickstart` page to get started.
@@ -61,6 +61,7 @@ Documentation
 
     quickstart
     medquery
+    conduct_and_info
     modules
 
 .. toctree::
@@ -68,6 +69,7 @@ Documentation
     :titlesonly:
     
     https://neomedsys.io/ <https://neomedsys.io/>
+    https://github.com/NeoMedSys/gingerbread_sc <https://github.com/NeoMedSys/gingerbread_sc>
 
 .. -----
 
@@ -77,3 +79,4 @@ Documentation
 ..     file of that documentation. These are usually ``html_sidebars``,
 ..     ``html_theme_path`` or ``html_theme_config``. Unsetting those will likely
 ..     allow the build to proceed.
+
