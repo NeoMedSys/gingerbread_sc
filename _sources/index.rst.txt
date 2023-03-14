@@ -58,14 +58,11 @@ Documentation
     :maxdepth: 1
     :caption: Documentation
     :titlesonly:
-
+    
+    whatsnew
     quickstart
     medquery
     conduct_and_info
-
-.. toctree::
-    :caption: Reference Api
-    :titlesonly:
     modules
 
 .. toctree::
