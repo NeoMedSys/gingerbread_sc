@@ -22,4 +22,5 @@ The ``third`` part is the docker image, or the ``operating system`` if you will.
 Check out the documentation for more information https://neomedsys.github.io/gingerbread_sc/.
 
 
-![Untitled-2023-02-13-1036](https://user-images.githubusercontent.com/24882057/225026286-aebc2ab2-008f-4788-bf19-30c1d97593f1.png)
+![Untitled-2023-02-13-1036(1)](https://user-images.githubusercontent.com/24882057/225026458-f80a82cc-f019-4b25-ac3e-7d465ebba073.png)
+
