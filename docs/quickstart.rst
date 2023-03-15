@@ -28,6 +28,17 @@ Quickstart
 
    ``docker exec -it ginger /bin/bash``
 
+.. attention::
+        
+        Unix systems use a very well defined user system with different permission levels. You might end up with some permission problems if you make new files inside the container and try to access them from your host machine. To avoid this, make sure you always create new files from the host machine and not from inside the container. If the docker container creates the files then you will need to change the permissions of the files to be able to access them from the host machine. To do this, run the following command from the host machine:
+
+        Get your user id: ``id -u`` on host machine and ``id -g`` on host machine
+
+        Change the permissions of the files: ``sudo chown -R <user_id>:<group_id> <file_name>``
+
+        for folders: ``sudo chown -R <user_id>:<group_id> <folder_name>``
+
+        We are working on a solution to make this process easier.
 
 7. Add medquery environment:
 
@@ -49,18 +60,6 @@ Quickstart
 
    To run code use: ``poetry run python main.py``, this will run the code in the poetry environment. To install new packages, use ``poetry add <package>`` and to remove packages use ``poetry remove <package>``. Read more on poetry here: https://python-poetry.org/docs/basic-usage/.
 
-
-.. important::
-        
-        Unix systems use a very well define user system with different permissions. You might end up with some permission problems if you make new files inside the container and try to access them from your host machine. To avoid this, make sure you always create new files from the host machine and not from inside the container. If the docker container creates the files then you will need to change the permissions of the files to be able to access them from the host machine. To do this, run the following command from the host machine:
-
-        Get your user id: ``id -u`` on host machine and ``id -g`` on host machine
-
-        Change the permissions of the files: ``sudo chown -R <user_id>:<group_id> <file_name>``
-
-        for folders: ``sudo chown -R <user_id>:<group_id> <folder_name>``
-
-        We are working on a solution to make this process easier.
 
 You are now ready to start coding!
 
