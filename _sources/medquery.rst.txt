@@ -9,7 +9,7 @@ Here is an example code for downloading data.
     
         import data_download as dd
 
-        mqd = MedqueryDataDownloader()
+        mqd = dd.MedqueryDataDownloader()
         mqd.download_data(
                         project_id="bloody",
                         get_affines=True,
