@@ -74,12 +74,12 @@ class MedqueryDataDownloader:
             if not os.path.exists(cfg.DATA_SAVE_DIR):
                 os.makedirs(cfg.DATA_SAVE_DIR)
             self.log.info(f"Downloading data from MedQuery for project {project_id}")
-            with h5py.File(f'./data/{project_id}.hdf5', 'w') as f:
+            with h5py.File(f'{cfg.DATA_SAVE_DIR}/{project_id}.hdf5', 'w') as f:
                 for batch in tqdm(large_data, desc="Saving data to disk..."):
                     for key, value in batch.items():
                         f.create_dataset(key, data=value)
-                    
-        except Exception as e:
+
+        except ValueError as e:
             self.log.error(f"Error while downloading data from MedQuery: {e}")
     
     def hdf5_to_nifti_all(self, hdf5_path: str, output_dir: str) -> NoReturn:
