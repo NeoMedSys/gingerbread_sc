@@ -242,6 +242,16 @@
 <li><p>Open a terminal in the container:</p>
 <p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">ginger</span> <span class="pre">/bin/bash</span></code></p>
 </li>
+</ol>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Unix systems use a very well defined user system with different permission levels. You might end up with some permission problems if you make new files inside the container and try to access them from your host machine. To avoid this, make sure you always create new files from the host machine and not from inside the container. If the docker container creates the files then you will need to change the permissions of the files to be able to access them from the host machine. To do this, run the following command from the host machine:</p>
+<p>Get your user id: <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-u</span></code> on host machine and <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-g</span></code> on host machine</p>
+<p>Change the permissions of the files: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chown</span> <span class="pre">-R</span> <span class="pre">&lt;user_id&gt;:&lt;group_id&gt;</span> <span class="pre">&lt;file_name&gt;</span></code></p>
+<p>for folders: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chown</span> <span class="pre">-R</span> <span class="pre">&lt;user_id&gt;:&lt;group_id&gt;</span> <span class="pre">&lt;folder_name&gt;</span></code></p>
+<p>We are working on a solution to make this process easier.</p>
+</div>
+<ol class="arabic" start="7">
 <li><p>Add medquery environment:</p>
 <p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/certs/.env</span></code></p>
 </li>
@@ -258,14 +268,6 @@ You can find the lightning template in /lightning with the corresponding data lo
 <p class="admonition-title">Attention</p>
 <p>The docker image contains a poetry environment, you can activate it with:</p>
 <p>To run code use: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">python</span> <span class="pre">main.py</span></code>, this will run the code in the poetry environment. To install new packages, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&lt;package&gt;</span></code> and to remove packages use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">remove</span> <span class="pre">&lt;package&gt;</span></code>. Read more on poetry here: <a class="reference external" href="https://python-poetry.org/docs/basic-usage/">https://python-poetry.org/docs/basic-usage/</a>.</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Unix systems use a very well define user system with different permissions. You might end up with some permission problems if you make new files inside the container and try to access them from your host machine. To avoid this, make sure you always create new files from the host machine and not from inside the container. If the docker container creates the files then you will need to change the permissions of the files to be able to access them from the host machine. To do this, run the following command from the host machine:</p>
-<p>Get your user id: <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-u</span></code> on host machine and <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-g</span></code> on host machine</p>
-<p>Change the permissions of the files: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chown</span> <span class="pre">-R</span> <span class="pre">&lt;user_id&gt;:&lt;group_id&gt;</span> <span class="pre">&lt;file_name&gt;</span></code></p>
-<p>for folders: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chown</span> <span class="pre">-R</span> <span class="pre">&lt;user_id&gt;:&lt;group_id&gt;</span> <span class="pre">&lt;folder_name&gt;</span></code></p>
-<p>We are working on a solution to make this process easier.</p>
 </div>
 <p>You are now ready to start coding!</p>
 <p>Here is a breakdown of the files in the project:</p>
