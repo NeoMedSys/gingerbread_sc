@@ -11,10 +11,10 @@ Here is an example code for downloading data.
 
         mqd = dd.MedqueryDataDownloader()
         mqd.download_data(
-                        project_id="bloody",
+                        project_id="booby",
                         get_affines=True,
                         get_all=True,
-                        include_mask=True,
+                        include_mask=False,
                         batch_size=20
                         )
 

@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Using Medquery" href="medquery.html" /><link rel="prev" title="What is new?" href="whatsnew.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>Quickstart - Gingerbread 0.1.1 documentation</title>
+        <title>Quickstart - Gingerbread 0.1.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Gingerbread 0.1.1 documentation</div></a>
+      <a href="index.html"><div class="brand">Gingerbread 0.1.2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="_static/63ecff6168e0e.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gingerbread 0.1.1 documentation</span>
+  <span class="sidebar-brand-text">Gingerbread 0.1.2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -242,6 +242,9 @@
 <li><p>Open a terminal in the container:</p>
 <p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">ginger</span> <span class="pre">/bin/bash</span></code></p>
 </li>
+<li><p>Add medquery environment:</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/certs/.env</span></code></p>
+</li>
 <li><p>Install the poetry environment:</p>
 <p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code></p>
 </li>
@@ -255,6 +258,14 @@ You can find the lightning template in /lightning with the corresponding data lo
 <p class="admonition-title">Attention</p>
 <p>The docker image contains a poetry environment, you can activate it with:</p>
 <p>To run code use: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">python</span> <span class="pre">main.py</span></code>, this will run the code in the poetry environment. To install new packages, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&lt;package&gt;</span></code> and to remove packages use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">remove</span> <span class="pre">&lt;package&gt;</span></code>. Read more on poetry here: <a class="reference external" href="https://python-poetry.org/docs/basic-usage/">https://python-poetry.org/docs/basic-usage/</a>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Unix systems use a very well define user system with different permissions. You might end up with some permission problems if you make new files inside the container and try to access them from your host machine. To avoid this, make sure you always create new files from the host machine and not from inside the container. If the docker container creates the files then you will need to change the permissions of the files to be able to access them from the host machine. To do this, run the following command from the host machine:</p>
+<p>Get your user id: <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-u</span></code> on host machine and <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-g</span></code> on host machine</p>
+<p>Change the permissions of the files: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chown</span> <span class="pre">-R</span> <span class="pre">&lt;user_id&gt;:&lt;group_id&gt;</span> <span class="pre">&lt;file_name&gt;</span></code></p>
+<p>for folders: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chown</span> <span class="pre">-R</span> <span class="pre">&lt;user_id&gt;:&lt;group_id&gt;</span> <span class="pre">&lt;folder_name&gt;</span></code></p>
+<p>We are working on a solution to make this process easier.</p>
 </div>
 <p>You are now ready to start coding!</p>
 <p>Here is a breakdown of the files in the project:</p>
