@@ -40,4 +40,5 @@ master_doc = "index"
 html_theme = "furo"
 html_logo = "63ecff6168e0e.png"
 
+# european time format "%b %d %y at %H:%M"
 today_fmt = "%b %d %y at %H:%M"

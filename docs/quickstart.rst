@@ -17,15 +17,6 @@ Quickstart
 
    ``cd gingerbread_sc``
 
-
-.. attention::
-         If you are working on unix based systems, you need to make sure that the ``environment.env`` file has the correct UID and GID. You can find the UID and GID by running ``id -u`` and ``id -g``. If you are working on windows, you can skip this step.
-
-         4. Add the UID and GID to the docker container by sourcing the ``environment.env`` file with shell:
-
-            ``. environment.env``
-
-
 5. Run docker compose to start the container:
 
    with cpu: ``docker compose up -d cpu``
