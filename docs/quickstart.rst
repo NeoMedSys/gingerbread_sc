@@ -56,9 +56,9 @@ Quickstart
    
 
 .. attention::
-   The docker image contains a poetry environment, you can activate it with:
+   The docker image contains a poetry environment:
 
-   To run code use: ``poetry run python main.py``, this will run the code in the poetry environment. To install new packages, use ``poetry add <package>`` and to remove packages use ``poetry remove <package>``. Read more on poetry here: https://python-poetry.org/docs/basic-usage/.
+   To run arbitrary code use: ``poetry run python SOMEFILE.py``, this will run the code in the poetry environment. To install new packages, use ``poetry add <package>`` and to remove packages use ``poetry remove <package>``. Read more on poetry here: https://python-poetry.org/docs/basic-usage/.
 
 
 You are now ready to start coding!
