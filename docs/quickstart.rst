@@ -17,15 +17,6 @@ Quickstart
 
    ``cd gingerbread_sc``
 
-
-.. attention::
-         If you are working on unix based systems, you need to make sure that the ``environment.env`` file has the correct UID and GID. You can find the UID and GID by running ``id -u`` and ``id -g``. If you are working on windows, you can skip this step.
-
-         4. Add the UID and GID to the docker container by sourcing the ``environment.env`` file with shell:
-
-            ``. environment.env``
-
-
 5. Run docker compose to start the container:
 
    with cpu: ``docker compose up -d cpu``
@@ -37,7 +28,24 @@ Quickstart
 
    ``docker exec -it ginger /bin/bash``
 
-7. Install the poetry environment:
+.. attention::
+        
+        Unix systems use a very well defined user system with different permission levels. You might end up with some permission problems if you make new files inside the container and try to access them from your host machine. To avoid this, make sure you always create new files from the host machine and not from inside the container. If the docker container creates the files then you will need to change the permissions of the files to be able to access them from the host machine. To do this, run the following command from the host machine:
+
+        Get your user id: ``id -u`` on host machine and ``id -g`` on host machine
+
+        Change the permissions of the files: ``sudo chown -R <user_id>:<group_id> <file_name>``
+
+        for folders: ``sudo chown -R <user_id>:<group_id> <folder_name>``
+
+        We are working on a solution to make this process easier.
+
+7. Add medquery environment:
+
+   ``source /certs/.env``
+
+
+8. Install the poetry environment:
 
    ``poetry install``
 
@@ -48,9 +56,9 @@ Quickstart
    
 
 .. attention::
-   The docker image contains a poetry environment, you can activate it with:
+   The docker image contains a poetry environment:
 
-   To run code use: ``poetry run python main.py``, this will run the code in the poetry environment. To install new packages, use ``poetry add <package>`` and to remove packages use ``poetry remove <package>``. Read more on poetry here: https://python-poetry.org/docs/basic-usage/.
+   To run arbitrary code use: ``poetry run python SOMEFILE.py``, this will run the code in the poetry environment. To install new packages, use ``poetry add <package>`` and to remove packages use ``poetry remove <package>``. Read more on poetry here: https://python-poetry.org/docs/basic-usage/.
 
 
 You are now ready to start coding!

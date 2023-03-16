@@ -1,12 +1,11 @@
-
 import os
 from typing import Tuple, Optional, Dict
 
 
 # data stages
-STAGES = ['train', 'val', 'test', 'predict']
-INPUT_KEY_LABEL = 'y'
-INPUT_KEY_IMAGE = 'x'
+STAGES = ["train", "val", "test", "predict"]
+INPUT_KEY_LABEL = "y"
+INPUT_KEY_IMAGE = "x"
 
 
 ROOT: os.PathLike = os.getcwd()
@@ -88,3 +87,7 @@ CACHE_NAMESPACE = "cache_namespace"
 CACHE_DATA_DIR = os.path.join(ROOT, "cache/data")
 CACHE_LOCK_DIR = os.path.join(ROOT, "cache/lock")
 # ---------------------------------------------------------
+
+# ---------------------------------------------------------
+# EXTRAS
+DATA_SAVE_DIR = "./data"
