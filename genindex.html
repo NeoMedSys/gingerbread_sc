@@ -170,6 +170,12 @@
 <li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="xmodules.html">xmodules package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="xmodules.models.html">xmodules.models package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xmodules.optimizers.html">xmodules.optimizers package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xmodules.schedulers.html">xmodules.schedulers package</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -213,7 +219,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#W"><strong>W</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#W"><strong>W</strong></a> | <a href="#X"><strong>X</strong></a></div>
 </section>
 <section id="A" class="genindex-section">
   <h2>A</h2>
@@ -345,16 +351,22 @@
   <h2>L</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="xmodules.optimizers.html#xmodules.optimizers.optim_adam.LitAdam">LitAdam (class in xmodules.optimizers.optim_adam)</a>
+</li>
+        <li><a href="xmodules.schedulers.html#xmodules.schedulers.sched_warmup.LitLRScheduler">LitLRScheduler (class in xmodules.schedulers.sched_warmup)</a>
+</li>
+        <li><a href="xmodules.schedulers.html#xmodules.schedulers.sched_warmup.LitWarmupCosineSchedule">LitWarmupCosineSchedule (class in xmodules.schedulers.sched_warmup)</a>
+</li>
         <li><a href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.load_from_checkpoint">load_from_checkpoint() (neotemplate.base_central_processing.CPNeoTemplate method)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="central_processing_handler.html#central_processing_handler.CentralProcessingHandler.log">log (central_processing_handler.CentralProcessingHandler attribute)</a>
 
         <ul>
           <li><a href="data_download.html#data_download.MedqueryDataDownloader.log">(data_download.MedqueryDataDownloader attribute)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="central_processing.html#central_processing.CentralProcessing.logga">logga (central_processing.CentralProcessing attribute)</a>
 
         <ul>
@@ -400,6 +412,18 @@
           <li><a href="utils.html#module-utils">utils</a>
 </li>
           <li><a href="utils.html#module-utils.helpers">utils.helpers</a>
+</li>
+          <li><a href="xmodules.html#module-xmodules">xmodules</a>
+</li>
+          <li><a href="xmodules.models.html#module-xmodules.models">xmodules.models</a>
+</li>
+          <li><a href="xmodules.optimizers.html#module-xmodules.optimizers">xmodules.optimizers</a>
+</li>
+          <li><a href="xmodules.optimizers.html#module-xmodules.optimizers.optim_adam">xmodules.optimizers.optim_adam</a>
+</li>
+          <li><a href="xmodules.schedulers.html#module-xmodules.schedulers">xmodules.schedulers</a>
+</li>
+          <li><a href="xmodules.schedulers.html#module-xmodules.schedulers.sched_warmup">xmodules.schedulers.sched_warmup</a>
 </li>
         </ul></li>
     </ul></td>
@@ -468,12 +492,20 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.save_checkpoint">save_checkpoint() (neotemplate.base_central_processing.CPNeoTemplate method)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.save_hyperparams">save_hyperparams() (neotemplate.base_central_processing.CPNeoTemplate method)</a>
 </li>
         <li><a href="central_processing_handler.html#central_processing_handler.CentralProcessingHandler.start_processing">start_processing() (central_processing_handler.CentralProcessingHandler method)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="xmodules.optimizers.html#xmodules.optimizers.optim_adam.LitAdam.step">step() (xmodules.optimizers.optim_adam.LitAdam method)</a>
+
+        <ul>
+          <li><a href="xmodules.schedulers.html#xmodules.schedulers.sched_warmup.LitLRScheduler.step">(xmodules.schedulers.sched_warmup.LitLRScheduler method)</a>
+</li>
+          <li><a href="xmodules.schedulers.html#xmodules.schedulers.sched_warmup.LitWarmupCosineSchedule.step">(xmodules.schedulers.sched_warmup.LitWarmupCosineSchedule method)</a>
+</li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>
@@ -548,6 +580,58 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="utils.html#utils.helpers.welcome_logo">welcome_logo() (in module utils.helpers)</a>
 </li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="X" class="genindex-section">
+  <h2>X</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    xmodules
+
+        <ul>
+          <li><a href="xmodules.html#module-xmodules">module</a>
+</li>
+        </ul></li>
+        <li>
+    xmodules.models
+
+        <ul>
+          <li><a href="xmodules.models.html#module-xmodules.models">module</a>
+</li>
+        </ul></li>
+        <li>
+    xmodules.optimizers
+
+        <ul>
+          <li><a href="xmodules.optimizers.html#module-xmodules.optimizers">module</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    xmodules.optimizers.optim_adam
+
+        <ul>
+          <li><a href="xmodules.optimizers.html#module-xmodules.optimizers.optim_adam">module</a>
+</li>
+        </ul></li>
+        <li>
+    xmodules.schedulers
+
+        <ul>
+          <li><a href="xmodules.schedulers.html#module-xmodules.schedulers">module</a>
+</li>
+        </ul></li>
+        <li>
+    xmodules.schedulers.sched_warmup
+
+        <ul>
+          <li><a href="xmodules.schedulers.html#module-xmodules.schedulers.sched_warmup">module</a>
+</li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>

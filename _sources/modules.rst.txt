@@ -12,3 +12,4 @@ gingerbread_sc
    neotemplate
    tests
    utils
+   xmodules

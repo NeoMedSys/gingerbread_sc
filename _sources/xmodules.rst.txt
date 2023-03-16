@@ -1,0 +1,20 @@
+xmodules package
+================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   xmodules.models
+   xmodules.optimizers
+   xmodules.schedulers
+
+Module contents
+---------------
+
+.. automodule:: xmodules
+   :members:
+   :undoc-members:
+   :show-inheritance:

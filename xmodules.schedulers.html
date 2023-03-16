@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="What is new?" href="whatsnew.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="xmodules.optimizers package" href="xmodules.optimizers.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>Gingerbread 0.1.4 documentation</title>
+        <title>xmodules.schedulers package - Gingerbread 0.1.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Gingerbread 0.1.4 documentation</div></a>
+      <a href="index.html"><div class="brand">Gingerbread 0.1.4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/63ecff6168e0e.png" alt="Logo"/>
@@ -158,12 +158,12 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What is new?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conduct_and_info.html">General Information</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="central_processing_handler.html">central_processing_handler module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli_main.html">cli_main module</a></li>
@@ -172,10 +172,10 @@
 <li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="xmodules.html">xmodules package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="xmodules.html">xmodules package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="xmodules.models.html">xmodules.models package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="xmodules.optimizers.html">xmodules.optimizers package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="xmodules.schedulers.html">xmodules.schedulers package</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">xmodules.schedulers package</a></li>
 </ul>
 </li>
 </ul>
@@ -219,60 +219,38 @@
           </label>
         </div>
         <article role="main">
-          <section id="gingerbread">
-<h1>Gingerbread<a class="headerlink" href="#gingerbread" title="Permalink to this heading">#</a></h1>
-<a class="reference external image-reference" href="https://www.python.org/downloads/release/python-390"><img alt="https://img.shields.io/badge/Python-3.9-blue" src="https://img.shields.io/badge/Python-3.9-blue" /></a>
-<a class="reference external image-reference" href="https://pytorch.org/"><img alt="https://img.shields.io/badge/PyTorch-1.13.1-blue" src="https://img.shields.io/badge/PyTorch-1.13.1-blue" /></a>
-<a class="reference external image-reference" href="https://python-poetry.org/"><img alt="https://img.shields.io/badge/Poetry-1.3.2-blue" src="https://img.shields.io/badge/Poetry-1.3.2-blue" /></a>
-<a class="reference external image-reference" href="https://monai.io/"><img alt="https://img.shields.io/badge/Monai-1.1.0-blue" src="https://img.shields.io/badge/Monai-1.1.0-blue" /></a>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Last change: Mar 16 23 at 16:06</p>
-</div>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>Hello, my name is Gingerbread, and I am a template enabling researchers to better engage with NeoMedSys.
-I’ll do my best to walk you through the steps involved in creating a new project and utilizing the template.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This template is based on docker, and uses poetry to manage the python dependencies.</p>
-</div>
-<p>The template consists of three parts.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">initial</span></code> element consists of the source files, which together with the production process form the researcher’s code template. This makes it simpler for both the production team and the research team to collaborate.</p>
-<p>The documentation is the <code class="docutils literal notranslate"><span class="pre">second</span></code> component; it serves as a manual for the researchers to use in order to ensure proper use of the template. It is simpler to duplicate the findings, for new hires to learn the workflow, and for everyone to comprehend what is happening when this sort of documentation is used for all projects.</p>
-<p>The docker image, or <code class="docutils literal notranslate"><span class="pre">operating</span> <span class="pre">system</span></code>, if you will, is the <code class="docutils literal notranslate"><span class="pre">third</span></code> component. The setting in which the researchers will operate is as described. The work of the researchers can more readily integrate into the production process as a result.</p>
-<img alt="https://user-images.githubusercontent.com/24882057/225026458-f80a82cc-f019-4b25-ac3e-7d465ebba073.png" class="align-center" src="https://user-images.githubusercontent.com/24882057/225026458-f80a82cc-f019-4b25-ac3e-7d465ebba073.png" />
-<section id="extra-information">
-<h3>Extra information<a class="headerlink" href="#extra-information" title="Permalink to this heading">#</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a block of notes</p>
-</div>
-<p>Just now, you read a <em>block of notes</em>. They can be used to draw attention to noteworthy information. You may utilize the various block types in the documentation to emphasize varying levels of relevance.</p>
-<p>While using Gingerbread, you containerize your project using a docker container. As a result, you may execute your project without worrying about installing dependencies on any computer. The same container may be used to execute your project on a server or in a cluster as well. For putting up arbitrary models and experiments in a pipeline, this is quite useful.</p>
-<p>So, if you feel ready, let’s get started!
-Head over to the <a class="reference internal" href="quickstart.html"><span class="doc">Quickstart</span></a> page to get started.</p>
+          <section id="xmodules-schedulers-package">
+<h1>xmodules.schedulers package<a class="headerlink" href="#xmodules-schedulers-package" title="Permalink to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 </section>
+<section id="module-xmodules.schedulers.sched_warmup">
+<span id="xmodules-schedulers-sched-warmup-module"></span><h2>xmodules.schedulers.sched_warmup module<a class="headerlink" href="#module-xmodules.schedulers.sched_warmup" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="xmodules.schedulers.sched_warmup.LitLRScheduler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xmodules.schedulers.sched_warmup.</span></span><span class="sig-name descname"><span class="pre">LitLRScheduler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xmodules.schedulers.sched_warmup.LitLRScheduler" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CosineAnnealingLR</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="xmodules.schedulers.sched_warmup.LitLRScheduler.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xmodules.schedulers.sched_warmup.LitLRScheduler.step" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="xmodules.schedulers.sched_warmup.LitWarmupCosineSchedule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xmodules.schedulers.sched_warmup.</span></span><span class="sig-name descname"><span class="pre">LitWarmupCosineSchedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warmup_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_total</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cycles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_epoch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warmup_multiplier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xmodules.schedulers.sched_warmup.LitWarmupCosineSchedule" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">WarmupCosineSchedule</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="xmodules.schedulers.sched_warmup.LitWarmupCosineSchedule.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xmodules.schedulers.sched_warmup.LitWarmupCosineSchedule.step" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What is new?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conduct_and_info.html">General Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">gingerbread_sc</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">NeoMedSys</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference external" href="https://neomedsys.io/">https://neomedsys.io/</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/NeoMedSys/gingerbread_sc">https://github.com/NeoMedSys/gingerbread_sc</a></li>
-</ul>
-</div>
+<section id="module-xmodules.schedulers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-xmodules.schedulers" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -281,16 +259,18 @@ Head over to the <a class="reference internal" href="quickstart.html"><span clas
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="whatsnew.html">
+          
+          <a class="prev-page" href="xmodules.optimizers.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
-                  <span>Next</span>
+                  <span>Previous</span>
                 </div>
-                <div class="title">What is new?</div>
+                
+                <div class="title">xmodules.optimizers package</div>
+                
               </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -321,14 +301,20 @@ Head over to the <a class="reference internal" href="quickstart.html"><span clas
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Gingerbread</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a><ul>
-<li><a class="reference internal" href="#extra-information">Extra information</a></li>
+<li><a class="reference internal" href="#">xmodules.schedulers package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-xmodules.schedulers.sched_warmup">xmodules.schedulers.sched_warmup module</a><ul>
+<li><a class="reference internal" href="#xmodules.schedulers.sched_warmup.LitLRScheduler"><code class="docutils literal notranslate"><span class="pre">LitLRScheduler</span></code></a><ul>
+<li><a class="reference internal" href="#xmodules.schedulers.sched_warmup.LitLRScheduler.step"><code class="docutils literal notranslate"><span class="pre">LitLRScheduler.step()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li><a class="reference internal" href="#xmodules.schedulers.sched_warmup.LitWarmupCosineSchedule"><code class="docutils literal notranslate"><span class="pre">LitWarmupCosineSchedule</span></code></a><ul>
+<li><a class="reference internal" href="#xmodules.schedulers.sched_warmup.LitWarmupCosineSchedule.step"><code class="docutils literal notranslate"><span class="pre">LitWarmupCosineSchedule.step()</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-xmodules.schedulers">Module contents</a></li>
 </ul>
 </li>
 </ul>
