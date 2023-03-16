@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="gingerbread_sc.tests package" href="gingerbread_sc.tests.html" /><link rel="prev" title="gingerbread_sc.data_loader package" href="gingerbread_sc.data_loader.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="data_download module" href="data_download.html" /><link rel="prev" title="central_processing_handler module" href="central_processing_handler.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>gingerbread_sc.neotemplate package - Gingerbread 0.1.4 documentation</title>
+        <title>cli_main module - Gingerbread 0.1.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -164,13 +164,14 @@
 <li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conduct_and_info.html">General Information</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="gingerbread_sc.html">gingerbread_sc package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="gingerbread_sc.data_loader.html">gingerbread_sc.data_loader package</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">gingerbread_sc.neotemplate package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gingerbread_sc.tests.html">gingerbread_sc.tests package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gingerbread_sc.utils.html">gingerbread_sc.utils package</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_processing_handler.html">central_processing_handler module</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">cli_main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_download.html">data_download module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_loader.html">data_loader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
 </ul>
 </li>
 </ul>
@@ -212,17 +213,24 @@
           </label>
         </div>
         <article role="main">
-          <section id="gingerbread-sc-neotemplate-package">
-<h1>gingerbread_sc.neotemplate package<a class="headerlink" href="#gingerbread-sc-neotemplate-package" title="Permalink to this heading">#</a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="gingerbread-sc-neotemplate-base-central-processing-module">
-<h2>gingerbread_sc.neotemplate.base_central_processing module<a class="headerlink" href="#gingerbread-sc-neotemplate-base-central-processing-module" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">#</a></h2>
-</section>
+          <section id="module-cli_main">
+<span id="cli-main-module"></span><h1>cli_main module<a class="headerlink" href="#module-cli_main" title="Permalink to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="cli_main.main">
+<span class="sig-prename descclassname"><span class="pre">cli_main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#cli_main.main" title="Permalink to this definition">#</a></dt>
+<dd><p>Main function for the central processing unit.
+Configure the central processing unit with the command line arguments.
+Add the command line arguments to the central processing unit as you see fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
         </article>
@@ -230,23 +238,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="gingerbread_sc.tests.html">
+          <a class="next-page" href="data_download.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">gingerbread_sc.tests package</div>
+                <div class="title">data_download module</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="gingerbread_sc.data_loader.html">
+          <a class="prev-page" href="central_processing_handler.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">gingerbread_sc.data_loader package</div>
+                <div class="title">central_processing_handler module</div>
                 
               </div>
             </a>
@@ -280,10 +288,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">gingerbread_sc.neotemplate package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#gingerbread-sc-neotemplate-base-central-processing-module">gingerbread_sc.neotemplate.base_central_processing module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#">cli_main module</a><ul>
+<li><a class="reference internal" href="#cli_main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
 </ul>
 </li>
 </ul>

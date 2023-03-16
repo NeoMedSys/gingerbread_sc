@@ -4,4 +4,11 @@ gingerbread_sc
 .. toctree::
    :maxdepth: 4
 
-   gingerbread_sc
+   central_processing
+   central_processing_handler
+   cli_main
+   data_download
+   data_loader
+   neotemplate
+   tests
+   utils

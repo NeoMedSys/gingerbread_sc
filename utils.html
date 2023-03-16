@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="gingerbread_sc.tests package" href="gingerbread_sc.tests.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="tests package" href="tests.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>gingerbread_sc.utils package - Gingerbread 0.1.4 documentation</title>
+        <title>utils package - Gingerbread 0.1.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -164,13 +164,14 @@
 <li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conduct_and_info.html">General Information</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="gingerbread_sc.html">gingerbread_sc package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="gingerbread_sc.data_loader.html">gingerbread_sc.data_loader package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gingerbread_sc.neotemplate.html">gingerbread_sc.neotemplate package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gingerbread_sc.tests.html">gingerbread_sc.tests package</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">gingerbread_sc.utils package</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="central_processing_handler.html">central_processing_handler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli_main.html">cli_main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_download.html">data_download module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_loader.html">data_loader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">utils package</a></li>
 </ul>
 </li>
 </ul>
@@ -212,16 +213,90 @@
           </label>
         </div>
         <article role="main">
-          <section id="gingerbread-sc-utils-package">
-<h1>gingerbread_sc.utils package<a class="headerlink" href="#gingerbread-sc-utils-package" title="Permalink to this heading">#</a></h1>
+          <section id="utils-package">
+<h1>utils package<a class="headerlink" href="#utils-package" title="Permalink to this heading">#</a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="gingerbread-sc-utils-helpers-module">
-<h2>gingerbread_sc.utils.helpers module<a class="headerlink" href="#gingerbread-sc-utils-helpers-module" title="Permalink to this heading">#</a></h2>
+<section id="module-utils.helpers">
+<span id="utils-helpers-module"></span><h2>utils.helpers module<a class="headerlink" href="#module-utils.helpers" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.helpers.check_version">
+<span class="sig-prename descclassname"><span class="pre">utils.helpers.</span></span><span class="sig-name descname"><span class="pre">check_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.helpers.check_version" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.helpers.decode_payload">
+<span class="sig-prename descclassname"><span class="pre">utils.helpers.</span></span><span class="sig-name descname"><span class="pre">decode_payload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blosc_compression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#utils.helpers.decode_payload" title="Permalink to this definition">#</a></dt>
+<dd><p>the function decodes a payload/response from the RadiomPipe API by first converting
+the hexstring to bytes and decompressing + decoding the buffer. The payload is then converted
+back to a dictionary from bytes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>payload</strong> (<em>str</em>) – the payload is the response from the RadiomPipe application</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>The dictionary contains two dataframes with radiomic features and diagnostic from the process as well</em></p></li>
+<li><p><em>as two dictionaries with masks from the segmentation and nested radiomics features.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.helpers.decode_weights">
+<span class="sig-prename descclassname"><span class="pre">utils.helpers.</span></span><span class="sig-name descname"><span class="pre">decode_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoded_weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OrderedDict</span></span></span><a class="headerlink" href="#utils.helpers.decode_weights" title="Permalink to this definition">#</a></dt>
+<dd><p>the function decodes a encoded weights loaded from MQ.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>encoded_model</strong> (<em>bytes</em>) – encoded weights loaded from MQ.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>weights</strong> – the weights of pre-trained model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>OrderedDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.helpers.get_img_info">
+<span class="sig-prename descclassname"><span class="pre">utils.helpers.</span></span><span class="sig-name descname"><span class="pre">get_img_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#utils.helpers.get_img_info" title="Permalink to this definition">#</a></dt>
+<dd><p>get_img_info is very simple helper that returns the dimension of image volume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>img</strong> (<em>np.ndarray</em>) – this is the image volume that you need to know the dimension for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.helpers.timer">
+<span class="sig-prename descclassname"><span class="pre">utils.helpers.</span></span><span class="sig-name descname"><span class="pre">timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orig_func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.helpers.timer" title="Permalink to this definition">#</a></dt>
+<dd><p>This is custom timer decorator.
+:param orig_func: The <cite>orig_func</cite> is the python function which is decorated.
+:type orig_func: object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>elapsed runtime for the function.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.helpers.welcome_logo">
+<span class="sig-prename descclassname"><span class="pre">utils.helpers.</span></span><span class="sig-name descname"><span class="pre">welcome_logo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.helpers.welcome_logo" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">#</a></h2>
+<section id="module-utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-utils" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -231,14 +306,14 @@
         
         <div class="related-pages">
           
-          <a class="prev-page" href="gingerbread_sc.tests.html">
+          <a class="prev-page" href="tests.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">gingerbread_sc.tests package</div>
+                <div class="title">tests package</div>
                 
               </div>
             </a>
@@ -272,10 +347,18 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">gingerbread_sc.utils package</a><ul>
+<li><a class="reference internal" href="#">utils package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#gingerbread-sc-utils-helpers-module">gingerbread_sc.utils.helpers module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#module-utils.helpers">utils.helpers module</a><ul>
+<li><a class="reference internal" href="#utils.helpers.check_version"><code class="docutils literal notranslate"><span class="pre">check_version()</span></code></a></li>
+<li><a class="reference internal" href="#utils.helpers.decode_payload"><code class="docutils literal notranslate"><span class="pre">decode_payload()</span></code></a></li>
+<li><a class="reference internal" href="#utils.helpers.decode_weights"><code class="docutils literal notranslate"><span class="pre">decode_weights()</span></code></a></li>
+<li><a class="reference internal" href="#utils.helpers.get_img_info"><code class="docutils literal notranslate"><span class="pre">get_img_info()</span></code></a></li>
+<li><a class="reference internal" href="#utils.helpers.timer"><code class="docutils literal notranslate"><span class="pre">timer()</span></code></a></li>
+<li><a class="reference internal" href="#utils.helpers.welcome_logo"><code class="docutils literal notranslate"><span class="pre">welcome_logo()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-utils">Module contents</a></li>
 </ul>
 </li>
 </ul>

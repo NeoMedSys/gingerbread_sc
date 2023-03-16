@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="gingerbread_sc" href="modules.html" /><link rel="prev" title="Using Medquery" href="medquery.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="data_loader package" href="data_loader.html" /><link rel="prev" title="cli_main module" href="cli_main.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>General Information - Gingerbread 0.1.4 documentation</title>
+        <title>data_download module - Gingerbread 0.1.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -162,12 +162,12 @@
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What is new?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">General Information</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="conduct_and_info.html">General Information</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="central_processing_handler.html">central_processing_handler module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli_main.html">cli_main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_download.html">data_download module</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">data_download module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_loader.html">data_loader package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
@@ -213,25 +213,104 @@
           </label>
         </div>
         <article role="main">
-          <section id="general-information">
-<h1>General Information<a class="headerlink" href="#general-information" title="Permalink to this heading">#</a></h1>
-<p>On this page you will find general information about the project.</p>
-<section id="how-to-go-about">
-<h2>How to go about<a class="headerlink" href="#how-to-go-about" title="Permalink to this heading">#</a></h2>
-<p>So you have now opened up the container and you are ready to start working on your project.</p>
-<p>You can now work as if it was a new normal project, the only difference here is that the <span class="xref std std-ref">central_processing</span> needs to be filled out according to your model’s main pipeline, <cite>Preprocessing</cite>, <cite>predict_step</cite> and <cite>postprocessing</cite>.</p>
-<p>In other words, you can make your own files and train your model as you normally would, but you need to make sure that the <span class="xref std std-ref">central_processing</span> is filled out correctly according to your model’s main pipeline when you want to go into production. You can fill out the <span class="xref std std-ref">central_processing</span> as you go along or at the end. You can change it along the experiments to see that it has the intended results.</p>
-<p>In production we import this class and run these functions with datastreams coming from different source. Therefore, it is important that you fill out the <span class="xref std std-ref">central_processing</span> correctly with the rights type for both input and output.</p>
-</section>
-<section id="the-philosophy">
-<h2>The philosophy<a class="headerlink" href="#the-philosophy" title="Permalink to this heading">#</a></h2>
-<p>The project’s guiding principle is to give researchers a straightforward framework that is simple to utilize.</p>
-<p>This framework includes built-in MedQuery certifications, eliminating the need to manually add them for every project.</p>
-<p>The framework also has the usual packages like poetry, CUDA etc. installed, so you can start working on your project right away.</p>
-<p>The framework is also designed to be easily extensible, so you can add your own packages and certifications as you see fit, which in turn will modulerize into the production pipeline.</p>
-<p>Another aspect of the framework is that it is easier to have a common understanding of how it all operates both for experiments and in production through regular documentation and code updates.</p>
-<p>The idea is also for researchers to add issues in the Github repository if there is any changes they would like to see in the framework, so that the framework can be improved over time and if there are any bugs or limitations.</p>
-</section>
+          <section id="module-data_download">
+<span id="data-download-module"></span><h1>data_download module<a class="headerlink" href="#module-data_download" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="data_download.MedqueryDataDownloader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">data_download.</span></span><span class="sig-name descname"><span class="pre">MedqueryDataDownloader</span></span><a class="headerlink" href="#data_download.MedqueryDataDownloader" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>MedqueryDataDownloader class for connecting to MedQuery and downloading data.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="data_download.MedqueryDataDownloader.mq">
+<span class="sig-name descname"><span class="pre">mq</span></span><a class="headerlink" href="#data_download.MedqueryDataDownloader.mq" title="Permalink to this definition">#</a></dt>
+<dd><p>pymedquery instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pymq.PyMedQuery</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="data_download.MedqueryDataDownloader.log">
+<span class="sig-name descname"><span class="pre">log</span></span><a class="headerlink" href="#data_download.MedqueryDataDownloader.log" title="Permalink to this definition">#</a></dt>
+<dd><p>logger instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>verboselogs.VerboseLogger</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_download.MedqueryDataDownloader.download_data">
+<span class="sig-name descname"><span class="pre">download_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_affines</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_all</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#data_download.MedqueryDataDownloader.download_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Download data from MedQuery and save it to disk.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Instanciate the class and use this method to download data from MedQuery and save it to disk. For more information about data extraction from MedQuery, see {INSERT LINK HERE}.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project_id</strong> (<em>str</em>) – Project ID</p></li>
+<li><p><strong>get_affines</strong> (<em>bool</em><em>, </em><em>optional</em>) – Get affines, by default False</p></li>
+<li><p><strong>get_all</strong> (<em>bool</em><em>, </em><em>optional</em>) – Get all, by default True</p></li>
+<li><p><strong>include_mask</strong> (<em>bool</em><em>, </em><em>optional</em>) – Include mask, by default False</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Batch size, by default 20</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_download.MedqueryDataDownloader.hdf5_to_nifti_all">
+<span class="sig-name descname"><span class="pre">hdf5_to_nifti_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdf5_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#data_download.MedqueryDataDownloader.hdf5_to_nifti_all" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert hdf5 file to nifti file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf5_path</strong> (<em>str</em>) – Path to hdf5 file</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em>) – Path to output directory</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This method assumed that the hdf5 file contains affine matrices and data. If this is not the case, the method will not work.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_download.MedqueryDataDownloader.hdf5_to_nifti_single">
+<span class="sig-name descname"><span class="pre">hdf5_to_nifti_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdf5_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#data_download.MedqueryDataDownloader.hdf5_to_nifti_single" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert single series to nifti file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdf5_path</strong> (<em>str</em>) – Path to hdf5 file</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em>) – Path to output directory</p></li>
+<li><p><strong>series_uid</strong> (<em>str</em>) – Series UID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This method assumed that the hdf5 file contains affine matrices and data. If this is not the case, the method will not work.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -239,23 +318,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="modules.html">
+          <a class="next-page" href="data_loader.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">gingerbread_sc</div>
+                <div class="title">data_loader package</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="medquery.html">
+          <a class="prev-page" href="cli_main.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Using Medquery</div>
+                <div class="title">cli_main module</div>
                 
               </div>
             </a>
@@ -289,9 +368,15 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">General Information</a><ul>
-<li><a class="reference internal" href="#how-to-go-about">How to go about</a></li>
-<li><a class="reference internal" href="#the-philosophy">The philosophy</a></li>
+<li><a class="reference internal" href="#">data_download module</a><ul>
+<li><a class="reference internal" href="#data_download.MedqueryDataDownloader"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader</span></code></a><ul>
+<li><a class="reference internal" href="#data_download.MedqueryDataDownloader.mq"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.mq</span></code></a></li>
+<li><a class="reference internal" href="#data_download.MedqueryDataDownloader.log"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.log</span></code></a></li>
+<li><a class="reference internal" href="#data_download.MedqueryDataDownloader.download_data"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.download_data()</span></code></a></li>
+<li><a class="reference internal" href="#data_download.MedqueryDataDownloader.hdf5_to_nifti_all"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.hdf5_to_nifti_all()</span></code></a></li>
+<li><a class="reference internal" href="#data_download.MedqueryDataDownloader.hdf5_to_nifti_single"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.hdf5_to_nifti_single()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
