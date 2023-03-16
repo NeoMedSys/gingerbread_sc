@@ -183,7 +183,8 @@ class CPNeoTemplate(nn.Module, ABC):
 
         Parameters:
         ----------
-        None
+        data: Dict[str, np.ndarray]
+            The data to be tested.
 
         Returns:
         -------
@@ -191,48 +192,40 @@ class CPNeoTemplate(nn.Module, ABC):
         """
         try:
             if isinstance(data, dict):
-                self.logga.info("Data correct is dictionary")
                 for key, value in data.items():
                     if not isinstance(value, np.ndarray):
                         raise TypeError(
                             f"Data input is not a dictionary of numpy arrays. Key: {key} is of type {type(value)}"
                         )
-                self.logga.info("Data values is numpy")
             else:
                 raise TypeError("Data input is not a dictionary")
 
             data = self.preprocess(data=data)
             if isinstance(data, dict):
-                self.logga.info("Data output from preprocess is a dictionary")
                 for key, value in data.items():
                     if not isinstance(value, np.ndarray):
                         raise TypeError(
                             f"Data input is not a dictionary of numpy arrays. Key: {key} is of type {type(value)}"
                         )
-                self.logga.info("Data values from preprocess is numpy")
             else:
                 raise TypeError("Data input from preprocess is not a dictionary")
 
             data = self.predict_step(data=data)
             if isinstance(data, dict):
-                self.logga.info("Data output from predict_step is a dictionary")
                 for key, value in data.items():
                     if not isinstance(value, np.ndarray):
                         raise TypeError(
                             f"Data input is not a dictionary of numpy arrays. Key: {key} is of type {type(value)}"
                         )
-                self.logga.info("Data values from predict step is numpy")
             else:
                 raise TypeError("Data input is not a dictionary")
             data = self.postprocess(data=data)
             if isinstance(data, dict):
-                self.logga.info("Data output from postprocess is a dictionary")
                 for key, value in data.items():
                     if not isinstance(value, np.ndarray):
                         raise TypeError(
                             f"Data input is not a dictionary of numpy arrays. Key: {key} is of type {type(value)}"
                         )
-                self.logga.info("Data values from postprocess is numpy")
 
         except Exception as e:
-            self.logga.error(f"Test structure failed with error {e}")
+            self.logga.error(f"Test structure failed with error: {e}")
