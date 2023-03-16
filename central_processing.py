@@ -39,8 +39,9 @@ class CentralProcessing(CPNeoTemplate):
     def __init__(self, args: argparse.Namespace) -> NoReturn:
         """Constructor for the central processing unit."""
         super().__init__()
-        self.args = args
-        # self.save_hyperparams()
+        self.args = args  # Do not remove
+        self.check_obligatory_methods()  # Do not remove
+        # self.save_hyperparams() # this is for saving hyperparams
 
     def postprocess(
         self, data: Dict[str, np.ndarray], stage: str, extras: Dict[str, Any] = {}
