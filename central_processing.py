@@ -36,9 +36,10 @@ class CentralProcessing(CPNeoTemplate):
 
     """
 
-    def __init__(self) -> NoReturn:
+    def __init__(self, args: argparse.Namespace = None) -> None:
         """Constructor for the central processing unit."""
         super().__init__()
+        self.args = args
         # self.save_hyperparams() # this is for saving hyperparams
 
         ########################################################3
@@ -74,7 +75,7 @@ class CentralProcessing(CPNeoTemplate):
         """
         resolution = extras.get("resolution", None)
         try:
-            self.logga.info(f"=> Postprocessing complete")
+            self.logga.success(f"=> Postprocessing completed successfully")
             return data
         except Exception as e:
             self.logga.error(f"Postprocessing failed with error {e}")
@@ -106,7 +107,7 @@ class CentralProcessing(CPNeoTemplate):
         resolution = extras.get("resolution", None)
 
         try:
-            self.logga.info(f"=> Preprocessing complete")
+            self.logga.success(f"=> Preprocessing completed successfully")
             return data
         except Exception as e:
             self.logga.error(f"Postprocessing failed, error {e}")
@@ -128,6 +129,7 @@ class CentralProcessing(CPNeoTemplate):
         try:
             self.eval()
             with torch.no_grad():
+                self.logga.success(f"=> Prediction completed successfully")
                 return data
         except Exception as e:
-            self.logga.error(f"Could not predict: {e}")
+            self.logga.error(f"Prediction failed: {e}")
