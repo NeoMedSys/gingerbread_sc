@@ -36,24 +36,27 @@ class CentralProcessing(CPNeoTemplate):
 
     """
 
-    def __init__(self, args: argparse.Namespace) -> NoReturn:
+    def __init__(self) -> NoReturn:
         """Constructor for the central processing unit."""
         super().__init__()
-        self.args = args  # Do not remove
-        self.check_obligatory_methods()  # Do not remove
         # self.save_hyperparams() # this is for saving hyperparams
 
+        ########################################################3
+        # Tests
+        mock_data = {
+            "x": np.random.rand(10, 10, 10)
+        }  # Please make sure this data mimics your own data
+        self.test_structure(data=mock_data)
+
     def postprocess(
-        self, data: Dict[str, np.ndarray], stage: str, extras: Dict[str, Any] = {}
-    ) -> Tensor:
+        self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
+    ) -> Dict[str, np.ndarray]:
         """Postprocess the data after training/val/test/predict
 
         Parameters
         ----------
         data : dict
             the data to be postprocessed
-        stage : str
-            the stage of the postprocessing, e.g. "train", "val", "test", "predict"
         extras: dict
             additional arguments for preprocessing such as resolution information etc.
             If provided, explain in depth in the docstring of the input and the input type.
@@ -66,29 +69,25 @@ class CentralProcessing(CPNeoTemplate):
 
         Returns
         -------
-        Tensor
+        Dict[str, np.ndarray]
             the postprocessed data
         """
         resolution = extras.get("resolution", None)
-        self.logga.info(f"Postprocessing data for stage {stage}")
         try:
-            # Fill here
-            pass
+            self.logga.info(f"=> Postprocessing complete")
+            return data
         except Exception as e:
-            self.logga.error(f"Postprocessing failed for stage {stage} with error {e}")
-        return data
+            self.logga.error(f"Postprocessing failed with error {e}")
 
     def preprocess(
-        self, data: Dict[str, Tensor], stage: str, extras: Dict[str, Any] = {}
-    ) -> dict:
+        self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
+    ) -> Dict[str, np.ndarray]:
         """Preprocess the data before training/val/test/predict
 
         Parameters
         ----------
         data : dict
             the data to be preprocessed
-        stage : str
-            the stage of the preprocessing, e.g. "train", "val", "test", "predict"
         extras: dict
             additional arguments for preprocessing such as resolution information etc.
             If provided, explain in depth in the docstring of the input and the input type.
@@ -101,55 +100,34 @@ class CentralProcessing(CPNeoTemplate):
 
         Returns
         -------
-        dict
+        Dict[str, np.ndarray]
             the preprocessed data
         """
         resolution = extras.get("resolution", None)
 
-        self.logga.info(f"Preprocessing data for stage {stage}")
         try:
-            if not all(stage in cfg.STAGES for s in cfg.STAGES):
-                self.logga.warning(f"stage must be one of {cfg.STAGES}, got {stage}")
-                raise ValueError(f"stage must be one of {cfg.STAGES}, got {stage}")
-
-            if stage == "predict":
-                data = AddChanneld(keys=self.key_input)(data)
-                data = ScaleIntensityd(keys=self.key_input, channel_wise=True)(data)
-                data = ToTensord(keys=self.key_input, dtype=torch.float32)(data)
-
-            else:
-                # data =LoadImaged(keys=[self.key_input, self.key_label])
-                data = AddChanneld(keys=[self.key_input, self.key_label])(data)
-                data = ScaleIntensityd(keys=self.key_input, channel_wise=True)(data)
-                data = ToTensord(
-                    keys=[self.key_input, self.key_label], dtype=torch.float32
-                )(data)
+            self.logga.info(f"=> Preprocessing complete")
             return data
         except Exception as e:
-            self.logga.error(f"Postprocessing failed for stage {stage} with error {e}")
+            self.logga.error(f"Postprocessing failed, error {e}")
 
-    def predict_step(self, batch: Tensor) -> Dict[str, np.ndarray]:
+    def predict_step(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
         """
         Predict step function.
 
         Parameters
         ------------
-        batch: Tensor
+        data: Dict[str, np.ndarray]
             Batch.
-        batch_idx: int
-            Batch index.
-        dataloader_idx: int
-            Dataloader index.
 
         Returns
         ------------
-        y_pred: np.ndarray
+        Dict[str, np.ndarray]
             Predictions.
         """
         try:
             self.eval()
             with torch.no_grad():
-                y_pred = self.infer(batch[self.key_input], self.model)
-            return {"y_pred": y_pred}
+                return data
         except Exception as e:
             self.logga.error(f"Could not predict: {e}")

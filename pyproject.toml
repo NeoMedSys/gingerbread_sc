@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gingerbread"
-version = "0.1.3"
+version = "0.1.4"
 description = "Researcher template that fits with NeoMedSys"
 authors = ["Martin Rovang <martinrovang@gmail.com>"]
 readme = "README.md"
