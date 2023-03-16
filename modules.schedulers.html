@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="schedulers package" href="schedulers.html" /><link rel="prev" title="neotemplate package" href="neotemplate.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="modules.optimizers package" href="modules.optimizers.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>optimizers package - Gingerbread 0.1.3 documentation</title>
+        <title>modules.schedulers package - Gingerbread 0.1.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Gingerbread 0.1.3 documentation</div></a>
+      <a href="index.html"><div class="brand">Gingerbread 0.1.4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="_static/63ecff6168e0e.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gingerbread 0.1.3 documentation</span>
+  <span class="sidebar-brand-text">Gingerbread 0.1.4 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -163,17 +163,10 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conduct_and_info.html">General Information</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="central_processing_handler.html">central_processing_handler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli_main.html">cli_main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_download.html">data_download module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_loader.html">data_loader package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">optimizers package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="schedulers.html">schedulers package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">modules package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="modules.models.html">modules.models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.optimizers.html">modules.optimizers package</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">modules.schedulers package</a></li>
 </ul>
 </li>
 </ul>
@@ -215,39 +208,38 @@
           </label>
         </div>
         <article role="main">
-          <section id="optimizers-package">
-<h1>optimizers package<a class="headerlink" href="#optimizers-package" title="Permalink to this heading">#</a></h1>
+          <section id="modules-schedulers-package">
+<h1>modules.schedulers package<a class="headerlink" href="#modules-schedulers-package" title="Permalink to this heading">#</a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="module-optimizers.optim_adam">
-<span id="optimizers-optim-adam-module"></span><h2>optimizers.optim_adam module<a class="headerlink" href="#module-optimizers.optim_adam" title="Permalink to this heading">#</a></h2>
+<section id="module-modules.schedulers.sched_warmup">
+<span id="modules-schedulers-sched-warmup-module"></span><h2>modules.schedulers.sched_warmup module<a class="headerlink" href="#module-modules.schedulers.sched_warmup" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="optimizers.optim_adam.LitAdam">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">optimizers.optim_adam.</span></span><span class="sig-name descname"><span class="pre">LitAdam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">betas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.9,</span> <span class="pre">0.999)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amsgrad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foreach</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capturable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">differentiable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fused</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimizers.optim_adam.LitAdam" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Adam</span></code></p>
+<dt class="sig sig-object py" id="modules.schedulers.sched_warmup.LitLRScheduler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.schedulers.sched_warmup.</span></span><span class="sig-name descname"><span class="pre">LitLRScheduler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.schedulers.sched_warmup.LitLRScheduler" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CosineAnnealingLR</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="optimizers.optim_adam.LitAdam.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">closure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimizers.optim_adam.LitAdam.step" title="Permalink to this definition">#</a></dt>
-<dd><p>Performs a single optimization step (parameter update).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>closure</strong> (<em>Callable</em>) – A closure that reevaluates the model and
-returns the loss. Optional for most optimizers.</p>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Unless otherwise specified, this function should not modify the
-<code class="docutils literal notranslate"><span class="pre">.grad</span></code> field of the parameters.</p>
-</div>
+<dt class="sig sig-object py" id="modules.schedulers.sched_warmup.LitLRScheduler.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.schedulers.sched_warmup.LitLRScheduler.step" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modules.schedulers.sched_warmup.LitWarmupCosineSchedule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.schedulers.sched_warmup.</span></span><span class="sig-name descname"><span class="pre">LitWarmupCosineSchedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warmup_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_total</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cycles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_epoch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warmup_multiplier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.schedulers.sched_warmup.LitWarmupCosineSchedule" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">WarmupCosineSchedule</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.schedulers.sched_warmup.LitWarmupCosineSchedule.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.schedulers.sched_warmup.LitWarmupCosineSchedule.step" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
 </section>
-<section id="module-optimizers">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-optimizers" title="Permalink to this heading">#</a></h2>
+<section id="module-modules.schedulers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-modules.schedulers" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -256,23 +248,15 @@ returns the loss. Optional for most optimizers.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="schedulers.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">schedulers package</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="neotemplate.html">
+          
+          <a class="prev-page" href="modules.optimizers.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">neotemplate package</div>
+                <div class="title">modules.optimizers package</div>
                 
               </div>
             </a>
@@ -306,16 +290,20 @@ returns the loss. Optional for most optimizers.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">optimizers package</a><ul>
+<li><a class="reference internal" href="#">modules.schedulers package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-optimizers.optim_adam">optimizers.optim_adam module</a><ul>
-<li><a class="reference internal" href="#optimizers.optim_adam.LitAdam"><code class="docutils literal notranslate"><span class="pre">LitAdam</span></code></a><ul>
-<li><a class="reference internal" href="#optimizers.optim_adam.LitAdam.step"><code class="docutils literal notranslate"><span class="pre">LitAdam.step()</span></code></a></li>
+<li><a class="reference internal" href="#module-modules.schedulers.sched_warmup">modules.schedulers.sched_warmup module</a><ul>
+<li><a class="reference internal" href="#modules.schedulers.sched_warmup.LitLRScheduler"><code class="docutils literal notranslate"><span class="pre">LitLRScheduler</span></code></a><ul>
+<li><a class="reference internal" href="#modules.schedulers.sched_warmup.LitLRScheduler.step"><code class="docutils literal notranslate"><span class="pre">LitLRScheduler.step()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modules.schedulers.sched_warmup.LitWarmupCosineSchedule"><code class="docutils literal notranslate"><span class="pre">LitWarmupCosineSchedule</span></code></a><ul>
+<li><a class="reference internal" href="#modules.schedulers.sched_warmup.LitWarmupCosineSchedule.step"><code class="docutils literal notranslate"><span class="pre">LitWarmupCosineSchedule.step()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#module-optimizers">Module contents</a></li>
+<li><a class="reference internal" href="#module-modules.schedulers">Module contents</a></li>
 </ul>
 </li>
 </ul>

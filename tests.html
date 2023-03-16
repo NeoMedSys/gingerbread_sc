@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="utils package" href="utils.html" /><link rel="prev" title="schedulers package" href="schedulers.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>tests package - Gingerbread 0.1.3 documentation</title>
+        <title>tests package - Gingerbread 0.1.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Gingerbread 0.1.3 documentation</div></a>
+      <a href="index.html"><div class="brand">Gingerbread 0.1.4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="_static/63ecff6168e0e.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gingerbread 0.1.3 documentation</span>
+  <span class="sidebar-brand-text">Gingerbread 0.1.4 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -158,22 +158,15 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What is new?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conduct_and_info.html">General Information</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="central_processing_handler.html">central_processing_handler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli_main.html">cli_main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_download.html">data_download module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_loader.html">data_loader package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="optimizers.html">optimizers package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="schedulers.html">schedulers package</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">tests package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">modules package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.models.html">modules.models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.optimizers.html">modules.optimizers package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.schedulers.html">modules.schedulers package</a></li>
 </ul>
 </li>
 </ul>
@@ -227,8 +220,8 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tests.general_test.</span></span><span class="sig-name descname"><span class="pre">Test_General</span></span><a class="headerlink" href="#tests.general_test.Test_General" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="tests.general_test.Test_General.test_data_handling">
-<span class="sig-name descname"><span class="pre">test_data_handling</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.general_test.Test_General.test_data_handling" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="tests.general_test.Test_General.test_central_processing">
+<span class="sig-name descname"><span class="pre">test_central_processing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.general_test.Test_General.test_central_processing" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -249,26 +242,8 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="utils.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">utils package</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="schedulers.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">schedulers package</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -303,7 +278,7 @@
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-tests.general_test">tests.general_test module</a><ul>
 <li><a class="reference internal" href="#tests.general_test.Test_General"><code class="docutils literal notranslate"><span class="pre">Test_General</span></code></a><ul>
-<li><a class="reference internal" href="#tests.general_test.Test_General.test_data_handling"><code class="docutils literal notranslate"><span class="pre">Test_General.test_data_handling()</span></code></a></li>
+<li><a class="reference internal" href="#tests.general_test.Test_General.test_central_processing"><code class="docutils literal notranslate"><span class="pre">Test_General.test_central_processing()</span></code></a></li>
 <li><a class="reference internal" href="#tests.general_test.Test_General.test_imports"><code class="docutils literal notranslate"><span class="pre">Test_General.test_imports()</span></code></a></li>
 </ul>
 </li>

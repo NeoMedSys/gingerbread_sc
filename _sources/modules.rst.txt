@@ -1,16 +1,20 @@
-gingerbread_sc
-==============
+modules package
+===============
+
+Subpackages
+-----------
 
 .. toctree::
    :maxdepth: 4
 
-   central_processing
-   central_processing_handler
-   cli_main
-   data_download
-   data_loader
-   neotemplate
-   optimizers
-   schedulers
-   tests
-   utils
+   modules.models
+   modules.optimizers
+   modules.schedulers
+
+Module contents
+---------------
+
+.. automodule:: modules
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -3,6 +3,21 @@ General Information
 
 On this page you will find general information about the project.
 
+
+How to go about
+--------------
+
+So you have now opened up the container and you are ready to start working on your project. 
+
+You can now work as if it was a new normal project, the only difference here is that the :ref:`central_processing` needs to be filled out according to your model's main pipeline, `Preprocessing`, `predict_step` and `postprocessing`.
+
+In other words, you can make your own files and train your model as you normally would, but you need to make sure that the :ref:`central_processing` is filled out correctly according to your model's main pipeline when you want to go into production. You can fill out the :ref:`central_processing` as you go along or at the end. You can change it along the experiments to see that it has the intended results.
+
+In production we import this class and run these functions with datastreams coming from different source. Therefore, it is important that you fill out the :ref:`central_processing` correctly with the rights type for both input and output.
+
+
+
+
 The philosophy
 --------------
 

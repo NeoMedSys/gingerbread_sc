@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="central_processing module" href="central_processing.html" /><link rel="prev" title="General Information" href="conduct_and_info.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="modules.models package" href="modules.models.html" /><link rel="prev" title="General Information" href="conduct_and_info.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>gingerbread_sc - Gingerbread 0.1.3 documentation</title>
+        <title>modules package - Gingerbread 0.1.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Gingerbread 0.1.3 documentation</div></a>
+      <a href="index.html"><div class="brand">Gingerbread 0.1.4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="_static/63ecff6168e0e.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gingerbread 0.1.3 documentation</span>
+  <span class="sidebar-brand-text">Gingerbread 0.1.4 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -163,17 +163,10 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conduct_and_info.html">General Information</a></li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">gingerbread_sc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="central_processing_handler.html">central_processing_handler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli_main.html">cli_main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_download.html">data_download module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_loader.html">data_loader package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="optimizers.html">optimizers package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="schedulers.html">schedulers package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">modules package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.models.html">modules.models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.optimizers.html">modules.optimizers package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.schedulers.html">modules.schedulers package</a></li>
 </ul>
 </li>
 </ul>
@@ -209,140 +202,56 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="gingerbread-sc">
-<h1>gingerbread_sc<a class="headerlink" href="#gingerbread-sc" title="Permalink to this heading">#</a></h1>
+          <section id="modules-package">
+<h1>modules package<a class="headerlink" href="#modules-package" title="Permalink to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="central_processing.html">central_processing module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="central_processing.html#central_processing.CentralProcessing"><code class="docutils literal notranslate"><span class="pre">CentralProcessing</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="central_processing.html#central_processing.CentralProcessing.logga"><code class="docutils literal notranslate"><span class="pre">CentralProcessing.logga</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="central_processing.html#central_processing.CentralProcessing.postprocess"><code class="docutils literal notranslate"><span class="pre">CentralProcessing.postprocess()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="central_processing.html#central_processing.CentralProcessing.predict_step"><code class="docutils literal notranslate"><span class="pre">CentralProcessing.predict_step()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="central_processing.html#central_processing.CentralProcessing.preprocess"><code class="docutils literal notranslate"><span class="pre">CentralProcessing.preprocess()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="central_processing.html#central_processing.CentralProcessing.training"><code class="docutils literal notranslate"><span class="pre">CentralProcessing.training</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.models.html">modules.models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.models.html#module-modules.models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.optimizers.html">modules.optimizers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.optimizers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.optimizers.html#module-modules.optimizers.optim_adam">modules.optimizers.optim_adam module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules.optimizers.html#modules.optimizers.optim_adam.LitAdam"><code class="docutils literal notranslate"><span class="pre">LitAdam</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules.optimizers.html#modules.optimizers.optim_adam.LitAdam.step"><code class="docutils literal notranslate"><span class="pre">LitAdam.step()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="central_processing_handler.html">central_processing_handler module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="central_processing_handler.html#central_processing_handler.CentralProcessingHandler"><code class="docutils literal notranslate"><span class="pre">CentralProcessingHandler</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="central_processing_handler.html#central_processing_handler.CentralProcessingHandler.cpr"><code class="docutils literal notranslate"><span class="pre">CentralProcessingHandler.cpr</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="central_processing_handler.html#central_processing_handler.CentralProcessingHandler.device"><code class="docutils literal notranslate"><span class="pre">CentralProcessingHandler.device</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="central_processing_handler.html#central_processing_handler.CentralProcessingHandler.log"><code class="docutils literal notranslate"><span class="pre">CentralProcessingHandler.log</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="central_processing_handler.html#central_processing_handler.CentralProcessingHandler.init_model_from_mq"><code class="docutils literal notranslate"><span class="pre">CentralProcessingHandler.init_model_from_mq()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="central_processing_handler.html#central_processing_handler.CentralProcessingHandler.start_processing"><code class="docutils literal notranslate"><span class="pre">CentralProcessingHandler.start_processing()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.optimizers.html#module-modules.optimizers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.schedulers.html">modules.schedulers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.schedulers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.schedulers.html#module-modules.schedulers.sched_warmup">modules.schedulers.sched_warmup module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules.schedulers.html#modules.schedulers.sched_warmup.LitLRScheduler"><code class="docutils literal notranslate"><span class="pre">LitLRScheduler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules.schedulers.html#modules.schedulers.sched_warmup.LitLRScheduler.step"><code class="docutils literal notranslate"><span class="pre">LitLRScheduler.step()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules.schedulers.html#modules.schedulers.sched_warmup.LitWarmupCosineSchedule"><code class="docutils literal notranslate"><span class="pre">LitWarmupCosineSchedule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules.schedulers.html#modules.schedulers.sched_warmup.LitWarmupCosineSchedule.step"><code class="docutils literal notranslate"><span class="pre">LitWarmupCosineSchedule.step()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cli_main.html">cli_main module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli_main.html#cli_main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="data_download.html">data_download module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader.mq"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.mq</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader.log"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.log</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader.download_data"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.download_data()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader.hdf5_to_nifti_all"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.hdf5_to_nifti_all()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader.hdf5_to_nifti_single"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.hdf5_to_nifti_single()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="data_loader.html">data_loader package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="data_loader.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_loader.html#module-data_loader.data_handling">data_loader.data_handling module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_loader.html#data_loader.data_handling.DataHandler"><code class="docutils literal notranslate"><span class="pre">DataHandler</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="data_loader.html#data_loader.data_handling.DataHandler.logga"><code class="docutils literal notranslate"><span class="pre">DataHandler.logga</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_loader.html#data_loader.data_handling.DataHandler.add_data"><code class="docutils literal notranslate"><span class="pre">DataHandler.add_data()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="data_loader.html#id0"><code class="docutils literal notranslate"><span class="pre">DataHandler.logga</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_loader.html#module-data_loader">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="neotemplate.html">neotemplate package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="neotemplate.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="neotemplate.html#module-neotemplate.base_central_processing">neotemplate.base_central_processing module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.check_obligatory_methods"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.check_obligatory_methods()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.load_from_checkpoint"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.load_from_checkpoint()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.save_checkpoint"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.save_checkpoint()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.save_hyperparams"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.save_hyperparams()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.training"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.training</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="neotemplate.html#module-neotemplate">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="optimizers.html">optimizers package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="optimizers.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="optimizers.html#module-optimizers.optim_adam">optimizers.optim_adam module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="optimizers.html#optimizers.optim_adam.LitAdam"><code class="docutils literal notranslate"><span class="pre">LitAdam</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="optimizers.html#optimizers.optim_adam.LitAdam.step"><code class="docutils literal notranslate"><span class="pre">LitAdam.step()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="optimizers.html#module-optimizers">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="schedulers.html">schedulers package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="schedulers.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="schedulers.html#module-schedulers.sched_warmup">schedulers.sched_warmup module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="schedulers.html#schedulers.sched_warmup.LitLRScheduler"><code class="docutils literal notranslate"><span class="pre">LitLRScheduler</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="schedulers.html#schedulers.sched_warmup.LitLRScheduler.step"><code class="docutils literal notranslate"><span class="pre">LitLRScheduler.step()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="schedulers.html#schedulers.sched_warmup.LitWarmupCosineSchedule"><code class="docutils literal notranslate"><span class="pre">LitWarmupCosineSchedule</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="schedulers.html#schedulers.sched_warmup.LitWarmupCosineSchedule.step"><code class="docutils literal notranslate"><span class="pre">LitWarmupCosineSchedule.step()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="schedulers.html#module-schedulers">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tests.html">tests package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests.general_test">tests.general_test module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.general_test.Test_General"><code class="docutils literal notranslate"><span class="pre">Test_General</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.general_test.Test_General.test_data_handling"><code class="docutils literal notranslate"><span class="pre">Test_General.test_data_handling()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.general_test.Test_General.test_imports"><code class="docutils literal notranslate"><span class="pre">Test_General.test_imports()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.helpers">utils.helpers module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.helpers.check_version"><code class="docutils literal notranslate"><span class="pre">check_version()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.helpers.decode_payload"><code class="docutils literal notranslate"><span class="pre">decode_payload()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.helpers.decode_weights"><code class="docutils literal notranslate"><span class="pre">decode_weights()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.helpers.get_img_info"><code class="docutils literal notranslate"><span class="pre">get_img_info()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.helpers.timer"><code class="docutils literal notranslate"><span class="pre">timer()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.helpers.welcome_logo"><code class="docutils literal notranslate"><span class="pre">welcome_logo()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.schedulers.html#module-modules.schedulers">Module contents</a></li>
 </ul>
 </li>
 </ul>
 </div>
+</section>
+<section id="module-modules">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-modules" title="Permalink to this heading">#</a></h2>
+</section>
 </section>
 
         </article>
@@ -350,12 +259,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="central_processing.html">
+          <a class="next-page" href="modules.models.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">central_processing module</div>
+                <div class="title">modules.models package</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -388,8 +297,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">modules package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#module-modules">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

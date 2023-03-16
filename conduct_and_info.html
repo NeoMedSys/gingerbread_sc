@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="gingerbread_sc" href="modules.html" /><link rel="prev" title="Using Medquery" href="medquery.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="modules package" href="modules.html" /><link rel="prev" title="Using Medquery" href="medquery.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>General Information - Gingerbread 0.1.3 documentation</title>
+        <title>General Information - Gingerbread 0.1.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Gingerbread 0.1.3 documentation</div></a>
+      <a href="index.html"><div class="brand">Gingerbread 0.1.4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="_static/63ecff6168e0e.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gingerbread 0.1.3 documentation</span>
+  <span class="sidebar-brand-text">Gingerbread 0.1.4 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -163,17 +163,10 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">General Information</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="central_processing_handler.html">central_processing_handler module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli_main.html">cli_main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_download.html">data_download module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_loader.html">data_loader package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="optimizers.html">optimizers package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="schedulers.html">schedulers package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">modules package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.models.html">modules.models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.optimizers.html">modules.optimizers package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.schedulers.html">modules.schedulers package</a></li>
 </ul>
 </li>
 </ul>
@@ -218,6 +211,13 @@
           <section id="general-information">
 <h1>General Information<a class="headerlink" href="#general-information" title="Permalink to this heading">#</a></h1>
 <p>On this page you will find general information about the project.</p>
+<section id="how-to-go-about">
+<h2>How to go about<a class="headerlink" href="#how-to-go-about" title="Permalink to this heading">#</a></h2>
+<p>So you have now opened up the container and you are ready to start working on your project.</p>
+<p>You can now work as if it was a new normal project, the only difference here is that the <span class="xref std std-ref">central_processing</span> needs to be filled out according to your model’s main pipeline, <cite>Preprocessing</cite>, <cite>predict_step</cite> and <cite>postprocessing</cite>.</p>
+<p>In other words, you can make your own files and train your model as you normally would, but you need to make sure that the <span class="xref std std-ref">central_processing</span> is filled out correctly according to your model’s main pipeline when you want to go into production. You can fill out the <span class="xref std std-ref">central_processing</span> as you go along or at the end. You can change it along the experiments to see that it has the intended results.</p>
+<p>In production we import this class and run these functions with datastreams coming from different source. Therefore, it is important that you fill out the <span class="xref std std-ref">central_processing</span> correctly with the rights type for both input and output.</p>
+</section>
 <section id="the-philosophy">
 <h2>The philosophy<a class="headerlink" href="#the-philosophy" title="Permalink to this heading">#</a></h2>
 <p>The project’s guiding principle is to give researchers a straightforward framework that is simple to utilize.</p>
@@ -239,7 +239,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">gingerbread_sc</div>
+                <div class="title">modules package</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -285,6 +285,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">General Information</a><ul>
+<li><a class="reference internal" href="#how-to-go-about">How to go about</a></li>
 <li><a class="reference internal" href="#the-philosophy">The philosophy</a></li>
 </ul>
 </li>
