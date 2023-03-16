@@ -9,7 +9,7 @@ import yaml
 from config import config as cfg
 
 
-class CPNeoTemplate(nn.Module, ABC):
+class CPNeoTemplate(nn.Module):
     """Central processing unit for the NeoTemplate.
 
     Attributes:
