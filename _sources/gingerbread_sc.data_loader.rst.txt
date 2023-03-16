@@ -1,0 +1,21 @@
+gingerbread\_sc.data\_loader package
+====================================
+
+Submodules
+----------
+
+gingerbread\_sc.data\_loader.data\_handling module
+--------------------------------------------------
+
+.. automodule:: gingerbread_sc.data_loader.data_handling
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: gingerbread_sc.data_loader
+   :members:
+   :undoc-members:
+   :show-inheritance:

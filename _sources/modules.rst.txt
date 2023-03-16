@@ -1,20 +1,7 @@
-modules package
-===============
-
-Subpackages
------------
+gingerbread_sc
+==============
 
 .. toctree::
    :maxdepth: 4
 
-   modules.models
-   modules.optimizers
-   modules.schedulers
-
-Module contents
----------------
-
-.. automodule:: modules
-   :members:
-   :undoc-members:
-   :show-inheritance:
+   gingerbread_sc

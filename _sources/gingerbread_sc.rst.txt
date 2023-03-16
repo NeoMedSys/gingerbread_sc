@@ -1,0 +1,56 @@
+gingerbread\_sc package
+=======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gingerbread_sc.data_loader
+   gingerbread_sc.neotemplate
+   gingerbread_sc.tests
+   gingerbread_sc.utils
+
+Submodules
+----------
+
+gingerbread\_sc.central\_processing module
+------------------------------------------
+
+.. automodule:: gingerbread_sc.central_processing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+gingerbread\_sc.central\_processing\_handler module
+---------------------------------------------------
+
+.. automodule:: gingerbread_sc.central_processing_handler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+gingerbread\_sc.cli\_main module
+--------------------------------
+
+.. automodule:: gingerbread_sc.cli_main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+gingerbread\_sc.data\_download module
+-------------------------------------
+
+.. automodule:: gingerbread_sc.data_download
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: gingerbread_sc
+   :members:
+   :undoc-members:
+   :show-inheritance:
