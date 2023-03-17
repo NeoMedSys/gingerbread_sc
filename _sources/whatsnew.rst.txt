@@ -1,6 +1,12 @@
 What is new?
 ============
 
+v0.1.7
+------
+
+* Exception catching version check
+
+
 v0.1.6
 ------
 
