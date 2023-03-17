@@ -223,20 +223,20 @@ class CPNeoTemplate(nn.Module):
 
 
     def check_version(self):
+        try:
+            # Fetch the contents of the .toml file
+            response = requests.get(cfg.PROJECTMETADATAURL, timeout=5)
 
-        # URL of the .toml file on the public repository
-        url = "https://raw.githubusercontent.com/NeoMedSys/gingerbread_sc/main/pyproject.toml"
+            # Parse the contents of the .toml file
+            toml_data = toml.loads(response.text)
 
-        # Fetch the contents of the .toml file
-        response = requests.get(url)
+            # Retrieve the version number from the parsed data
+            version = toml_data["tool"]["poetry"]["version"]
 
-        # Parse the contents of the .toml file
-        toml_data = toml.loads(response.text)
-
-        # Retrieve the version number from the parsed data
-        version = toml_data["tool"]["poetry"]["version"]
-
-        # Compare the version number to the latest version on the public repository
-        latest_version = toml.load("./pyproject.toml")["tool"]["poetry"]["version"]
-        if version != latest_version:
-            self.logga.warning(f"New version is available: {version}, current version: {latest_version}, check updated documentation at https://neomedsys.github.io/gingerbread_sc/whatsnew.html")
+            # Compare the version number to the latest version on the public repository
+            latest_version = toml.load("./pyproject.toml")["tool"]["poetry"]["version"]
+            if version != latest_version:
+                self.logga.warning(f"New version is available: {version}, current version: {latest_version}, check updated documentation at https://neomedsys.github.io/gingerbread_sc/whatsnew.html")
+        
+        except requests.exceptions.HTTPError as e:
+            self.logga.error(f"Error in version check: {e}")
