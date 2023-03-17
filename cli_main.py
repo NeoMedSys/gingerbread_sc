@@ -25,6 +25,9 @@ def main() -> NoReturn:
     args = parser.parse_args()
 
     # Insert into your model
+    
+    ## Test
+    cpr.CentralProcessing() #Test to see if the central processing unit is working as intended.
 
 
 if __name__ == "__main__":

@@ -5,6 +5,8 @@ import coloredlogs, verboselogs
 from typing import Dict, Optional, Any, NoReturn
 import numpy as np
 import yaml
+import toml
+import requests
 
 from config import config as cfg
 
@@ -42,6 +44,7 @@ class CPNeoTemplate(nn.Module):
         self.logga.info("CentralProcessing initialized")
         self.key_input: str = cfg.INPUT_KEY_IMAGE
         self.key_label: str = cfg.INPUT_KEY_LABEL
+        self.check_version()
 
     def save_hyperparams(self) -> NoReturn:
         """Save hyperparameters to a file.
@@ -217,3 +220,23 @@ class CPNeoTemplate(nn.Module):
 
         except Exception as e:
             self.logga.error(f"Error in central processing module: {e}")
+
+
+    def check_version(self):
+
+        # URL of the .toml file on the public repository
+        url = "https://raw.githubusercontent.com/NeoMedSys/gingerbread_sc/main/pyproject.toml"
+
+        # Fetch the contents of the .toml file
+        response = requests.get(url)
+
+        # Parse the contents of the .toml file
+        toml_data = toml.loads(response.text)
+
+        # Retrieve the version number from the parsed data
+        version = toml_data["tool"]["poetry"]["version"]
+
+        # Compare the version number to the latest version on the public repository
+        latest_version = toml.load("./pyproject.toml")["tool"]["poetry"]["version"]
+        if version != latest_version:
+            self.logga.warning(f"New version is available: {version}, current version: {latest_version}, check updated documentation at https://neomedsys.github.io/gingerbread_sc/whatsnew.html")
