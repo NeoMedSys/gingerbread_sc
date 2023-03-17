@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gingerbread"
-version = "0.1.5"
+version = "0.1.6"
 description = "Researcher template that fits with NeoMedSys"
 authors = ["Martin Rovang <martinrovang@gmail.com>"]
 readme = "README.md"
@@ -21,6 +21,7 @@ beaker = "^1.12.1"
 nibabel = "^5.0.1"
 pytest = "^7.2.1"
 toml = "^0.10.2"
+requests = "^2.28.2"
 
 
 [build-system]
