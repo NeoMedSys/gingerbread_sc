@@ -2,10 +2,16 @@ What is new?
 ============
 
 
+v0.1.5
+------
+
+* Minor bug fixes.
+
+
 v0.1.4
 ------
 
-* Revamped CentralProcessing, it now has proper testing for all the production methods, with types of input and output.
+* Revamped ``CentralProcessing``, it now has proper testing for all the production methods, with types of input and output.
 
 * Added a new section :doc:`conduct_and_info` to the documentation about "How to go about" with Gingerbread.
 

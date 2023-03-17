@@ -119,7 +119,7 @@ class CentralProcessing(CPNeoTemplate):
         Parameters
         ------------
         data: Dict[str, np.ndarray]
-            Batch.
+            data input
 
         Returns
         ------------

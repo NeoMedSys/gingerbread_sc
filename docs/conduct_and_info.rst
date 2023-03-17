@@ -4,17 +4,18 @@ General Information
 On this page you will find general information about the project.
 
 
-How to go about
+How to go about?
 --------------
 
-So you have now opened up the container and you are ready to start working on your project. 
+So you've opened the container and are ready to begin working on your project.
 
-You can now work as if it was a new normal project, the only difference here is that the :ref:`central_processing` needs to be filled out according to your model's main pipeline, `Preprocessing`, `predict_step` and `postprocessing`.
+The only difference here is that the :ref:`central processing` needs to be filled out according to your model's main pipeline, `preprocessing`, `predict step`, and `postprocessing`. In other words, you can create your own files and train your model as usual, but when you want to go into production, you must ensure that the :ref:`central processing` is correctly filled out according to your model's main pipeline. Fill in the :ref:`central processing` as you go or at the end. You can change it as you go through the experiments to ensure that it produces the desired results.
 
-In other words, you can make your own files and train your model as you normally would, but you need to make sure that the :ref:`central_processing` is filled out correctly according to your model's main pipeline when you want to go into production. You can fill out the :ref:`central_processing` as you go along or at the end. You can change it along the experiments to see that it has the intended results.
+.. important:: 
+        The docker-compose file will mount the local folder to the container's '/gingerbread' so you can work on your project as if it were a local folder.
 
-In production we import this class and run these functions with datastreams coming from different source. Therefore, it is important that you fill out the :ref:`central_processing` correctly with the rights type for both input and output.
 
+We import :ref:`central processing` in production and run the three methods with datastreams from various sources. As a result, it is critical that you correctly fill out the :ref:`central processing` with the appropriate rights type for both input and output.
 
 
 

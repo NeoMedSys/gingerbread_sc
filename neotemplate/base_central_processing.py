@@ -5,12 +5,11 @@ import coloredlogs, verboselogs
 from typing import Dict, Optional, Any, NoReturn
 import numpy as np
 import yaml
-from abc import ABC, abstractmethod
 
 from config import config as cfg
 
 
-class CPNeoTemplate(nn.Module, ABC):
+class CPNeoTemplate(nn.Module):
     """Central processing unit for the NeoTemplate.
 
     Attributes:
@@ -95,7 +94,6 @@ class CPNeoTemplate(nn.Module, ABC):
             checkpoint_path,
         )
 
-    @abstractmethod
     def postprocess(
         self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
     ) -> Dict[str, np.ndarray]:
@@ -125,7 +123,6 @@ class CPNeoTemplate(nn.Module, ABC):
         except Exception as e:
             self.logga.error(f"Postprocessing failed with error {e}")
 
-    @abstractmethod
     def preprocess(
         self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
     ) -> Dict[str, np.ndarray]:
@@ -157,7 +154,6 @@ class CPNeoTemplate(nn.Module, ABC):
         except Exception as e:
             self.logga.error(f"Preprocessing failed with error {e}")
 
-    @abstractmethod
     def predict_step(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
         """
         Predict step function.
@@ -183,56 +179,41 @@ class CPNeoTemplate(nn.Module, ABC):
 
         Parameters:
         ----------
-        None
+        data: Dict[str, np.ndarray]
+            The data to be tested.
 
         Returns:
         -------
         None
         """
         try:
-            if isinstance(data, dict):
-                self.logga.info("Data correct is dictionary")
-                for key, value in data.items():
-                    if not isinstance(value, np.ndarray):
-                        raise TypeError(
-                            f"Data input is not a dictionary of numpy arrays. Key: {key} is of type {type(value)}"
-                        )
-                self.logga.info("Data values is numpy")
-            else:
-                raise TypeError("Data input is not a dictionary")
-
             data = self.preprocess(data=data)
             if isinstance(data, dict):
-                self.logga.info("Data output from preprocess is a dictionary")
                 for key, value in data.items():
                     if not isinstance(value, np.ndarray):
                         raise TypeError(
-                            f"Data input is not a dictionary of numpy arrays. Key: {key} is of type {type(value)}"
+                            f"Data input to preprocess is not of type numpy array."
                         )
-                self.logga.info("Data values from preprocess is numpy")
             else:
-                raise TypeError("Data input from preprocess is not a dictionary")
+                raise TypeError("Data input in preprocess is not of type dict")
 
             data = self.predict_step(data=data)
             if isinstance(data, dict):
-                self.logga.info("Data output from predict_step is a dictionary")
                 for key, value in data.items():
                     if not isinstance(value, np.ndarray):
                         raise TypeError(
-                            f"Data input is not a dictionary of numpy arrays. Key: {key} is of type {type(value)}"
+                            f"Data input to predict_step is not of type numpy array."
                         )
-                self.logga.info("Data values from predict step is numpy")
             else:
-                raise TypeError("Data input is not a dictionary")
+                raise TypeError("Data input in prediction_step is not of type dict")
+
             data = self.postprocess(data=data)
             if isinstance(data, dict):
-                self.logga.info("Data output from postprocess is a dictionary")
                 for key, value in data.items():
                     if not isinstance(value, np.ndarray):
-                        raise TypeError(
-                            f"Data input is not a dictionary of numpy arrays. Key: {key} is of type {type(value)}"
-                        )
-                self.logga.info("Data values from postprocess is numpy")
+                        raise TypeError(f"")
+            else:
+                raise TypeError("Data input in postprocess is not of type dict")
 
         except Exception as e:
-            self.logga.error(f"Test structure failed with error {e}")
+            self.logga.error(f"Error in central processing module: {e}")
