@@ -91,3 +91,6 @@ CACHE_LOCK_DIR = os.path.join(ROOT, "cache/lock")
 # ---------------------------------------------------------
 # EXTRAS
 DATA_SAVE_DIR = "./data"
+
+#github repo metadata
+PROJECTMETADATAURL = "https://raw.githubusercontent.com/NeoMedSys/gingerbread_sc/main/pyproject.toml"
