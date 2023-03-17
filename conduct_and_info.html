@@ -224,13 +224,13 @@
 <p>On this page you will find general information about the project.</p>
 <section id="how-to-go-about">
 <h2>How to go about?<a class="headerlink" href="#how-to-go-about" title="Permalink to this heading">#</a></h2>
-<p>So you have now opened up the container and you are ready to start working on your project.</p>
-<p>You can now work as if it was a new normal project, the only difference here is that the <span class="xref std std-ref">central_processing</span> needs to be filled out according to your model’s main pipeline, <cite>Preprocessing</cite>, <cite>predict_step</cite> and <cite>postprocessing</cite>. In other words, you can make your own files and train your model as you normally would, but you need to make sure that the <span class="xref std std-ref">central_processing</span> is filled out correctly according to your model’s main pipeline when you want to go into production. You can fill out the <span class="xref std std-ref">central_processing</span> as you go along or at the end. You can change it along the experiments to see that it has the intended results.</p>
+<p>So you’ve opened the container and are ready to begin working on your project.</p>
+<p>The only difference here is that the <span class="xref std std-ref">central processing</span> needs to be filled out according to your model’s main pipeline, <cite>preprocessing</cite>, <cite>predict step</cite>, and <cite>postprocessing</cite>. In other words, you can create your own files and train your model as usual, but when you want to go into production, you must ensure that the <span class="xref std std-ref">central processing</span> is correctly filled out according to your model’s main pipeline. Fill in the <span class="xref std std-ref">central processing</span> as you go or at the end. You can change it as you go through the experiments to ensure that it produces the desired results.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The docker-compose file will mount the local folder to <cite>/gingerbread</cite> in the container, so you can work on your project as if it was a local folder.</p>
+<p>The docker-compose file will mount the local folder to the container’s ‘/gingerbread’ so you can work on your project as if it were a local folder.</p>
 </div>
-<p>In production we import <span class="xref std std-ref">central_processing</span> and run the three methods with datastreams coming from different source. Therefore, it is important that you fill out the <span class="xref std std-ref">central_processing</span> correctly with the rights type for both input and output.</p>
+<p>We import <span class="xref std std-ref">central processing</span> in production and run the three methods with datastreams from various sources. As a result, it is critical that you correctly fill out the <span class="xref std std-ref">central processing</span> with the appropriate rights type for both input and output.</p>
 </section>
 <section id="the-philosophy">
 <h2>The philosophy<a class="headerlink" href="#the-philosophy" title="Permalink to this heading">#</a></h2>
