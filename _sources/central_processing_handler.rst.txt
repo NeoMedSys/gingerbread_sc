@@ -1,7 +1,0 @@
-central\_processing\_handler module
-===================================
-
-.. automodule:: central_processing_handler
-   :members:
-   :undoc-members:
-   :show-inheritance:

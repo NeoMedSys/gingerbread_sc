@@ -1,6 +1,11 @@
 What is new?
 ============
 
+v0.1.6
+------
+
+* Added version check when running CentralProcessing
+
 
 v0.1.5
 ------
