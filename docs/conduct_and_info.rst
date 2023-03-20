@@ -9,7 +9,8 @@ How to go about?
 
 So you've opened the container and are ready to begin working on your project.
 
-The only difference here is that the :ref:`central processing` needs to be filled out according to your model's main pipeline, `preprocessing`, `predict step`, and `postprocessing`. In other words, you can create your own files and train your model as usual, but when you want to go into production, you must ensure that the :ref:`central processing` is correctly filled out according to your model's main pipeline. Fill in the :ref:`central processing` as you go or at the end. You can change it as you go through the experiments to ensure that it produces the desired results.
+The only difference here is that the :ref:`central processing` needs to be filled out according to your model's main pipeline, ``preprocessing``, ``predict step``, and ``postprocessing``. In other words, you can create your own files and train your model as usual, but when you want to go into production, you must ensure that the :ref:`central processing` is correctly filled out according to your model's main pipeline. Fill in the :ref:`central processing` as you go or at the end. You can change it as you go through the experiments to ensure that it produces the desired results.
+
 
 .. important:: 
         The docker-compose file will mount the local folder to the container's '/gingerbread' so you can work on your project as if it were a local folder.
