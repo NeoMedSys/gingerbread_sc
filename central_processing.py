@@ -49,37 +49,6 @@ class CentralProcessing(CPNeoTemplate):
         }  # Please make sure this data mimics your own data
         self.test_structure(data=mock_data)
 
-    def postprocess(
-        self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
-    ) -> Dict[str, np.ndarray]:
-        """Postprocess the data after training/val/test/predict
-
-        Parameters
-        ----------
-        data : dict
-            the data to be postprocessed
-        extras: dict
-            additional arguments for preprocessing such as resolution information etc.
-            If provided, explain in depth in the docstring of the input and the input type.
-            Example of extras:
-                resolution [list]: resolution of the image, e.g. {"resolution": [1.0, 1.0, 1.0]}
-
-        Important
-        -------
-        Extras dictionary is something the researchers need to define. There has to be a proper explanation of what the extras dictionary is and what it contains, as shown in the example above.
-
-        Returns
-        -------
-        Dict[str, np.ndarray]
-            the postprocessed data
-        """
-        resolution = extras.get("resolution", None)
-        try:
-            self.logga.success(f"=> Postprocessing completed successfully")
-            return data
-        except Exception as e:
-            self.logga.error(f"Postprocessing failed with error {e}")
-
     def preprocess(
         self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
     ) -> Dict[str, np.ndarray]:
@@ -109,8 +78,8 @@ class CentralProcessing(CPNeoTemplate):
         try:
             self.logga.success(f"=> Preprocessing completed successfully")
             return data
-        except Exception as e:
-            self.logga.error(f"Postprocessing failed, error {e}")
+        except TypeError as e:
+            self.logga.error(f"Preprocessing failed, error {e}")
 
     def predict_step(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
         """
@@ -131,5 +100,36 @@ class CentralProcessing(CPNeoTemplate):
             with torch.no_grad():
                 self.logga.success(f"=> Prediction completed successfully")
                 return data
-        except Exception as e:
+        except TypeError as e:
             self.logga.error(f"Prediction failed: {e}")
+
+    def postprocess(
+        self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
+    ) -> Dict[str, np.ndarray]:
+        """Postprocess the data after training/val/test/predict
+
+        Parameters
+        ----------
+        data : dict
+            the data to be postprocessed
+        extras: dict
+            additional arguments for preprocessing such as resolution information etc.
+            If provided, explain in depth in the docstring of the input and the input type.
+            Example of extras:
+                resolution [list]: resolution of the image, e.g. {"resolution": [1.0, 1.0, 1.0]}
+
+        Important
+        -------
+        Extras dictionary is something the researchers need to define. There has to be a proper explanation of what the extras dictionary is and what it contains, as shown in the example above.
+
+        Returns
+        -------
+        Dict[str, np.ndarray]
+            the postprocessed data
+        """
+        resolution = extras.get("resolution", None)
+        try:
+            self.logga.success(f"=> Postprocessing completed successfully")
+            return data
+        except TypeError as e:
+            self.logga.error(f"Postprocessing failed with error {e}")
