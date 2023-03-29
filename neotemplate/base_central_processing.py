@@ -93,13 +93,14 @@ class CPNeoTemplate(nn.Module):
         # save with the state_dict and the hyperparameters
         self.logga.info(f"Saving checkpoint to {checkpoint_path}")
         torch.save(
-            {"state_dict": self.state_dict(), "hyperparameters": self.args},
+            {
+                "state_dict": self.state_dict(),
+                "hyperparameters": self.args
+            },
             checkpoint_path,
         )
 
-    def postprocess(
-        self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
-    ) -> Dict[str, np.ndarray]:
+    def postprocess(self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}) -> Dict[str, np.ndarray]:
         """Postprocess the data after training/val/test/predict
 
         Parameters
@@ -126,9 +127,7 @@ class CPNeoTemplate(nn.Module):
         except Exception as e:
             self.logga.error(f"Postprocessing failed with error {e}")
 
-    def preprocess(
-        self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
-    ) -> Dict[str, np.ndarray]:
+    def preprocess(self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}) -> Dict[str, np.ndarray]:
         """Preprocess the data before training/val/test/predict
 
         Parameters
@@ -194,9 +193,7 @@ class CPNeoTemplate(nn.Module):
             if isinstance(data, dict):
                 for key, value in data.items():
                     if not isinstance(value, np.ndarray):
-                        raise TypeError(
-                            f"Data input to preprocess is not of type numpy array."
-                        )
+                        raise TypeError(f"Data input to preprocess is not of type numpy array.")
             else:
                 raise TypeError("Data input in preprocess is not of type dict")
 
@@ -204,9 +201,7 @@ class CPNeoTemplate(nn.Module):
             if isinstance(data, dict):
                 for key, value in data.items():
                     if not isinstance(value, np.ndarray):
-                        raise TypeError(
-                            f"Data input to predict_step is not of type numpy array."
-                        )
+                        raise TypeError(f"Data input to predict_step is not of type numpy array.")
             else:
                 raise TypeError("Data input in prediction_step is not of type dict")
 
@@ -214,13 +209,12 @@ class CPNeoTemplate(nn.Module):
             if isinstance(data, dict):
                 for key, value in data.items():
                     if not isinstance(value, np.ndarray):
-                        raise TypeError(f"")
+                        raise TypeError(f"Data input to postprocess is not of type numpy array.")
             else:
                 raise TypeError("Data input in postprocess is not of type dict")
 
         except Exception as e:
             self.logga.error(f"Error in central processing module: {e}")
-
 
     def check_version(self):
         try:
@@ -236,7 +230,9 @@ class CPNeoTemplate(nn.Module):
             # Compare the version number to the latest version on the public repository
             latest_version = toml.load("./pyproject.toml")["tool"]["poetry"]["version"]
             if version != latest_version:
-                self.logga.warning(f"New version is available: {version}, current version: {latest_version}, check updated documentation at https://neomedsys.github.io/gingerbread_sc/whatsnew.html")
-        
+                self.logga.warning(
+                    f"New version is available: {version}, current version: {latest_version}, check updated documentation at https://neomedsys.github.io/gingerbread_sc/whatsnew.html"
+                )
+
         except requests.exceptions.HTTPError as e:
             self.logga.error(f"Error in version check: {e}")

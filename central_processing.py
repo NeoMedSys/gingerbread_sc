@@ -1,13 +1,7 @@
 import torch
-from typing import Dict, List, Optional, Tuple, Union, Any, cast, NoReturn
-from torch import Tensor
+from typing import Dict, Any
 import numpy as np
 import argparse
-from monai.transforms import (
-    AddChanneld,
-    ScaleIntensityd,
-    ToTensord,
-)
 
 import config.config as cfg
 from neotemplate.base_central_processing import CPNeoTemplate
@@ -44,14 +38,10 @@ class CentralProcessing(CPNeoTemplate):
 
         ########################################################3
         # Tests
-        mock_data = {
-            "x": np.random.rand(10, 10, 10)
-        }  # Please make sure this data mimics your own data
+        mock_data = {"x": np.random.rand(10, 10, 10)}  # Please make sure this data mimics your own data
         self.test_structure(data=mock_data)
 
-    def preprocess(
-        self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
-    ) -> Dict[str, np.ndarray]:
+    def preprocess(self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}) -> Dict[str, np.ndarray]:
         """Preprocess the data before training/val/test/predict
 
         Parameters
@@ -76,6 +66,7 @@ class CentralProcessing(CPNeoTemplate):
         resolution = extras.get("resolution", None)
 
         try:
+            self.logga.info(f"Added extras: {extras}")
             self.logga.success(f"=> Preprocessing completed successfully")
             return data
         except TypeError as e:
@@ -103,9 +94,7 @@ class CentralProcessing(CPNeoTemplate):
         except TypeError as e:
             self.logga.error(f"Prediction failed: {e}")
 
-    def postprocess(
-        self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}
-    ) -> Dict[str, np.ndarray]:
+    def postprocess(self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}) -> Dict[str, np.ndarray]:
         """Postprocess the data after training/val/test/predict
 
         Parameters
@@ -129,7 +118,8 @@ class CentralProcessing(CPNeoTemplate):
         """
         resolution = extras.get("resolution", None)
         try:
-            self.logga.success(f"=> Postprocessing completed successfully")
+            self.logga.info(f"Added extras: {extras}")
+            self.logga.success("=> Postprocessing completed successfully")
             return data
         except TypeError as e:
             self.logga.error(f"Postprocessing failed with error {e}")
