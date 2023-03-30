@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="tests package" href="tests.html" /><link rel="prev" title="data_loader package" href="data_loader.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="tests package" href="tests.html" /><link rel="prev" title="data_download module" href="data_download.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>neotemplate package - Gingerbread 0.1.7 documentation</title>
+        <title>neotemplate package - Gingerbread 0.1.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Gingerbread 0.1.7 documentation</div></a>
+      <a href="index.html"><div class="brand">Gingerbread 0.1.8 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="_static/63ecff6168e0e.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gingerbread 0.1.7 documentation</span>
+  <span class="sidebar-brand-text">Gingerbread 0.1.8 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -167,7 +167,6 @@
 <li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli_main.html">cli_main module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_download.html">data_download module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_loader.html">data_loader package</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">neotemplate package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
@@ -230,15 +229,6 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neotemplate.base_central_processing.</span></span><span class="sig-name descname"><span class="pre">CPNeoTemplate</span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <p>Central processing unit for the NeoTemplate.</p>
-<section id="attributes">
-<h3>Attributes:<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h3>
-<dl class="simple">
-<dt>logga: verboselogs.VerboseLogger</dt><dd><p>The logger for the central processing unit.</p>
-</dd>
-</dl>
-</section>
-<section id="methods">
-<h3>Methods:<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h3>
 <dl class="py method">
 <dt class="sig sig-object py" id="neotemplate.base_central_processing.CPNeoTemplate.check_version">
 <span class="sig-name descname"><span class="pre">check_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.check_version" title="Permalink to this definition">#</a></dt>
@@ -249,21 +239,21 @@
 <span class="sig-name descname"><span class="pre">load_from_checkpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checkpoint_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.load_from_checkpoint" title="Permalink to this definition">#</a></dt>
 <dd><p>Load a checkpoint.</p>
 <section id="parameters">
-<h4>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h4>
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h3>
 <dl class="simple">
 <dt>checkpoint_path: str</dt><dd><p>The path to the checkpoint.</p>
 </dd>
 </dl>
 </section>
 <section id="returns">
-<h4>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
+<h3>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h3>
 <p>None</p>
 </section>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neotemplate.base_central_processing.CPNeoTemplate.postprocess">
-<span class="sig-name descname"><span class="pre">postprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extras</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.postprocess" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">postprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extras</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.postprocess" title="Permalink to this definition">#</a></dt>
 <dd><p>Postprocess the data after training/val/test/predict</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -295,7 +285,7 @@ Example of extras:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neotemplate.base_central_processing.CPNeoTemplate.predict_step">
-<span class="sig-name descname"><span class="pre">predict_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.predict_step" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">predict_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.predict_step" title="Permalink to this definition">#</a></dt>
 <dd><p>Predict step function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -312,7 +302,7 @@ Example of extras:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neotemplate.base_central_processing.CPNeoTemplate.preprocess">
-<span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extras</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.preprocess" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extras</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.preprocess" title="Permalink to this definition">#</a></dt>
 <dd><p>Preprocess the data before training/val/test/predict</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -347,14 +337,14 @@ Example of extras:</p>
 <span class="sig-name descname"><span class="pre">save_checkpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checkpoint_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.save_checkpoint" title="Permalink to this definition">#</a></dt>
 <dd><p>Save a checkpoint.</p>
 <section id="id1">
-<h4>Parameters:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<h3>Parameters:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <dl class="simple">
 <dt>checkpoint_path: str</dt><dd><p>The path to the checkpoint.</p>
 </dd>
 </dl>
 </section>
 <section id="id2">
-<h4>Returns:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h3>Returns:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>None</p>
 </section>
 </dd></dl>
@@ -364,28 +354,79 @@ Example of extras:</p>
 <span class="sig-name descname"><span class="pre">save_hyperparams</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.save_hyperparams" title="Permalink to this definition">#</a></dt>
 <dd><p>Save hyperparameters to a file.</p>
 <section id="id3">
-<h4>Parameters:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<h3>Parameters:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>None</p>
 </section>
 <section id="id4">
-<h4>Returns:<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<h3>Returns:<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>None</p>
 </section>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="neotemplate.base_central_processing.CPNeoTemplate.test_structure">
-<span class="sig-name descname"><span class="pre">test_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.test_structure" title="Permalink to this definition">#</a></dt>
-<dd><p>Test the structure of the model.</p>
+<dt class="sig sig-object py" id="neotemplate.base_central_processing.CPNeoTemplate.test_postproc">
+<span class="sig-name descname"><span class="pre">test_postproc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.test_postproc" title="Permalink to this definition">#</a></dt>
+<dd><p>Test the postprocessing of the model.</p>
 <section id="id5">
-<h4>Parameters:<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<h3>Parameters:<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <dl class="simple">
 <dt>data: Dict[str, np.ndarray]</dt><dd><p>The data to be tested.</p>
 </dd>
 </dl>
 </section>
 <section id="id6">
-<h4>Returns:<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<h3>Returns:<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>Dict[str, np.ndarray]</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neotemplate.base_central_processing.CPNeoTemplate.test_predict_step">
+<span class="sig-name descname"><span class="pre">test_predict_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.test_predict_step" title="Permalink to this definition">#</a></dt>
+<dd><p>Test the predict step of the model.</p>
+<section id="id7">
+<h3>Parameters:<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<dl class="simple">
+<dt>data: Dict[str, np.ndarray]</dt><dd><p>The data to be tested.</p>
+</dd>
+</dl>
+</section>
+<section id="id8">
+<h3>Returns:<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p>Dict[str, np.ndarray]</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neotemplate.base_central_processing.CPNeoTemplate.test_preproc">
+<span class="sig-name descname"><span class="pre">test_preproc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.test_preproc" title="Permalink to this definition">#</a></dt>
+<dd><p>Test the preprocessing of the model.</p>
+<section id="id9">
+<h3>Parameters:<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<dl class="simple">
+<dt>data: Dict[str, np.ndarray]</dt><dd><p>The data to be tested.</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h3>Returns:<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<p>Dict[str, np.ndarray]</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neotemplate.base_central_processing.CPNeoTemplate.test_structure">
+<span class="sig-name descname"><span class="pre">test_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.test_structure" title="Permalink to this definition">#</a></dt>
+<dd><p>Test the structure of the model.</p>
+<section id="id11">
+<h3>Parameters:<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<dl class="simple">
+<dt>data: Dict[str, np.ndarray]</dt><dd><p>The data to be tested.</p>
+</dd>
+</dl>
+</section>
+<section id="id12">
+<h3>Returns:<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>None</p>
 </section>
 </dd></dl>
@@ -395,7 +436,6 @@ Example of extras:</p>
 <span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#neotemplate.base_central_processing.CPNeoTemplate.training" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -418,14 +458,14 @@ Example of extras:</p>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="data_loader.html">
+          <a class="prev-page" href="data_download.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">data_loader package</div>
+                <div class="title">data_download module</div>
                 
               </div>
             </a>
@@ -470,6 +510,9 @@ Example of extras:</p>
 <li><a class="reference internal" href="#neotemplate.base_central_processing.CPNeoTemplate.preprocess"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.preprocess()</span></code></a></li>
 <li><a class="reference internal" href="#neotemplate.base_central_processing.CPNeoTemplate.save_checkpoint"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.save_checkpoint()</span></code></a></li>
 <li><a class="reference internal" href="#neotemplate.base_central_processing.CPNeoTemplate.save_hyperparams"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.save_hyperparams()</span></code></a></li>
+<li><a class="reference internal" href="#neotemplate.base_central_processing.CPNeoTemplate.test_postproc"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.test_postproc()</span></code></a></li>
+<li><a class="reference internal" href="#neotemplate.base_central_processing.CPNeoTemplate.test_predict_step"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.test_predict_step()</span></code></a></li>
+<li><a class="reference internal" href="#neotemplate.base_central_processing.CPNeoTemplate.test_preproc"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.test_preproc()</span></code></a></li>
 <li><a class="reference internal" href="#neotemplate.base_central_processing.CPNeoTemplate.test_structure"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.test_structure()</span></code></a></li>
 <li><a class="reference internal" href="#neotemplate.base_central_processing.CPNeoTemplate.training"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.training</span></code></a></li>
 </ul>

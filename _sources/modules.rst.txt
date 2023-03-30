@@ -7,7 +7,6 @@ gingerbread_sc
    central_processing
    cli_main
    data_download
-   data_loader
    neotemplate
    tests
    utils
