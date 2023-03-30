@@ -1,6 +1,14 @@
 What is new?
 ============
 
+v0.1.8
+------
+
+* Aded new logger
+* Added typechecker
+* Removed lightning code for now
+* Removed example data loader, this is something each user can implement on their own.
+
 v0.1.7
 ------
 

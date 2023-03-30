@@ -13,7 +13,7 @@ from typing import NoReturn, List, Union, IO, Dict, Callable, OrderedDict, Tuple
 from pymedquery.pymq import PyMedQuery
 from functools import wraps
 from time import time
-import coloredlogs, verboselogs
+from loguru import logger
 import torch
 from copy import deepcopy
 
@@ -23,9 +23,6 @@ from config.exceptions import (
     DatabaseUploadError,
     DatabasePrepareRecordError,
 )
-
-coloredlogs.install()
-log = verboselogs.VerboseLogger(__name__)
 
 
 def timer(orig_func: Callable):
@@ -46,10 +43,11 @@ def timer(orig_func: Callable):
         t1 = time()
         result = orig_func(*args, **kwargs)
         t2 = time() - t1
-        print("Runtime for {}: {} sec".format(orig_func.__name__, t2))
+        logger.info("Runtime for {}: {} sec".format(orig_func.__name__, t2))
         return result
 
     return wrapper
+
 
 def get_img_info(img: np.ndarray) -> Tuple[int, int, int]:
     """get_img_info is very simple helper that returns the dimension of image volume.
@@ -62,7 +60,7 @@ def get_img_info(img: np.ndarray) -> Tuple[int, int, int]:
     try:
         height, width, depth = img.shape
     except ValueError:
-        log.error("Image is not 3D")
+        logger.error("Image is not 3D")
         raise ValueError
     return height, width, depth
 
@@ -95,8 +93,9 @@ def decode_payload(payload: str, blosc_compression: bool = True) -> np.ndarray:
             array = np.frombuffer(payload_b)
             return np.reshape(array, payload.metadata)
     else:
-        log.error("no payload received")
+        logger.error("no payload received")
         raise ValueError
+
 
 def decode_weights(encoded_weights: bytes) -> OrderedDict:
     """the function decodes a encoded weights loaded from MQ.
@@ -114,7 +113,6 @@ def decode_weights(encoded_weights: bytes) -> OrderedDict:
         weights_bytes = blosc.decompress(base64.b64decode(encoded_weights))
         weights_dict = json.loads(weights_bytes)
         weights = {}
-
         """
         In order to take the "tensors" from the encoded objects, we need to apply:
         1. json.loads to get the list which represents the encoded tensor and its size
@@ -134,18 +132,15 @@ def decode_weights(encoded_weights: bytes) -> OrderedDict:
 
         return weights
     except (NameError, ValueError, TypeError) as e:
-        log.error("Error decoding weights: {}".format(e))
+        logger.error("Error decoding weights: {}".format(e))
         raise e
     except Exception as e:
-        log.error("Error decoding weights: {}".format(e))
+        logger.error("Error decoding weights: {}".format(e))
         raise e
-
 
 
 def check_version():
-    log.info(f"PyTorch version: {torch.__version__}")
-
-
+    logger.info(f"PyTorch version: {torch.__version__}")
 
 
 def welcome_logo():
@@ -157,7 +152,7 @@ def welcome_logo():
 \____/|_|_| |_|\__, |\___|_|  |_.__/|_|  \___|\__,_|\__,_|
                |___/                                      
                """
-    log.success(output)
+    logger.success(output)
 
 
 if __name__ == "__main__":

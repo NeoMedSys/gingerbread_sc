@@ -2,20 +2,17 @@ import torch
 from typing import Dict, Any
 import numpy as np
 import argparse
+from beartype.typing import Dict, Optional, Any, NoReturn
+from loguru import logger
 
 import config.config as cfg
+from utils.helpers import timer
 from neotemplate.base_central_processing import CPNeoTemplate
 
 
 class CentralProcessing(CPNeoTemplate):
     """
     Central processing unit for preprocessing, postprocessing, predicting and training.
-
-
-    Attributes
-    ------------
-    logga: verboselogs.VerboseLogger
-        The logger for the central processing unit.
 
 
     Parameters
@@ -38,10 +35,13 @@ class CentralProcessing(CPNeoTemplate):
 
         ########################################################3
         # Tests
-        mock_data = {"x": np.random.rand(10, 10, 10)}  # Please make sure this data mimics your own data
+        mock_data = {"x": np.random.randn(10, 10, 10)}  # Please make sure this data mimics your own data
         self.test_structure(data=mock_data)
 
-    def preprocess(self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}) -> Dict[str, np.ndarray]:
+    @timer
+    def preprocess(self,
+                   data: Dict[str, np.ndarray],
+                   extras: Optional[Dict[str, Any]] = {}) -> Dict[str, np.ndarray]:
         """Preprocess the data before training/val/test/predict
 
         Parameters
@@ -66,12 +66,12 @@ class CentralProcessing(CPNeoTemplate):
         resolution = extras.get("resolution", None)
 
         try:
-            self.logga.info(f"Added extras: {extras}")
-            self.logga.success(f"=> Preprocessing completed successfully")
+            logger.success(f"=> Preprocessing completed successfully")
             return data
-        except TypeError as e:
-            self.logga.error(f"Preprocessing failed, error {e}")
+        except TypeError:
+            logger.exception("Preprocessing failed")
 
+    @timer
     def predict_step(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
         """
         Predict step function.
@@ -89,12 +89,15 @@ class CentralProcessing(CPNeoTemplate):
         try:
             self.eval()
             with torch.no_grad():
-                self.logga.success(f"=> Prediction completed successfully")
+                logger.success(f"=> Prediction completed successfully")
                 return data
-        except TypeError as e:
-            self.logga.error(f"Prediction failed: {e}")
+        except TypeError:
+            logger.exception("predict_step failed")
 
-    def postprocess(self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}) -> Dict[str, np.ndarray]:
+    @timer
+    def postprocess(self,
+                    data: Dict[str, np.ndarray],
+                    extras: Optional[Dict[str, Any]] = {}) -> Dict[str, np.ndarray]:
         """Postprocess the data after training/val/test/predict
 
         Parameters
@@ -118,8 +121,7 @@ class CentralProcessing(CPNeoTemplate):
         """
         resolution = extras.get("resolution", None)
         try:
-            self.logga.info(f"Added extras: {extras}")
-            self.logga.success("=> Postprocessing completed successfully")
+            logger.success("=> Postprocessing completed successfully")
             return data
-        except TypeError as e:
-            self.logga.error(f"Postprocessing failed with error {e}")
+        except TypeError:
+            logger.exception("postprocessing failed")

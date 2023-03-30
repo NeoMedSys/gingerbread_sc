@@ -2,7 +2,7 @@ from pymedquery import pymq
 import os
 import shutil
 import numpy as np
-import coloredlogs, verboselogs
+from loguru import logger
 from tqdm import tqdm
 import h5py
 import nibabel as nib
@@ -19,26 +19,19 @@ class MedqueryDataDownloader:
     ----------
     mq : pymq.PyMedQuery
             pymedquery instance
-    log : verboselogs.VerboseLogger
-        logger instance
-
-
     """
+
     def __init__(self):
 
         self.mq = pymq.PyMedQuery()
-        coloredlogs.install()
-        self.log = verboselogs.VerboseLogger(__name__)
-        self.log.info("MedqueryDataDownloader initialized.")
+        logger.info("MedqueryDataDownloader initialized.")
 
-        
-    def download_data(self, 
-                    project_id: str,
-                    get_affines: bool = False,
-                    get_all: bool = True,
-                    include_mask: bool = False,
-                    batch_size: int = 20
-                    ) -> NoReturn:
+    def download_data(self,
+                      project_id: str,
+                      get_affines: bool = False,
+                      get_all: bool = True,
+                      include_mask: bool = False,
+                      batch_size: int = 20) -> NoReturn:
         """Download data from MedQuery and save it to disk.
 
         Note
@@ -66,22 +59,21 @@ class MedqueryDataDownloader:
         try:
             large_data = self.mq.batch_extract(get_all=get_all,
                                                get_affines=get_affines,
-                                               project_id=project_id, 
-                                               batch_size=batch_size, 
-                                               include_mask=include_mask
-                                               )
+                                               project_id=project_id,
+                                               batch_size=batch_size,
+                                               include_mask=include_mask)
 
             if not os.path.exists(cfg.DATA_SAVE_DIR):
                 os.makedirs(cfg.DATA_SAVE_DIR)
-            self.log.info(f"Downloading data from MedQuery for project {project_id}")
+            logger.info(f"Downloading data from MedQuery for project {project_id}")
             with h5py.File(f'{cfg.DATA_SAVE_DIR}/{project_id}.hdf5', 'w') as f:
                 for batch in tqdm(large_data, desc="Saving data to disk..."):
                     for key, value in batch.items():
                         f.create_dataset(key, data=value)
 
-        except ValueError as e:
-            self.log.error(f"Error while downloading data from MedQuery: {e}")
-    
+        except ValueError:
+            logger.exception(f"Error while downloading data from MedQuery")
+
     def hdf5_to_nifti_all(self, hdf5_path: str, output_dir: str) -> NoReturn:
         """Convert hdf5 file to nifti file.
 
@@ -114,9 +106,9 @@ class MedqueryDataDownloader:
                     self.log.info(f"Converting {series_uid} file to nifti file...")
                     img = nib.Nifti1Image(data, affine)
                     nib.save(img, os.path.join(output_dir, f"{series_uid}.nii.gz"))
-        except IndexError as e:
-            self.log.error(f"Error with hdf5 indexing: {e}")
-    
+        except IndexError:
+            logger.exception(f"Error with hdf5 indexing")
+
     def hdf5_to_nifti_single(self, hdf5_path: str, output_dir: str, series_uid: str) -> NoReturn:
         """Convert single series to nifti file.
 
@@ -142,8 +134,8 @@ class MedqueryDataDownloader:
                 data = hdf5[series_uid]
                 affine_uid = series_uid.replace("series", "affine")
                 affine = hdf5[affine_uid]
-                self.log.info(f"Converting {series_uid} file to nifti file...")
+                logger.info(f"Converting {series_uid} file to nifti file...")
                 img = pymq.utils.convert2nii(img=data, affine=affine)
                 nib.save(img, os.path.join(output_dir, f"{series_uid}.nii.gz"))
-        except Exception as e:
-            self.log.error(f"Error while converting hdf5 to nifti: {e}")
+        except Exception:
+            logger.error(f"Error while converting hdf5 to nifti")

@@ -1,28 +1,19 @@
 import torch
 from torch import Tensor
 import torch.nn as nn
-import coloredlogs, verboselogs
-from typing import Dict, Optional, Any, NoReturn
+from loguru import logger
+from beartype.typing import Dict, Optional, Any, NoReturn, Union
 import numpy as np
 import yaml
 import toml
 import requests
+from beartype import beartype
 
 from config import config as cfg
 
 
 class CPNeoTemplate(nn.Module):
-    """Central processing unit for the NeoTemplate.
-
-    Attributes:
-    ----------
-    logga: verboselogs.VerboseLogger
-        The logger for the central processing unit.
-
-    Methods:
-    -------
-
-    """
+    """Central processing unit for the NeoTemplate. """
 
     def __init__(self) -> NoReturn:
         """Constructor for the central processing unit
@@ -39,9 +30,7 @@ class CPNeoTemplate(nn.Module):
         super().__init__()
 
         # logger [color]
-        coloredlogs.install()
-        self.logga = verboselogs.VerboseLogger(__name__)
-        self.logga.info("CentralProcessing initialized")
+        logger.info("CentralProcessing initialized")
         self.key_input: str = cfg.INPUT_KEY_IMAGE
         self.key_label: str = cfg.INPUT_KEY_LABEL
         self.check_version()
@@ -73,7 +62,7 @@ class CPNeoTemplate(nn.Module):
         -------
         None
         """
-        self.logga.info(f"Loading checkpoint from {checkpoint_path}")
+        logger.info(f"Loading checkpoint from {checkpoint_path}")
         checkpoint = torch.load(checkpoint_path)
         self.load_state_dict(checkpoint["state_dict"])
         self.args = checkpoint["hyperparameters"]
@@ -91,7 +80,7 @@ class CPNeoTemplate(nn.Module):
         None
         """
         # save with the state_dict and the hyperparameters
-        self.logga.info(f"Saving checkpoint to {checkpoint_path}")
+        logger.info(f"Saving checkpoint to {checkpoint_path}")
         torch.save(
             {
                 "state_dict": self.state_dict(),
@@ -100,7 +89,9 @@ class CPNeoTemplate(nn.Module):
             checkpoint_path,
         )
 
-    def postprocess(self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}) -> Dict[str, np.ndarray]:
+    def postprocess(self,
+                    data: Dict[str, np.ndarray],
+                    extras: Optional[Dict[str, Any]] = {}) -> Dict[str, np.ndarray]:
         """Postprocess the data after training/val/test/predict
 
         Parameters
@@ -125,9 +116,11 @@ class CPNeoTemplate(nn.Module):
         try:
             raise NotImplementedError
         except Exception as e:
-            self.logga.error(f"Postprocessing failed with error {e}")
+            logger.error(f"Postprocessing failed with error {e}")
 
-    def preprocess(self, data: Dict[str, np.ndarray], extras: Dict[str, Any] = {}) -> Dict[str, np.ndarray]:
+    def preprocess(self,
+                   data: Dict[str, np.ndarray],
+                   extras: Optional[Dict[str, Any]] = {}) -> Dict[str, np.ndarray]:
         """Preprocess the data before training/val/test/predict
 
         Parameters
@@ -153,8 +146,8 @@ class CPNeoTemplate(nn.Module):
 
         try:
             raise NotImplementedError
-        except Exception as e:
-            self.logga.error(f"Preprocessing failed with error {e}")
+        except Exception:
+            logger.exception("preproccessing failed")
 
     def predict_step(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
         """
@@ -173,8 +166,56 @@ class CPNeoTemplate(nn.Module):
 
         try:
             raise NotImplementedError
-        except Exception as e:
-            self.logga.error(f"Predict_step failed with error {e}")
+        except Exception:
+            logger.exception("predict_step failed")
+
+    @beartype
+    def test_preproc(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
+        """Test the preprocessing of the model.
+
+        Parameters:
+        ----------
+        data: Dict[str, np.ndarray]
+            The data to be tested.
+
+        Returns:
+        -------
+        Dict[str, np.ndarray]
+        """
+        data = self.preprocess(data=data)
+        return data
+
+    @beartype
+    def test_predict_step(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
+        """Test the predict step of the model.
+
+        Parameters:
+        ----------
+        data: Dict[str, np.ndarray]
+            The data to be tested.
+
+        Returns:
+        -------
+        Dict[str, np.ndarray]
+        """
+        data = self.predict_step(data=data)
+        return data
+
+    @beartype
+    def test_postproc(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
+        """Test the postprocessing of the model.
+
+        Parameters:
+        ----------
+        data: Dict[str, np.ndarray]
+            The data to be tested.
+
+        Returns:
+        -------
+        Dict[str, np.ndarray]
+        """
+        data = self.postprocess(data=data)
+        return data
 
     def test_structure(self, data: Dict[str, np.ndarray]) -> NoReturn:
         """Test the structure of the model.
@@ -189,32 +230,19 @@ class CPNeoTemplate(nn.Module):
         None
         """
         try:
-            data = self.preprocess(data=data)
-            if isinstance(data, dict):
-                for key, value in data.items():
-                    if not isinstance(value, np.ndarray):
-                        raise TypeError(f"Data input to preprocess is not of type numpy array.")
-            else:
-                raise TypeError("Data input in preprocess is not of type dict")
+            data = self.test_preproc(data=data)
+        except Exception:
+            logger.exception("test_preproc failed")
 
-            data = self.predict_step(data=data)
-            if isinstance(data, dict):
-                for key, value in data.items():
-                    if not isinstance(value, np.ndarray):
-                        raise TypeError(f"Data input to predict_step is not of type numpy array.")
-            else:
-                raise TypeError("Data input in prediction_step is not of type dict")
+        try:
+            data = self.test_predict_step(data=data)
+        except Exception:
+            logger.exception("predict_step failed")
 
-            data = self.postprocess(data=data)
-            if isinstance(data, dict):
-                for key, value in data.items():
-                    if not isinstance(value, np.ndarray):
-                        raise TypeError(f"Data input to postprocess is not of type numpy array.")
-            else:
-                raise TypeError("Data input in postprocess is not of type dict")
-
-        except Exception as e:
-            self.logga.error(f"Error in central processing module: {e}")
+        try:
+            data = self.test_postproc(data=data)
+        except Exception:
+            logger.exception("postproc failed")
 
     def check_version(self):
         try:
@@ -230,9 +258,9 @@ class CPNeoTemplate(nn.Module):
             # Compare the version number to the latest version on the public repository
             latest_version = toml.load("./pyproject.toml")["tool"]["poetry"]["version"]
             if version != latest_version:
-                self.logga.warning(
+                logger.warning(
                     f"New version is available: {version}, current version: {latest_version}, check updated documentation at https://neomedsys.github.io/gingerbread_sc/whatsnew.html"
                 )
 
         except requests.exceptions.HTTPError as e:
-            self.logga.error(f"Error in version check: {e}")
+            logger.error(f"Error in version check: {e}")
