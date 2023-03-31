@@ -3,6 +3,12 @@ What is new?
 
 v0.1.8
 ------
+* Fixed typo
+* Cleaned up code
+* Changed input types from dict to numpy arrays
+
+v0.1.8
+------
 
 * Aded new logger
 * Added typechecker

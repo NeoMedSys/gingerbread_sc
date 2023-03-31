@@ -35,18 +35,16 @@ class CentralProcessing(CPNeoTemplate):
 
         ########################################################3
         # Tests
-        mock_data = {"x": np.random.randn(10, 10, 10)}  # Please make sure this data mimics your own data
+        mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
         self.test_structure(data=mock_data)
 
     @timer
-    def preprocess(self,
-                   data: Dict[str, np.ndarray],
-                   extras: Optional[Dict[str, Any]] = {}) -> Dict[str, np.ndarray]:
+    def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
         """Preprocess the data before training/val/test/predict
 
         Parameters
         ----------
-        data : dict
+        data : np.ndarray
             the data to be preprocessed
         extras: dict
             additional arguments for preprocessing such as resolution information etc.
@@ -60,49 +58,58 @@ class CentralProcessing(CPNeoTemplate):
 
         Returns
         -------
-        Dict[str, np.ndarray]
+        np.ndarray
             the preprocessed data
         """
-        resolution = extras.get("resolution", None)
 
         try:
+            logger.info(f"Preprocessing data with shape {data.shape}")
+
+            # --------------------- #
+            # TODO: Your preprocessing code here
+            # --------------------- #
+
             logger.success(f"=> Preprocessing completed successfully")
             return data
         except TypeError:
             logger.exception("Preprocessing failed")
 
     @timer
-    def predict_step(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
+    def predict_step(self, data: np.ndarray) -> np.ndarray:
         """
         Predict step function.
 
         Parameters
         ------------
-        data: Dict[str, np.ndarray]
+        data: np.ndarray
             data input
 
         Returns
         ------------
-        Dict[str, np.ndarray]
+        np.ndarray
             Predictions.
         """
         try:
             self.eval()
             with torch.no_grad():
+                logger.info(f"Predicting data with shape {data.shape}")
+
+                # --------------------- #
+                # TODO: Your prediction code here
+                # --------------------- #
+
                 logger.success(f"=> Prediction completed successfully")
                 return data
         except TypeError:
             logger.exception("predict_step failed")
 
     @timer
-    def postprocess(self,
-                    data: Dict[str, np.ndarray],
-                    extras: Optional[Dict[str, Any]] = {}) -> Dict[str, np.ndarray]:
+    def postprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
         """Postprocess the data after training/val/test/predict
 
         Parameters
         ----------
-        data : dict
+        data : np.ndarray
             the data to be postprocessed
         extras: dict
             additional arguments for preprocessing such as resolution information etc.
@@ -116,11 +123,16 @@ class CentralProcessing(CPNeoTemplate):
 
         Returns
         -------
-        Dict[str, np.ndarray]
+        np.ndarray
             the postprocessed data
         """
-        resolution = extras.get("resolution", None)
         try:
+            logger.info(f"Postprocessing data with shape {data.shape}")
+
+            # --------------------- #
+            # TODO: Your postprocessing code here
+            # --------------------- #
+
             logger.success("=> Postprocessing completed successfully")
             return data
         except TypeError:
