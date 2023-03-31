@@ -3,6 +3,7 @@ from torch import Tensor
 import torch.nn as nn
 from loguru import logger
 from beartype.typing import Dict, Optional, Any, NoReturn, Union
+from beartype.roar import BeartypeCallHintParamViolation
 import numpy as np
 import yaml
 import toml
@@ -89,9 +90,7 @@ class CPNeoTemplate(nn.Module):
             checkpoint_path,
         )
 
-    def postprocess(self,
-                    data: Dict[str, np.ndarray],
-                    extras: Optional[Dict[str, Any]] = {}) -> Dict[str, np.ndarray]:
+    def postprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
         """Postprocess the data after training/val/test/predict
 
         Parameters
@@ -110,7 +109,7 @@ class CPNeoTemplate(nn.Module):
 
         Returns
         -------
-        Dict[str, np.ndarray]
+        np.ndarray
             the postprocessed data
         """
         try:
@@ -118,9 +117,7 @@ class CPNeoTemplate(nn.Module):
         except Exception as e:
             logger.error(f"Postprocessing failed with error {e}")
 
-    def preprocess(self,
-                   data: Dict[str, np.ndarray],
-                   extras: Optional[Dict[str, Any]] = {}) -> Dict[str, np.ndarray]:
+    def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
         """Preprocess the data before training/val/test/predict
 
         Parameters
@@ -139,7 +136,7 @@ class CPNeoTemplate(nn.Module):
 
         Returns
         -------
-        Dict[str, np.ndarray]
+        np.ndarray
             the preprocessed data
         """
         resolution = extras.get("resolution", None)
@@ -149,18 +146,18 @@ class CPNeoTemplate(nn.Module):
         except Exception:
             logger.exception("preproccessing failed")
 
-    def predict_step(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
+    def predict_step(self, data: np.ndarray) -> np.ndarray:
         """
         Predict step function.
 
         Parameters
         ------------
-        data: Dict[str, np.ndarray]
+        data: np.ndarray
             Batch.
 
         Returns
         ------------
-        Dict[str, np.ndarray]
+        np.ndarray
             Predictions.
         """
 
@@ -170,65 +167,67 @@ class CPNeoTemplate(nn.Module):
             logger.exception("predict_step failed")
 
     @beartype
-    def test_preproc(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
+    def test_preproc(self, data: np.ndarray) -> np.ndarray:
         """Test the preprocessing of the model.
 
         Parameters:
         ----------
-        data: Dict[str, np.ndarray]
+        data: np.ndarray
             The data to be tested.
 
         Returns:
         -------
-        Dict[str, np.ndarray]
+        np.ndarray
         """
         data = self.preprocess(data=data)
         return data
 
     @beartype
-    def test_predict_step(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
+    def test_predict_step(self, data: np.ndarray) -> np.ndarray:
         """Test the predict step of the model.
 
         Parameters:
         ----------
-        data: Dict[str, np.ndarray]
+        data: np.ndarray
             The data to be tested.
 
         Returns:
         -------
-        Dict[str, np.ndarray]
+        np.ndarray
         """
         data = self.predict_step(data=data)
         return data
 
     @beartype
-    def test_postproc(self, data: Dict[str, np.ndarray]) -> Dict[str, np.ndarray]:
+    def test_postproc(self, data: np.ndarray) -> np.ndarray:
         """Test the postprocessing of the model.
 
         Parameters:
         ----------
-        data: Dict[str, np.ndarray]
+        data: np.ndarray
             The data to be tested.
 
         Returns:
         -------
-        Dict[str, np.ndarray]
+        np.ndarray
         """
         data = self.postprocess(data=data)
         return data
 
-    def test_structure(self, data: Dict[str, np.ndarray]) -> NoReturn:
+    def test_structure(self, data: np.ndarray) -> NoReturn:
         """Test the structure of the model.
 
         Parameters:
         ----------
-        data: Dict[str, np.ndarray]
+        data: np.ndarray
             The data to be tested.
 
         Returns:
         -------
         None
         """
+        logger.info("Testing the functions of the model")
+
         try:
             data = self.test_preproc(data=data)
         except Exception:
@@ -259,7 +258,7 @@ class CPNeoTemplate(nn.Module):
             latest_version = toml.load("./pyproject.toml")["tool"]["poetry"]["version"]
             if version != latest_version:
                 logger.warning(
-                    f"New version is available: {version}, current version: {latest_version}, check updated documentation at https://neomedsys.github.io/gingerbread_sc/whatsnew.html"
+                    f"New version of Gingerbread source code is available: {version}, current version: {latest_version}, check updated documentation at https://neomedsys.github.io/gingerbread_sc/whatsnew.html"
                 )
 
         except requests.exceptions.HTTPError as e:

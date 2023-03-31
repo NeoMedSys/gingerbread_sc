@@ -103,7 +103,7 @@ class MedqueryDataDownloader:
                     affine_uid = series_uid.replace("series", "affine")
                     data = hdf5[series_uid]
                     affine = hdf5[affine_uid]
-                    self.log.info(f"Converting {series_uid} file to nifti file...")
+                    logger.info(f"Converting {series_uid} file to nifti file...")
                     img = nib.Nifti1Image(data, affine)
                     nib.save(img, os.path.join(output_dir, f"{series_uid}.nii.gz"))
         except IndexError:
