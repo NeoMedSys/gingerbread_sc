@@ -1,6 +1,17 @@
 xmodules.models package
 =======================
 
+Submodules
+----------
+
+xmodules.models.mock\_model module
+----------------------------------
+
+.. automodule:: xmodules.models.mock_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
