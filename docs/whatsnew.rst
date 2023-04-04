@@ -1,7 +1,12 @@
 What is new?
 ============
 
-v0.1.8
+v0.2.0
+------
+* Added compatability with central processing handler
+
+
+v0.1.9
 ------
 * Fixed typo
 * Cleaned up code

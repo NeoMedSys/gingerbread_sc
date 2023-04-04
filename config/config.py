@@ -1,12 +1,10 @@
 import os
 from typing import Tuple, Optional, Dict
 
-
 # data stages
 STAGES = ["train", "val", "test", "predict"]
 INPUT_KEY_LABEL = "y"
 INPUT_KEY_IMAGE = "x"
-
 
 ROOT: os.PathLike = os.getcwd()
 
@@ -19,7 +17,8 @@ BATCH_SIZE = int(os.environ.get("BATCH_SIZE", 4))
 # ---------------------------------------------------------
 WEIGHTS_DIR = os.path.join(ROOT, "model_weights")
 WEIGHTS_PATH = os.path.join(WEIGHTS_DIR, "epoch=4950-dice_mean=78.49.pth")
-
+PROJECT_ID = "spotty"
+MODEL_VERSION = "modelw_v1.1.0"
 # ---------------------------------------------------------
 SQL_FILE_PATH_MODELS_WEIGHTS = os.path.join(ROOT, "sql/extract_model_weights.sql")
 SQL_FILE_PATH_BATCH = os.path.join(ROOT, "sql/extract_series_uid.sql")
