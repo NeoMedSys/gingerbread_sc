@@ -20,7 +20,7 @@ WEIGHTS_DIR = os.path.join(ROOT, "model_weights")
 WEIGHTS_PATH = os.path.join(WEIGHTS_DIR, "epoch=4950-dice_mean=78.49.pth")
 
 MODELS = {
-    "epoch=4950-dice_mean=78.49.pth": models.MockModel,
+    "DynUnet": models.MockModel,
 }
 
 # ---------------------------------------------------------
