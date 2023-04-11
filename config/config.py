@@ -1,6 +1,6 @@
 import os
 from typing import Tuple, Optional, Dict
-import xmodules.models as models
+import xmodules.models.mock_model as mmodel
 
 # data stages
 STAGES = ["train", "val", "test", "predict"]
@@ -20,7 +20,7 @@ WEIGHTS_DIR = os.path.join(ROOT, "model_weights")
 WEIGHTS_PATH = os.path.join(WEIGHTS_DIR, "epoch=4950-dice_mean=78.49.pth")
 
 MODELS = {
-    "DynUnet": models.MockModel,
+    "DynUnet": mmodel.MockModel,
 }
 
 # ---------------------------------------------------------
