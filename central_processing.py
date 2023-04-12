@@ -5,7 +5,6 @@ import argparse
 from beartype.typing import Dict, Optional, Any, NoReturn
 from loguru import logger
 
-import config.config as cfg
 from utils.helpers import timer
 from neotemplate.base_central_processing import CPNeoTemplate
 
