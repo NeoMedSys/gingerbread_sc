@@ -1,6 +1,5 @@
 import os
 from typing import Tuple, Dict
-from central_processing import CentralProcessing
 
 # data stages
 STAGES = ["train", "val", "test", "predict"]
@@ -19,8 +18,10 @@ BATCH_SIZE = int(os.environ.get("BATCH_SIZE", 4))
 WEIGHTS_DIR = os.path.join(ROOT, "model_weights")
 WEIGHTS_PATH = os.path.join(WEIGHTS_DIR, "epoch=4950-dice_mean=78.49.pth")
 
+import central_processing
+
 MODELS = {
-    "DynUnet": CentralProcessing,
+    "DynUnet": central_processing.CentralProcessing,
 }
 
 # ---------------------------------------------------------
