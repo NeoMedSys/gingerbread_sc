@@ -7,9 +7,10 @@ from loguru import logger
 
 from utils.helpers import timer
 from neotemplate.base_central_processing import CPNeoTemplate
+from xmodules.models.mock_model import MockModel
 
 
-class CentralProcessing(CPNeoTemplate):
+class CentralProcessing(CPNeoTemplate, MockModel):
     """
     Central processing unit for preprocessing, postprocessing, predicting and training.
 
