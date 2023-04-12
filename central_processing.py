@@ -34,11 +34,6 @@ class CentralProcessing(CPNeoTemplate, MockModel):
         self.args = args
         # self.save_hyperparams() # this is for saving hyperparams
 
-        ########################################################3
-        # Tests
-        # mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
-        # self.test_structure(data=mock_data)
-
     @timer
     def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
         """Preprocess the data before training/val/test/predict

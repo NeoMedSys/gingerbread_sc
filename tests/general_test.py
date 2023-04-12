@@ -1,4 +1,3 @@
-import pytest
 import os, sys
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
@@ -16,4 +15,6 @@ class Test_General:
         assert cli_main
 
     def test_central_processing(self):
-        central_processing.CentralProcessing()
+        cpp = central_processing.CentralProcessing()
+        mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
+        cpp.test_structure(data=mock_data)
