@@ -5,6 +5,7 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
 import central_processing
 import data_download
 import cli_main
+import numpy as np
 
 
 class Test_General:
@@ -15,7 +16,6 @@ class Test_General:
         assert cli_main
 
     def test_central_processing(self):
-        pass
         cpp = central_processing.CentralProcessing()
         mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
         cpp.test_structure(data=mock_data)
