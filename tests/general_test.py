@@ -16,8 +16,8 @@ class Test_General:
 
     def test_central_processing(self):
         pass
-        # cpp = central_processing.CentralProcessing()
-        # mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
-        # cpp.test_structure(data=mock_data)
-        # cpp.load_state_dict(state_dict={'kdwkamd',
-        #                                 2381232103})  # Anything should work as the function is mocked
+        cpp = central_processing.CentralProcessing()
+        mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
+        cpp.test_structure(data=mock_data)
+        cpp.load_state_dict(state_dict={'kdwkamd',
+                                        2381232103})  # Anything should work as the function is mocked

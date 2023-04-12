@@ -8,7 +8,6 @@ from loguru import logger
 import config.config as cfg
 from utils.helpers import timer
 from neotemplate.base_central_processing import CPNeoTemplate
-#from xmodules.models.mock_model import MockModel
 
 
 class CentralProcessing(CPNeoTemplate):
