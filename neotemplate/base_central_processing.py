@@ -1,9 +1,7 @@
 import torch
-from torch import Tensor
 import torch.nn as nn
 from loguru import logger
-from beartype.typing import Dict, Optional, Any, NoReturn, Union
-from beartype.roar import BeartypeCallHintParamViolation
+from beartype.typing import Dict, Optional, Any, NoReturn
 import numpy as np
 import yaml
 import toml

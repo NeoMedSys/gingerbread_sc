@@ -5,7 +5,6 @@ import argparse
 from beartype.typing import Dict, Optional, Any, NoReturn
 from loguru import logger
 
-import config.config as cfg
 from utils.helpers import timer
 from neotemplate.base_central_processing import CPNeoTemplate
 from xmodules.models.mock_model import MockModel
@@ -33,11 +32,6 @@ class CentralProcessing(CPNeoTemplate, MockModel):
         super().__init__()
         self.args = args
         # self.save_hyperparams() # this is for saving hyperparams
-
-        ########################################################3
-        # Tests
-        # mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
-        # self.test_structure(data=mock_data)
 
     @timer
     def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
