@@ -1,5 +1,5 @@
 import os
-from typing import Tuple, Optional, Dict
+from typing import Tuple, Dict
 from central_processing import CentralProcessing
 
 # data stages
