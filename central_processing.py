@@ -8,10 +8,10 @@ from loguru import logger
 import config.config as cfg
 from utils.helpers import timer
 from neotemplate.base_central_processing import CPNeoTemplate
-import xmodules.models.mock_model as mock_model
+from xmodules.models.mock_model import MockModel
 
 
-class CentralProcessing(CPNeoTemplate):
+class CentralProcessing(CPNeoTemplate, MockModel):
     """
     Central processing unit for preprocessing, postprocessing, predicting and training.
 
@@ -36,9 +36,8 @@ class CentralProcessing(CPNeoTemplate):
 
         ########################################################3
         # Tests
-        mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
-        self.test_structure(data=mock_data)
-        self.model = mock_model.MockModel()  # change this to your model
+        # mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
+        # self.test_structure(data=mock_data)
 
     @timer
     def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
