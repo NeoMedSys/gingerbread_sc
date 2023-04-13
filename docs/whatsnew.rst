@@ -1,13 +1,17 @@
 What is new?
 ============
 
+v0.2.2
+------
+* Added simpleitk to poetry dependencies
+
+
 v0.2.1
 ------
 * Added new tests, now models are inherited in central processing. More central processors are needed and the models are needed to be added in config.MODELS.
+
 ```
-MODELS = {
-    "DynUnet": CentralProcessing,
-}
+MODELS = {"DynUnet": CentralProcessing}
 ```
 v0.2.0
 ------
