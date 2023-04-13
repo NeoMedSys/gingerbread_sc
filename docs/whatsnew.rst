@@ -1,6 +1,10 @@
 What is new?
 ============
 
+v0.2.1
+------
+* Added simpleitk to poetry dependencies
+
 v0.2.0
 ------
 * Added compatability with central processing handler

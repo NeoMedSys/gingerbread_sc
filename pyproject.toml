@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gingerbread"
-version = "0.2.0"
+version = "0.2.1"
 description = "Researcher template that fits with NeoMedSys"
 authors = ["Martin Rovang <martinrovang@gmail.com>"]
 readme = "README.md"
@@ -23,6 +23,7 @@ furo = "^2022.12.7"
 beartype = "^0.12.0"
 loguru = "^0.6.0"
 matplotlib = "^3.7.1"
+simpleitk = "^2.2.1"
 
 
 [build-system]
