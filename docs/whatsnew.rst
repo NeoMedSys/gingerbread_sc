@@ -1,6 +1,10 @@
 What is new?
 ============
 
+v0.2.3
+------
+* Update poetry dependencies versions
+
 v0.2.2
 ------
 * Added simpleitk to poetry dependencies
