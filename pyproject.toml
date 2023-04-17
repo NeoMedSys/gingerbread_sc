@@ -6,7 +6,7 @@ authors = ["Martin Rovang <martinrovang@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.10,<3.11"
 numpy = "^1.24.2"
 pymedquery = "^2.11.3b0"
 wandb = "^0.13.10"
@@ -24,6 +24,12 @@ beartype = "^0.12.0"
 loguru = "^0.6.0"
 matplotlib = "^3.7.1"
 simpleitk = "^2.2.1"
+uvicorn = "^0.21.1"
+fastapi = "^0.95.1"
+pydantic = "^1.10.7"
+tqdm = "^4.65.0"
+libclang = "^16.0.0"
+tensorflow-gpu = "2.11.0"
 
 
 [build-system]
