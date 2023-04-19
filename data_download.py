@@ -1,7 +1,5 @@
 from pymedquery import pymq
 import os
-import shutil
-import numpy as np
 from loguru import logger
 from tqdm import tqdm
 import h5py
