@@ -1,6 +1,10 @@
 What is new?
 ============
 
+v0.2.4
+------
+* Codebase cleanup
+
 v0.2.3
 ------
 * Update poetry dependencies versions
