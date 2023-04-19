@@ -30,6 +30,7 @@ pydantic = "^1.10.7"
 tqdm = "^4.65.0"
 libclang = "^16.0.0"
 tensorflow-gpu = "2.11.0"
+mrsal = "^0.3.0a0"
 
 
 [build-system]
