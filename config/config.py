@@ -1,7 +1,7 @@
 import os
 from typing import Tuple, Dict
-from pydantic import BaseModel
-import torch.nn as nn
+from pydantic import BaseModel as PydanticBaseModel
+import torch
 
 # data stages
 STAGES = ["train", "val", "test", "predict"]
@@ -43,5 +43,11 @@ DATA_SAVE_DIR = "./data"
 PROJECTMETADATAURL = "https://raw.githubusercontent.com/NeoMedSys/gingerbread_sc/main/pyproject.toml"
 
 
+class BaseModel(PydanticBaseModel):
+
+    class Config:
+        arbitrary_types_allowed = True
+
+
 class ModelInput(BaseModel):
-    model: nn.Module
+    model: torch.nn.Module
