@@ -27,11 +27,10 @@ class CentralProcessing(CPNeoTemplate, MockModel):
 
     """
 
-    def __init__(self, args: argparse.Namespace = None) -> NoReturn:
+    def __init__(self) -> NoReturn:
         """Constructor for the central processing unit."""
         super().__init__()
-        self.args = args
-        # self.save_hyperparams() # this is for saving hyperparams
+        self.model = None
 
     @timer
     def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
@@ -92,7 +91,7 @@ class CentralProcessing(CPNeoTemplate, MockModel):
             self.eval()
             with torch.no_grad():
                 logger.info(f"Predicting data with shape {data.shape}")
-
+                data = self.model(data)
                 # --------------------- #
                 # TODO: Your prediction code here
                 # --------------------- #
