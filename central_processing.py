@@ -66,8 +66,12 @@ class CentralProcessing(CPNeoTemplate, MockModel):
 
             logger.success(f"=> Preprocessing completed successfully")
             return data
-        except TypeError:
-            logger.exception("Preprocessing failed")
+        except (NameError, ValueError, TypeError, AttributeError, RuntimeError) as e:
+            msg = f"I failed preprocessing the image with error: {e}"
+            logger.exception(msg)
+        except Exception as e:
+            msg = f"I failed preprocessing the image. Unexpected exception: type={type(e)}, e:{e}"
+            logger.exception(msg)
 
     @timer
     def predict_step(self, data: np.ndarray) -> np.ndarray:
@@ -95,8 +99,18 @@ class CentralProcessing(CPNeoTemplate, MockModel):
 
                 logger.success(f"=> Prediction completed successfully")
                 return data
-        except TypeError:
-            logger.exception("predict_step failed")
+        except (
+                NameError,
+                ValueError,
+                TypeError,
+                AttributeError,
+                RuntimeError,
+        ) as e:
+            msg = f"I failed predicting the image with error: {e}"
+            logger.exception(msg)
+        except Exception as e:
+            msg = f"I failed predicting the image. Unexpected exception: type={type(e)}, e:{e}"
+            logger.exception(msg)
 
     @timer
     def postprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
@@ -130,5 +144,42 @@ class CentralProcessing(CPNeoTemplate, MockModel):
 
             logger.success("=> Postprocessing completed successfully")
             return data
-        except TypeError:
-            logger.exception("postprocessing failed")
+        except (
+                NameError,
+                ValueError,
+                TypeError,
+                AttributeError,
+                RuntimeError,
+        ) as e:
+            msg = f"I failed postprocessing with error {e}"
+            logger.exception(msg)
+        except Exception as e:
+            msg = f"I failed postprocessing the image. Unexpected exception: type={type(e)}, e:{e}"
+            logger.exception(msg)
+
+    def set_model(self, model: torch.nn.Module) -> None:
+        """
+        Set model to the centralprocessing.
+
+        Parameters
+        ------------
+        model: torch.nn.Module
+            model to set in centralprocessing.
+        """
+        try:
+            if not isinstance(model, torch.nn.Module):
+                raise TypeError("Model must be a torch.nn.Module.")
+            self.model = model
+            logger.info(f"Model set to '{model.__class__.__name__}' in CentralProcessing.")
+        except (
+                NameError,
+                ValueError,
+                TypeError,
+                AttributeError,
+                RuntimeError,
+        ) as e:
+            msg = f"I failed setting the model with error: {e}"
+            logger.exception(msg)
+        except Exception as e:
+            msg = f"I failed setting the model. Unexpected exception: type={type(e)}, e:{e}"
+            logger.exception(msg)
