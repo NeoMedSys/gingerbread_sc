@@ -5,7 +5,7 @@ from beartype.typing import Dict, Optional, Any, NoReturn
 from loguru import logger
 
 from utils.helpers import timer
-from config.config import config
+from config import config
 from neotemplate.base_central_processing import CPNeoTemplate
 
 
