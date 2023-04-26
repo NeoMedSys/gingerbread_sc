@@ -1,16 +1,15 @@
 import torch
 from typing import Dict, Any
 import numpy as np
-import argparse
 from beartype.typing import Dict, Optional, Any, NoReturn
 from loguru import logger
 
 from utils.helpers import timer
+from config.config import config
 from neotemplate.base_central_processing import CPNeoTemplate
-from xmodules.models.mock_model import MockModel
 
 
-class CentralProcessing(CPNeoTemplate, MockModel):
+class CentralProcessing(CPNeoTemplate):
     """
     Central processing unit for preprocessing, postprocessing, predicting and training.
 
@@ -156,7 +155,7 @@ class CentralProcessing(CPNeoTemplate, MockModel):
             msg = f"I failed postprocessing the image. Unexpected exception: type={type(e)}, e:{e}"
             logger.exception(msg)
 
-    def set_model(self, model: torch.nn.Module) -> None:
+    def set_model(self, model: config.ModelInput) -> None:
         """
         Set model to the centralprocessing.
 
@@ -166,19 +165,8 @@ class CentralProcessing(CPNeoTemplate, MockModel):
             model to set in centralprocessing.
         """
         try:
-            if not isinstance(model, torch.nn.Module):
-                raise TypeError("Model must be a torch.nn.Module.")
             self.model = model
             logger.info(f"Model set to '{model.__class__.__name__}' in CentralProcessing.")
-        except (
-                NameError,
-                ValueError,
-                TypeError,
-                AttributeError,
-                RuntimeError,
-        ) as e:
-            msg = f"I failed setting the model with error: {e}"
-            logger.exception(msg)
         except Exception as e:
             msg = f"I failed setting the model. Unexpected exception: type={type(e)}, e:{e}"
             logger.exception(msg)
