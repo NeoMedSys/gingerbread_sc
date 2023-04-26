@@ -1,16 +1,15 @@
 import torch
 from typing import Dict, Any
 import numpy as np
-import argparse
 from beartype.typing import Dict, Optional, Any, NoReturn
 from loguru import logger
 
 from utils.helpers import timer
+from config import config
 from neotemplate.base_central_processing import CPNeoTemplate
-from xmodules.models.mock_model import MockModel
 
 
-class CentralProcessing(CPNeoTemplate, MockModel):
+class CentralProcessing(CPNeoTemplate):
     """
     Central processing unit for preprocessing, postprocessing, predicting and training.
 
@@ -27,11 +26,10 @@ class CentralProcessing(CPNeoTemplate, MockModel):
 
     """
 
-    def __init__(self, args: argparse.Namespace = None) -> NoReturn:
+    def __init__(self) -> NoReturn:
         """Constructor for the central processing unit."""
         super().__init__()
-        self.args = args
-        # self.save_hyperparams() # this is for saving hyperparams
+        self.model = None
 
     @timer
     def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
@@ -66,8 +64,12 @@ class CentralProcessing(CPNeoTemplate, MockModel):
 
             logger.success(f"=> Preprocessing completed successfully")
             return data
-        except TypeError:
-            logger.exception("Preprocessing failed")
+        except (NameError, ValueError, TypeError, AttributeError, RuntimeError) as e:
+            msg = f"I failed preprocessing the image with error: {e}"
+            logger.exception(msg)
+        except Exception as e:
+            msg = f"I failed preprocessing the image. Unexpected exception: type={type(e)}, e:{e}"
+            logger.exception(msg)
 
     @timer
     def predict_step(self, data: np.ndarray) -> np.ndarray:
@@ -88,15 +90,25 @@ class CentralProcessing(CPNeoTemplate, MockModel):
             self.eval()
             with torch.no_grad():
                 logger.info(f"Predicting data with shape {data.shape}")
-
+                data = self.model(data)
                 # --------------------- #
                 # TODO: Your prediction code here
                 # --------------------- #
 
                 logger.success(f"=> Prediction completed successfully")
                 return data
-        except TypeError:
-            logger.exception("predict_step failed")
+        except (
+                NameError,
+                ValueError,
+                TypeError,
+                AttributeError,
+                RuntimeError,
+        ) as e:
+            msg = f"I failed predicting the image with error: {e}"
+            logger.exception(msg)
+        except Exception as e:
+            msg = f"I failed predicting the image. Unexpected exception: type={type(e)}, e:{e}"
+            logger.exception(msg)
 
     @timer
     def postprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
@@ -130,5 +142,31 @@ class CentralProcessing(CPNeoTemplate, MockModel):
 
             logger.success("=> Postprocessing completed successfully")
             return data
-        except TypeError:
-            logger.exception("postprocessing failed")
+        except (
+                NameError,
+                ValueError,
+                TypeError,
+                AttributeError,
+                RuntimeError,
+        ) as e:
+            msg = f"I failed postprocessing with error {e}"
+            logger.exception(msg)
+        except Exception as e:
+            msg = f"I failed postprocessing the image. Unexpected exception: type={type(e)}, e:{e}"
+            logger.exception(msg)
+
+    def set_model(self, model: config.ModelInput) -> None:
+        """
+        Set model to the centralprocessing.
+
+        Parameters
+        ------------
+        model: torch.nn.Module
+            model to set in centralprocessing.
+        """
+        try:
+            self.model = model
+            logger.info(f"Model set to '{model.__class__.__name__}' in CentralProcessing.")
+        except Exception as e:
+            msg = f"I failed setting the model. Unexpected exception: type={type(e)}, e:{e}"
+            logger.exception(msg)

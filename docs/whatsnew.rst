@@ -1,6 +1,10 @@
 What is new?
 ============
 
+v0.2.5
+------
+* Added "set_model" function and additional exceptions
+
 v0.2.4
 ------
 * Codebase cleanup

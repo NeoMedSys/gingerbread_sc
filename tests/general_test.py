@@ -6,6 +6,7 @@ import central_processing
 import data_download
 import cli_main
 import numpy as np
+from xmodules.models.mock_model import MockModel
 
 
 class Test_General:
@@ -18,4 +19,6 @@ class Test_General:
     def test_central_processing(self):
         cpp = central_processing.CentralProcessing()
         mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
+        cpp.set_model(model=MockModel())
+        assert isinstance(cpp.model, MockModel)
         cpp.test_structure(data=mock_data)
