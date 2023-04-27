@@ -1,5 +1,5 @@
-from central_processing import CentralProcessing
+from xmodules.models.mock_model import MockModel
 
 MODELS = {
-    "DynUnet": CentralProcessing,
+    "DynUnet": MockModel,
 }
