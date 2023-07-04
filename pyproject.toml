@@ -9,7 +9,6 @@ readme = "README.md"
 python = ">=3.10,<3.11"
 numpy = "^1.24.2"
 pymedquery = "^2.11.3b0"
-wandb = "^0.13.10"
 scikit-learn = "^1.2.1"
 monai = "^1.1.0"
 blosc = "^1.11.1"
@@ -30,6 +29,8 @@ pydantic = "^1.10.7"
 tqdm = "^4.65.0"
 libclang = "^16.0.0"
 tensorflow-gpu = "2.11.0"
+arrow = "^1.2.3"
+mrsal = "^0.5.0a0"
 
 
 [build-system]
