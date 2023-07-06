@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Quickstart" href="quickstart.html" /><link rel="prev" title="Gingerbread" href="index.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="tests package" href="tests.html" /><link rel="prev" title="neotemplate package" href="neotemplate.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>What is new? - Gingerbread 0.2.5 documentation</title>
+        <title>noxfile module - Gingerbread 0.2.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -159,16 +159,16 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">What is new?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What is new?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conduct_and_info.html">General Information</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli_main.html">cli_main module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_download.html">data_download module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="noxfile.html">noxfile module</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">noxfile module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="xmodules.html">xmodules package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -212,100 +212,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="what-is-new">
-<h1>What is new?<a class="headerlink" href="#what-is-new" title="Permalink to this heading">#</a></h1>
-<section id="v0-2-5">
-<h2>v0.2.5<a class="headerlink" href="#v0-2-5" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Added “set_model” function and additional exceptions</p></li>
-</ul>
-</section>
-<section id="v0-2-4">
-<h2>v0.2.4<a class="headerlink" href="#v0-2-4" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Codebase cleanup</p></li>
-</ul>
-</section>
-<section id="v0-2-3">
-<h2>v0.2.3<a class="headerlink" href="#v0-2-3" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Update poetry dependencies versions</p></li>
-</ul>
-</section>
-<section id="v0-2-2">
-<h2>v0.2.2<a class="headerlink" href="#v0-2-2" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Added simpleitk to poetry dependencies</p></li>
-</ul>
-</section>
-<section id="v0-2-1">
-<h2>v0.2.1<a class="headerlink" href="#v0-2-1" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Added new tests, now models are inherited in central processing. More central processors are needed and the models are needed to be added in config.MODELS.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">MODELS</span> <span class="pre">=</span> <span class="pre">{&quot;DynUnet&quot;:</span> <span class="pre">CentralProcessing}</span>
-<span class="pre">`</span></code>
-v0.2.0
-——
-* Added compatability with central processing handler</p>
-</section>
-<section id="v0-1-9">
-<h2>v0.1.9<a class="headerlink" href="#v0-1-9" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Fixed typo</p></li>
-<li><p>Cleaned up code</p></li>
-<li><p>Changed input types from dict to numpy arrays</p></li>
-</ul>
-</section>
-<section id="v0-1-8">
-<h2>v0.1.8<a class="headerlink" href="#v0-1-8" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Aded new logger</p></li>
-<li><p>Added typechecker</p></li>
-<li><p>Removed lightning code for now</p></li>
-<li><p>Removed example data loader, this is something each user can implement on their own.</p></li>
-</ul>
-</section>
-<section id="v0-1-7">
-<h2>v0.1.7<a class="headerlink" href="#v0-1-7" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Exception catching version check</p></li>
-</ul>
-</section>
-<section id="v0-1-6">
-<h2>v0.1.6<a class="headerlink" href="#v0-1-6" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Added version check when running CentralProcessing</p></li>
-</ul>
-</section>
-<section id="v0-1-5">
-<h2>v0.1.5<a class="headerlink" href="#v0-1-5" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Minor bug fixes.</p></li>
-</ul>
-</section>
-<section id="v0-1-4">
-<h2>v0.1.4<a class="headerlink" href="#v0-1-4" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Revamped <code class="docutils literal notranslate"><span class="pre">CentralProcessing</span></code>, it now has proper testing for all the production methods, with types of input and output.</p></li>
-<li><p>Added a new section <a class="reference internal" href="conduct_and_info.html"><span class="doc">General Information</span></a> to the documentation about “How to go about” with Gingerbread.</p></li>
-<li><p>Restructured code structure with <cite>modules</cite>.</p></li>
-</ul>
-</section>
-<section id="v0-1-3">
-<h2>v0.1.3<a class="headerlink" href="#v0-1-3" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>An issue where <code class="docutils literal notranslate"><span class="pre">ǸotImplementedError</span></code> always ran despite the the methods existing. This has been fixed with a new method in the init function: <code class="docutils literal notranslate"><span class="pre">check_obligatory_methods</span></code>.</p></li>
-<li><p>Some documentation changes.</p></li>
-</ul>
-</section>
+          <section id="noxfile-module">
+<h1>noxfile module<a class="headerlink" href="#noxfile-module" title="Permalink to this heading">#</a></h1>
 </section>
 
         </article>
@@ -313,23 +227,23 @@ v0.2.0
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="quickstart.html">
+          <a class="next-page" href="tests.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Quickstart</div>
+                <div class="title">tests package</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="neotemplate.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">neotemplate package</div>
                 
               </div>
             </a>
@@ -351,38 +265,8 @@ v0.2.0
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">What is new?</a><ul>
-<li><a class="reference internal" href="#v0-2-5">v0.2.5</a></li>
-<li><a class="reference internal" href="#v0-2-4">v0.2.4</a></li>
-<li><a class="reference internal" href="#v0-2-3">v0.2.3</a></li>
-<li><a class="reference internal" href="#v0-2-2">v0.2.2</a></li>
-<li><a class="reference internal" href="#v0-2-1">v0.2.1</a></li>
-<li><a class="reference internal" href="#v0-1-9">v0.1.9</a></li>
-<li><a class="reference internal" href="#v0-1-8">v0.1.8</a></li>
-<li><a class="reference internal" href="#v0-1-7">v0.1.7</a></li>
-<li><a class="reference internal" href="#v0-1-6">v0.1.6</a></li>
-<li><a class="reference internal" href="#v0-1-5">v0.1.5</a></li>
-<li><a class="reference internal" href="#v0-1-4">v0.1.4</a></li>
-<li><a class="reference internal" href="#v0-1-3">v0.1.3</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
