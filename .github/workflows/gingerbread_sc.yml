@@ -22,7 +22,7 @@ jobs:
         run: |
           docker compose up -d cpu
           docker exec ginger poetry install
-          docker exec ginger sh ./tests/test.sh
+          docker exec ginger sh ./tests/tests.sh
           docker cp test:/gingerbread/coverage-badge.svg ./coverage-badge.svg
           docker cp test:/gingerbread/flake8-badge.svg ./flake8-badge.svg
           docker cp test:/gingerbread/tests-badge.svg ./tests-badge.svg
