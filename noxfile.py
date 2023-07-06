@@ -5,7 +5,7 @@ import os
 def tests(session):
     session.run('poetry', 'install')
     session.run('poetry', 'add', 'coverage')
-    session.run('poetry', 'run', 'pytest', './tests_rest', '--junitxml=./junit.xml')
+    session.run('poetry', 'run', 'pytest', './tests', '--junitxml=./junit.xml')
     # coverage
     session.run('poetry', 'run', 'coverage', 'run', '--source=.', '--data-file', './.coverage', '-m', 'pytest', './tests')
     session.run('poetry', 'run', 'coverage', 'xml')
