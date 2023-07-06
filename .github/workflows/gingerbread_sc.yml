@@ -22,15 +22,11 @@ jobs:
         run: |
           docker compose up -d cpu
           docker exec ginger poetry install
-          docker exec ginger poetry run pytest
-          echo "$(docker exec ginger poetry run pytest)" >> /home/runner/work/gingerbread_sc/gingerbread_sc/.github/workflows/comment.md
-
-      - name: post PR comment with docker logs
-        uses: NejcZdovc/comment-pr@v2
-        with:
-          file: "comment.md"
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          docker exec ginger sh ./tests/tests.sh
+          docker cp ginger:/gingerbread/coverage-badge.svg ./coverage-badge.svg
+          docker cp ginger:/gingerbread/flake8-badge.svg ./flake8-badge.svg
+          docker cp ginger:/gingerbread/tests-badge.svg ./tests-badge.svg
+      - uses: stefanzweifel/git-auto-commit-action@v4
 
   doc_building:
     needs: test_docker_compose

@@ -450,7 +450,7 @@ test-no-images = ["pytest"]
 name = "coverage"
 version = "7.2.7"
 description = "Code coverage measurement for Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -3204,4 +3204,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.11"
-content-hash = "bd328e8aa9688a52df0ef90e06eb398c62c1b82fc7aaf6c1aa4f38561b79eb86"
+content-hash = "8d7d3e45412e416ab5fb0536366d10c9b637912342f025b4b20b22c353de3316"
