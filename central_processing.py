@@ -72,7 +72,7 @@ class CentralProcessing(CPNeoTemplate):
             logger.exception(msg)
 
     @timer
-    def predict_step(self, data: np.ndarray) -> np.ndarray:
+    def predict_step(self, data: np.ndarray, model: config.ModelInput) -> np.ndarray:
         """
         Predict step function.
 
@@ -90,7 +90,7 @@ class CentralProcessing(CPNeoTemplate):
             self.eval()
             with torch.no_grad():
                 logger.info(f"Predicting data with shape {data.shape}")
-                data = self.model(data)
+                data = model(data)
                 # --------------------- #
                 # TODO: Your prediction code here
                 # --------------------- #
