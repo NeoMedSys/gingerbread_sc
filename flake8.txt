@@ -299,3 +299,291 @@ html
 2     F841 local variable 'args' is assigned to but never used
 7     W292 no newline at end of file
 3     W293 blank line contains whitespace
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+1     E261 at least two spaces before inline comment
+1     E262 inline comment should start with '# '
+1     E265 block comment should start with '# '
+1     E266 too many leading '#' for block comment
+5     E302 expected 2 blank lines, found 1
+1     E401 multiple imports on one line
+5     E402 module level import not at top of file
+45    E501 line too long (87 > 79 characters)
+3     F401 'typing.Tuple' imported but unused
+5     F541 f-string is missing placeholders
+2     F811 redefinition of unused 'Dict' from line 2
+2     F841 local variable 'args' is assigned to but never used
+7     W292 no newline at end of file
+3     W293 blank line contains whitespace
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+1     E261 at least two spaces before inline comment
+1     E262 inline comment should start with '# '
+1     E265 block comment should start with '# '
+1     E266 too many leading '#' for block comment
+5     E302 expected 2 blank lines, found 1
+1     E401 multiple imports on one line
+5     E402 module level import not at top of file
+45    E501 line too long (87 > 79 characters)
+3     F401 'typing.Tuple' imported but unused
+5     F541 f-string is missing placeholders
+2     F811 redefinition of unused 'Dict' from line 2
+2     F841 local variable 'args' is assigned to but never used
+7     W292 no newline at end of file
+3     W293 blank line contains whitespace
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+html
+1     E261 at least two spaces before inline comment
+1     E262 inline comment should start with '# '
+1     E265 block comment should start with '# '
+1     E266 too many leading '#' for block comment
+5     E302 expected 2 blank lines, found 1
+1     E401 multiple imports on one line
+5     E402 module level import not at top of file
+45    E501 line too long (87 > 79 characters)
+3     F401 'typing.Tuple' imported but unused
+5     F541 f-string is missing placeholders
+2     F811 redefinition of unused 'Dict' from line 2
+2     F841 local variable 'args' is assigned to but never used
+7     W292 no newline at end of file
+3     W293 blank line contains whitespace

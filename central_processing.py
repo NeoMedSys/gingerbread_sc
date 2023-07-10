@@ -33,7 +33,7 @@ class CentralProcessing(CPNeoTemplate):
 
     @timer
     def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
-        """Preprocess the data before training/val/test/predict
+        """Preprocess the data before training/val/test/predict.
 
         Parameters
         ----------
