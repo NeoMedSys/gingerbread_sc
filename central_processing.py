@@ -154,19 +154,3 @@ class CentralProcessing(CPNeoTemplate):
         except Exception as e:
             msg = f"I failed postprocessing the image. Unexpected exception: type={type(e)}, e:{e}"
             logger.exception(msg)
-
-    def set_model(self, model: config.ModelInput) -> None:
-        """
-        Set model to the centralprocessing.
-
-        Parameters
-        ------------
-        model: torch.nn.Module
-            model to set in centralprocessing.
-        """
-        try:
-            self.model = model
-            logger.info(f"Model set to '{model.__class__.__name__}' in CentralProcessing.")
-        except Exception as e:
-            msg = f"I failed setting the model. Unexpected exception: type={type(e)}, e:{e}"
-            logger.exception(msg)
