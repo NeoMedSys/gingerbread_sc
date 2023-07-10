@@ -80,6 +80,7 @@ docs/*
 !docs/medquery.rst
 !docs/conduct_and_info.rst
 !docs/whatsnew.rst
+!docs/code_structure.rst
 # PyBuilder
 target/
 
