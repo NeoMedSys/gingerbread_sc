@@ -19,27 +19,51 @@ The code structure
 The code structure is as follows in the final docker image:
 
     .
+    
     ├── *systemfolders*
+
     ├── gingerbread
+    
     │   ├── config
+
     │   ├── neotemplate
+
     │   ├── tests
+
     │   ├── utils
+
     │   ├── xmodules
+
     │   ├── README.md
+
     │   ├── central_processing.py
+
     │   ├── cli_main.py
+
     │   ├── data_download.py
+
     │   ├── poetry.lock
+
     │   ├── pyproject.toml
+
     ├── application (These are the service modules such as )
+
     │   ├── appfile.py (this name is based on the service)
+
     │   ├── config
+
     │   ├── utils
+
     ├── central_processing_handler
+
     │   ├── central_processing_handler.py
+
     │   ├── config
+
     │   ├── utils
+
     │   ├── sql
+
     ├── analytics
+    
     │   ├── analytics_module.py
