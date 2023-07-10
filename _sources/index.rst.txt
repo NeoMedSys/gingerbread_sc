@@ -63,6 +63,7 @@ Documentation
     quickstart
     medquery
     conduct_and_info
+    code_structure
     modules
 
 .. toctree::
