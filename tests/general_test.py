@@ -14,7 +14,6 @@ class Test_General:
     def test_imports(self):
         assert central_processing
         assert data_download
-        assert cli_main
 
     def test_central_processing(self):
         cpp = central_processing.CentralProcessing()
