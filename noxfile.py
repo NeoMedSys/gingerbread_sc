@@ -3,8 +3,7 @@ import os
 
 @nox.session()
 def tests(session):
-    session.run('poetry', 'install')
-    session.run('poetry', 'add', 'coverage')
+    session.run('poetry', 'install', '--with', 'dev')
     session.run('poetry', 'run', 'pytest', './tests', '--junitxml=./junit.xml')
     # coverage
     session.run('poetry', 'run', 'coverage', 'run', '--source=.', '--data-file', './.coverage', '-m', 'pytest', './tests')
