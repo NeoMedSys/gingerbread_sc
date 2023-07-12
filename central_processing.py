@@ -29,7 +29,7 @@ class CentralProcessing(CPNeoTemplate):
     def __init__(self) -> NoReturn:
         """Constructor for the central processing unit."""
         super().__init__()
-        self.model = None
+        logger.info("Initializing central processing unit")
 
     @timer
     def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
@@ -62,7 +62,7 @@ class CentralProcessing(CPNeoTemplate):
             # TODO: Your preprocessing code here
             # --------------------- #
 
-            logger.success(f"=> Preprocessing completed successfully")
+            logger.success("=> Preprocessing completed successfully")
             return data
         except (NameError, ValueError, TypeError, AttributeError, RuntimeError) as e:
             msg = f"I failed preprocessing the image with error: {e}"

@@ -27,6 +27,11 @@ jobs:
           docker cp ginger:/gingerbread/flake8-badge.svg ./flake8-badge.svg
           docker cp ginger:/gingerbread/tests-badge.svg ./tests-badge.svg
       - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          # Optional. Commit message for the created commit.
+          # Defaults to "Apply automatic changes"
+          commit_message: Add badges
+
 
   doc_building:
     needs: test_docker_compose
