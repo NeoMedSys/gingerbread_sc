@@ -4,7 +4,6 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
 
 import central_processing
 import data_download
-import cli_main
 import numpy as np
 from xmodules.models.mock_model import MockModel
 
