@@ -20,8 +20,6 @@ jobs:
       - name: Build and test
         id: docker_log
         run: |
-          rm ./flake8.txt
-          rm ./junit.xml
           docker compose up -d cpu
           docker exec ginger poetry install
           docker exec ginger sh ./tests/tests.sh
@@ -33,7 +31,7 @@ jobs:
           # Optional. Commit message for the created commit.
           # Defaults to "Apply automatic changes"
           commit_message: Add badges
-          
+
 
   doc_building:
     needs: test_docker_compose
