@@ -5,7 +5,6 @@ gingerbread_sc
    :maxdepth: 4
 
    central_processing
-   cli_main
    data_download
    neotemplate
    noxfile
