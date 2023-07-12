@@ -29,7 +29,7 @@ class CentralProcessing(CPNeoTemplate):
     def __init__(self) -> NoReturn:
         """Constructor for the central processing unit."""
         super().__init__()
-        self.model = None
+        logger.info("Initializing central processing unit")
 
     @timer
     def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
