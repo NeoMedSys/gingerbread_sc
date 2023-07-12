@@ -62,7 +62,7 @@ class CentralProcessing(CPNeoTemplate):
             # TODO: Your preprocessing code here
             # --------------------- #
 
-            logger.success(f"=> Preprocessing completed successfully")
+            logger.success("=> Preprocessing completed successfully")
             return data
         except (NameError, ValueError, TypeError, AttributeError, RuntimeError) as e:
             msg = f"I failed preprocessing the image with error: {e}"
