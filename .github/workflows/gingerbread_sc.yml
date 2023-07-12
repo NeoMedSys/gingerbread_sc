@@ -26,8 +26,6 @@ jobs:
           docker cp ginger:/gingerbread/coverage-badge.svg ./coverage-badge.svg
           docker cp ginger:/gingerbread/flake8-badge.svg ./flake8-badge.svg
           docker cp ginger:/gingerbread/tests-badge.svg ./tests-badge.svg
-          rm ./flake8.txt
-          rm ./junit.xml
       - uses: stefanzweifel/git-auto-commit-action@v4
 
   doc_building:
