@@ -28,11 +28,11 @@ pydantic = "^1.10.7"
 tqdm = "^4.65.0"
 libclang = "^16.0.0"
 arrow = "^1.2.3"
-mrsal = "^0.5.0a0"
 pyyaml = "^6.0"
 scikit-image = "^0.21.0"
 httpx = "^0.24.1"
 torch = "2.0.0"
+mrsal = "^0.6.2a0"
 
 
 [tool.poetry.group.dev.dependencies]
