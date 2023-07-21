@@ -30,6 +30,7 @@ class CentralProcessing(CPNeoTemplate):
         """Constructor for the central processing unit."""
         super().__init__()
         logger.info("Initializing central processing unit")
+        self.test_data = np.random.randn(32, 32, 32)  # Please make sure this data mimics your own data
 
     @timer
     def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:

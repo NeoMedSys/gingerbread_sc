@@ -5,7 +5,7 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
 import central_processing
 import data_download
 import numpy as np
-from xmodules.models.mock_model import MockModel
+from config.model_conf import MODELS
 
 
 class Test_General:
@@ -15,6 +15,12 @@ class Test_General:
         assert data_download
 
     def test_central_processing(self):
-        cpp = central_processing.CentralProcessing()
-        mock_data = np.random.randn(10, 10, 10)  # Please make sure this data mimics your own data
-        cpp.test_structure(data=mock_data)
+        for model_key in MODELS.keys():
+            model = MODELS[model_key]
+            cpp = central_processing.CentralProcessing()
+            preprocessed_data = cpp.preprocess(data=cpp.test_data)
+            assert isinstance(preprocessed_data, np.ndarray)
+            processed_data = cpp.predict_step(data=preprocessed_data, model=model)
+            assert isinstance(processed_data, np.ndarray)
+            postprocessed_data = cpp.postprocess(data=processed_data)
+            assert isinstance(postprocessed_data, np.ndarray)

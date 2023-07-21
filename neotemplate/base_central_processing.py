@@ -30,8 +30,6 @@ class CPNeoTemplate(nn.Module):
 
         # logger [color]
         logger.info("CentralProcessing initialized")
-        self.key_input: str = cfg.INPUT_KEY_IMAGE
-        self.key_label: str = cfg.INPUT_KEY_LABEL
         self.check_version()
 
     def save_hyperparams(self) -> NoReturn:
@@ -164,82 +162,7 @@ class CPNeoTemplate(nn.Module):
         except Exception:
             logger.exception("predict_step failed")
 
-    @beartype
-    def test_preproc(self, data: np.ndarray) -> np.ndarray:
-        """Test the preprocessing of the model.
 
-        Parameters:
-        ----------
-        data: np.ndarray
-            The data to be tested.
-
-        Returns:
-        -------
-        np.ndarray
-        """
-        data = self.preprocess(data=data)
-        return data
-
-    @beartype
-    def test_predict_step(self, data: np.ndarray) -> np.ndarray:
-        """Test the predict step of the model.
-
-        Parameters:
-        ----------
-        data: np.ndarray
-            The data to be tested.
-
-        Returns:
-        -------
-        np.ndarray
-        """
-        data = self.predict_step(data=data)
-        return data
-
-    @beartype
-    def test_postproc(self, data: np.ndarray) -> np.ndarray:
-        """Test the postprocessing of the model.
-
-        Parameters:
-        ----------
-        data: np.ndarray
-            The data to be tested.
-
-        Returns:
-        -------
-        np.ndarray
-        """
-        data = self.postprocess(data=data)
-        return data
-
-    def test_structure(self, data: np.ndarray) -> NoReturn:
-        """Test the structure of the model.
-
-        Parameters:
-        ----------
-        data: np.ndarray
-            The data to be tested.
-
-        Returns:
-        -------
-        None
-        """
-        logger.info("Testing the functions of the model")
-
-        try:
-            data = self.test_preproc(data=data)
-        except Exception:
-            logger.exception("test_preproc failed")
-
-        try:
-            data = self.test_predict_step(data=data)
-        except Exception:
-            logger.exception("predict_step failed")
-
-        try:
-            data = self.test_postproc(data=data)
-        except Exception:
-            logger.exception("postproc failed")
 
     def check_version(self):
         try:
