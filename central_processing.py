@@ -30,10 +30,14 @@ class CentralProcessing(CPNeoTemplate):
         """Constructor for the central processing unit."""
         super().__init__()
         logger.info("Initializing central processing unit")
-        self.test_data = np.random.randn(32, 32, 32)  # Please make sure this data mimics your own data
+        self.test_data = np.random.randn(
+            32, 32, 32
+        )  # Please make sure this data mimics your own data
 
     @timer
-    def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
+    def preprocess(
+        self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}
+    ) -> np.ndarray:
         """Preprocess the data before training/val/test/predict.
 
         Parameters
@@ -96,14 +100,14 @@ class CentralProcessing(CPNeoTemplate):
                 # TODO: Your prediction code here
                 # --------------------- #
 
-                logger.success(f"=> Prediction completed successfully")
+                logger.success("=> Prediction completed successfully")
                 return data
         except (
-                NameError,
-                ValueError,
-                TypeError,
-                AttributeError,
-                RuntimeError,
+            NameError,
+            ValueError,
+            TypeError,
+            AttributeError,
+            RuntimeError,
         ) as e:
             msg = f"I failed predicting the image with error: {e}"
             logger.exception(msg)
@@ -112,7 +116,9 @@ class CentralProcessing(CPNeoTemplate):
             logger.exception(msg)
 
     @timer
-    def postprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
+    def postprocess(
+        self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}
+    ) -> np.ndarray:
         """Postprocess the data after training/val/test/predict
 
         Parameters
@@ -144,11 +150,11 @@ class CentralProcessing(CPNeoTemplate):
             logger.success("=> Postprocessing completed successfully")
             return data
         except (
-                NameError,
-                ValueError,
-                TypeError,
-                AttributeError,
-                RuntimeError,
+            NameError,
+            ValueError,
+            TypeError,
+            AttributeError,
+            RuntimeError,
         ) as e:
             msg = f"I failed postprocessing with error {e}"
             logger.exception(msg)

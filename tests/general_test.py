@@ -9,7 +9,6 @@ from config.model_conf import MODELS
 
 
 class Test_General:
-
     def test_imports(self):
         assert central_processing
         assert data_download

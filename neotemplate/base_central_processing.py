@@ -12,7 +12,7 @@ from config import config as cfg
 
 
 class CPNeoTemplate(nn.Module):
-    """Central processing unit for the NeoTemplate. """
+    """Central processing unit for the NeoTemplate."""
 
     def __init__(self) -> NoReturn:
         """Constructor for the central processing unit
@@ -79,14 +79,13 @@ class CPNeoTemplate(nn.Module):
         # save with the state_dict and the hyperparameters
         logger.info(f"Saving checkpoint to {checkpoint_path}")
         torch.save(
-            {
-                "state_dict": self.state_dict(),
-                "hyperparameters": self.args
-            },
+            {"state_dict": self.state_dict(), "hyperparameters": self.args},
             checkpoint_path,
         )
 
-    def postprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
+    def postprocess(
+        self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}
+    ) -> np.ndarray:
         """Postprocess the data after training/val/test/predict
 
         Parameters
@@ -113,7 +112,9 @@ class CPNeoTemplate(nn.Module):
         except Exception as e:
             logger.error(f"Postprocessing failed with error {e}")
 
-    def preprocess(self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}) -> np.ndarray:
+    def preprocess(
+        self, data: np.ndarray, extras: Optional[Dict[str, Any]] = {}
+    ) -> np.ndarray:
         """Preprocess the data before training/val/test/predict
 
         Parameters
@@ -161,8 +162,6 @@ class CPNeoTemplate(nn.Module):
             raise NotImplementedError
         except Exception:
             logger.exception("predict_step failed")
-
-
 
     def check_version(self):
         try:

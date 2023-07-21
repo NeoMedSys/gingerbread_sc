@@ -15,7 +15,7 @@ def timer(orig_func: Callable):
     -------
     type
         elapsed runtime for the function.
-    
+
     """
 
     @wraps(orig_func)

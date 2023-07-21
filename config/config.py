@@ -15,8 +15,10 @@ REQUIRED_SHAPE = 3
 # EXTRAS
 DATA_SAVE_DIR = "./data"
 
-#github repo metadata
-PROJECTMETADATAURL = "https://raw.githubusercontent.com/NeoMedSys/gingerbread_sc/main/pyproject.toml"
+# github repo metadata
+PROJECTMETADATAURL = (
+    "https://raw.githubusercontent.com/NeoMedSys/gingerbread_sc/main/pyproject.toml"
+)
 
 
 class BaseModel(PydanticBaseModel):
