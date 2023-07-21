@@ -1,5 +1,4 @@
 import nox
-import os
 
 
 @nox.session()
@@ -29,6 +28,7 @@ def lint(session):
         "flake8",
         ".",
         "--exit-zero",
+        "--max-line-length=180",
         "--format=html",
         "--statistics",
         "--tee",

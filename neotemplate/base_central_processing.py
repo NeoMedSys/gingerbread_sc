@@ -6,7 +6,6 @@ import numpy as np
 import yaml
 import toml
 import requests
-from beartype import beartype
 
 from config import config as cfg
 
@@ -136,7 +135,7 @@ class CPNeoTemplate(nn.Module):
         np.ndarray
             the preprocessed data
         """
-        resolution = extras.get("resolution", None)
+        extras.get("resolution", None)
 
         try:
             raise NotImplementedError
