@@ -1,6 +1,6 @@
 import os, sys
 
-sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/..')
 
 import central_processing
 import data_download
@@ -9,6 +9,7 @@ from config.model_conf import MODELS
 
 
 class Test_General:
+
     def test_imports(self):
         assert central_processing
         assert data_download

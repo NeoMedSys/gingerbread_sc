@@ -1,0 +1,15 @@
+[style]
+based_on_style = google
+spaces_before_comment = 2
+indent_width: 4
+#split_before_logical_operator = true
+column_limit = 180
+allow_multiline_dictionary_keys= true
+#SPLIT_BEFORE_FIRST_ARGUMENT= true
+# -- --------------------------------
+# To enforce quote type
+#pip install unify
+#  For single quote
+#unify --in-place --quote="'"  fatty_realtime/fatty_realtime.py
+#  For double quote
+#unify --in-place --quote='"'  fatty_realtime/fatty_realtime.py

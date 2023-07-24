@@ -1,45 +1,45 @@
 [tool.poetry]
-name = "gingerbread"
-version = "0.2.6"
-description = "Researcher template that fits with NeoMedSys"
-authors = ["Martin Rovang <martinrovang@gmail.com>"]
-readme = "README.md"
+name = 'gingerbread'
+version = '0.2.6'
+description = 'Researcher template that fits with NeoMedSys'
+authors = ['Martin Rovang <martinrovang@gmail.com>']
+readme = 'README.md'
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.12"
-numpy = "^1.24.2"
-pymedquery = "^2.11.3b0"
-scikit-learn = "^1.2.1"
-monai = "^1.1.0"
-blosc = "^1.11.1"
-h5py = "^3.8.0"
-beaker = "^1.12.1"
-nibabel = "^5.0.1"
-toml = "^0.10.2"
-requests = "^2.28.2"
-furo = "^2022.12.7"
-beartype = "^0.12.0"
-loguru = "^0.6.0"
-matplotlib = "^3.7.1"
-simpleitk = "^2.2.1"
-uvicorn = "^0.21.1"
-fastapi = "^0.95.1"
-pydantic = "^1.10.7"
-tqdm = "^4.65.0"
-libclang = "^16.0.0"
-arrow = "^1.2.3"
-pyyaml = "^6.0"
-scikit-image = "^0.21.0"
-httpx = "^0.24.1"
-torch = "2.0.0"
-mrsal = "^0.6.2a0"
+python = '>=3.10,<3.12'
+numpy = '^1.24.2'
+pymedquery = '^2.11.3b0'
+scikit-learn = '^1.2.1'
+monai = '^1.1.0'
+blosc = '^1.11.1'
+h5py = '^3.8.0'
+beaker = '^1.12.1'
+nibabel = '^5.0.1'
+toml = '^0.10.2'
+requests = '^2.28.2'
+furo = '^2022.12.7'
+beartype = '^0.12.0'
+loguru = '^0.6.0'
+matplotlib = '^3.7.1'
+simpleitk = '^2.2.1'
+uvicorn = '^0.21.1'
+fastapi = '^0.95.1'
+pydantic = '^1.10.7'
+tqdm = '^4.65.0'
+libclang = '^16.0.0'
+arrow = '^1.2.3'
+pyyaml = '^6.0'
+scikit-image = '^0.21.0'
+httpx = '^0.24.1'
+torch = '2.0.0'
+mrsal = '^0.6.2a0'
 
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.4.0"
-pytest-mock = "^3.11.1"
-coverage = "^7.2.7"
+pytest = '^7.4.0'
+pytest-mock = '^3.11.1'
+coverage = '^7.2.7'
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ['poetry-core']
+build-backend = 'poetry.core.masonry.api'
