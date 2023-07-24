@@ -21,7 +21,6 @@ jobs:
         id: docker_log
         run: |
           docker compose up -d cpu
-          docker exec ginger poetry install
           docker exec ginger sh ./tests/tests.sh
           docker cp ginger:/gingerbread/badges/ ./badges/
           docker cp ginger:/gingerbread/reports/ ./reports/

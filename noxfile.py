@@ -14,31 +14,6 @@ def clean(session):
 @nox.session()
 def tests(session):
     session.run(
-        'mkdir',
-        './badges',
-        external=True,
-    )
-    session.run(
-        'mkdir',
-        './reports',
-        external=True,
-    )
-    session.run(
-        'mkdir',
-        './reports/junit',
-        external=True,
-    )
-    session.run(
-        'mkdir',
-        './reports/flake8',
-        external=True,
-    )
-    session.run(
-        'mkdir',
-        './reports/coverage',
-        external=True,
-    )
-    session.run(
         'poetry',
         'install',
         '--with',
