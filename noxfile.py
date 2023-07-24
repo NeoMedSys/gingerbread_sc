@@ -76,6 +76,14 @@ def tests(session):
         external=True,
     )
     session.run(
+        'cp',
+        '-R',
+        'htmlcov/',
+        './reports/coverage',
+        external=True,
+    )
+    
+    session.run(
         'rm',
         '-R',
         'htmlcov/',
