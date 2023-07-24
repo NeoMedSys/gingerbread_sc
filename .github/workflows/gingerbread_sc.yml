@@ -23,8 +23,8 @@ jobs:
           docker compose up -d cpu
           docker exec ginger poetry install
           docker exec ginger sh ./tests/tests.sh
-          docker cp test:/gingerbread/badges/ ./badges/
-          docker cp test:/gingerbread/reports/ ./reports/
+          docker cp ginger:/gingerbread/badges/ ./badges/
+          docker cp ginger:/gingerbread/reports/ ./reports/
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           # Optional. Commit message for the created commit.
