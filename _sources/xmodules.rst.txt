@@ -8,8 +8,6 @@ Subpackages
    :maxdepth: 4
 
    xmodules.models
-   xmodules.optimizers
-   xmodules.schedulers
 
 Module contents
 ---------------

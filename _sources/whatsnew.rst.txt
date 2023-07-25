@@ -1,6 +1,10 @@
 What is new?
 ============
 
+v0.2.6
+------
+* New test structure made in anticipation of NeoGate
+
 v0.2.5
 ------
 * Added "set_model" function and additional exceptions
