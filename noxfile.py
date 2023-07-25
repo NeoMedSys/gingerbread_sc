@@ -126,6 +126,11 @@ def gen_badge(session):
         './reports/coverage',
         external=True,
     )
+    session.run(
+        'ls',
+        './reports/flake8',
+        external=True,
+    )
 
     session.run(
         'genbadge',
