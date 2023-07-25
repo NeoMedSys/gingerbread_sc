@@ -22,6 +22,7 @@ Add all other code needed in a structured way, use config files and other projec
 ```bash
 neogate test -p /gingerbread
 ```
+
 .. important::
     The folder needs to be named *gingerbread*, this means basically removing *_sc* from the folder name.
 
@@ -30,6 +31,7 @@ If the code is working properly, researchers should see the following output:
 ```bash
 Test passed!
 ```
+
 3. The model will the be built appropriately and uploaded to the NeoMedSys Dockerhub repository. To do this, researchers should execute the following command in the terminal:
 
 .. important::
@@ -37,3 +39,5 @@ Test passed!
 
 4. Researchers should then create a new GitHub repository for their model and push the code to the new repository.
 
+.. image:: https://github.com/NeoMedSys/gingerbread_sc/blob/main/docs/design1.svg?raw=true
+    :align: center
