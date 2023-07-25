@@ -113,16 +113,17 @@ def gen_badge(session):
 
     session.run(
         'ls',
-        external=True,
-    )
-    session.run(
-        'ls',
         './reports',
         external=True,
     )
     session.run(
         'ls',
         './reports/junit',
+        external=True,
+    )
+    session.run(
+        'ls',
+        './reports/coverage',
         external=True,
     )
 
