@@ -23,7 +23,7 @@ def timer(orig_func: Callable):
         t1 = time()
         result = orig_func(*args, **kwargs)
         t2 = time() - t1
-        logger.info("Runtime for {}: {} sec".format(orig_func.__name__, t2))
+        logger.info('Runtime for {}: {} sec'.format(orig_func.__name__, t2))
         return result
 
     return wrapper

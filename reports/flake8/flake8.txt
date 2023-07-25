@@ -1,0 +1,57 @@
+./central_processing.py::4,1::F811::redefinition of unused 'Dict' from line 2
+./central_processing.py::4,1::F811::redefinition of unused 'Any' from line 2
+./central_processing.py::55,181::E501::line too long (193 > 180 characters)
+./central_processing.py::136,181::E501::line too long (193 > 180 characters)
+./data_download.py::38,181::E501::line too long (183 > 180 characters)
+./neotemplate/base_central_processing.py::103,181::E501::line too long (193 > 180 characters)
+./neotemplate/base_central_processing.py::130,181::E501::line too long (193 > 180 characters)
+./neotemplate/base_central_processing.py::179,181::E501::line too long (209 > 180 characters)
+./noxfile.py::161,6::W292::no newline at end of file
+./tests/general_test.py::1,10::E401::multiple imports on one line
+./tests/general_test.py::5,1::E402::module level import not at top of file
+./tests/general_test.py::6,1::E402::module level import not at top of file
+./tests/general_test.py::7,1::E402::module level import not at top of file
+./tests/general_test.py::8,1::E402::module level import not at top of file
+1     E401 multiple imports on one line
+4     E402 module level import not at top of file
+6     E501 line too long (193 > 180 characters)
+2     F811 redefinition of unused 'Dict' from line 2
+1     W292 no newline at end of file
+./central_processing.py::4,1::F811::redefinition of unused 'Dict' from line 2
+./central_processing.py::4,1::F811::redefinition of unused 'Any' from line 2
+./central_processing.py::55,181::E501::line too long (193 > 180 characters)
+./central_processing.py::136,181::E501::line too long (193 > 180 characters)
+./data_download.py::38,181::E501::line too long (183 > 180 characters)
+./neotemplate/base_central_processing.py::103,181::E501::line too long (193 > 180 characters)
+./neotemplate/base_central_processing.py::130,181::E501::line too long (193 > 180 characters)
+./neotemplate/base_central_processing.py::179,181::E501::line too long (209 > 180 characters)
+./noxfile.py::136,6::W292::no newline at end of file
+./tests/general_test.py::1,10::E401::multiple imports on one line
+./tests/general_test.py::5,1::E402::module level import not at top of file
+./tests/general_test.py::6,1::E402::module level import not at top of file
+./tests/general_test.py::7,1::E402::module level import not at top of file
+./tests/general_test.py::8,1::E402::module level import not at top of file
+1     E401 multiple imports on one line
+4     E402 module level import not at top of file
+6     E501 line too long (193 > 180 characters)
+2     F811 redefinition of unused 'Dict' from line 2
+1     W292 no newline at end of file
+./central_processing.py::4,1::F811::redefinition of unused 'Dict' from line 2
+./central_processing.py::4,1::F811::redefinition of unused 'Any' from line 2
+./central_processing.py::55,181::E501::line too long (193 > 180 characters)
+./central_processing.py::136,181::E501::line too long (193 > 180 characters)
+./data_download.py::38,181::E501::line too long (183 > 180 characters)
+./neotemplate/base_central_processing.py::103,181::E501::line too long (193 > 180 characters)
+./neotemplate/base_central_processing.py::130,181::E501::line too long (193 > 180 characters)
+./neotemplate/base_central_processing.py::179,181::E501::line too long (209 > 180 characters)
+./noxfile.py::136,6::W292::no newline at end of file
+./tests/general_test.py::1,10::E401::multiple imports on one line
+./tests/general_test.py::5,1::E402::module level import not at top of file
+./tests/general_test.py::6,1::E402::module level import not at top of file
+./tests/general_test.py::7,1::E402::module level import not at top of file
+./tests/general_test.py::8,1::E402::module level import not at top of file
+1     E401 multiple imports on one line
+4     E402 module level import not at top of file
+6     E501 line too long (193 > 180 characters)
+2     F811 redefinition of unused 'Dict' from line 2
+1     W292 no newline at end of file

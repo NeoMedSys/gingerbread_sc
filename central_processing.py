@@ -29,7 +29,7 @@ class CentralProcessing(CPNeoTemplate):
     def __init__(self) -> NoReturn:
         """Constructor for the central processing unit."""
         super().__init__()
-        logger.info("Initializing central processing unit")
+        logger.info('Initializing central processing unit')
         self.test_data = np.random.randn(
             32, 32, 32
         )  # Please make sure this data mimics your own data
@@ -61,19 +61,19 @@ class CentralProcessing(CPNeoTemplate):
         """
 
         try:
-            logger.info(f"Preprocessing data with shape {data.shape}")
+            logger.info(f'Preprocessing data with shape {data.shape}')
 
             # --------------------- #
             # TODO: Your preprocessing code here
             # --------------------- #
 
-            logger.success("=> Preprocessing completed successfully")
+            logger.success('=> Preprocessing completed successfully')
             return data
         except (NameError, ValueError, TypeError, AttributeError, RuntimeError) as e:
-            msg = f"I failed preprocessing the image with error: {e}"
+            msg = f'I failed preprocessing the image with error: {e}'
             logger.exception(msg)
         except Exception as e:
-            msg = f"I failed preprocessing the image. Unexpected exception: type={type(e)}, e:{e}"
+            msg = f'I failed preprocessing the image. Unexpected exception: type={type(e)}, e:{e}'
             logger.exception(msg)
 
     @timer
@@ -94,13 +94,13 @@ class CentralProcessing(CPNeoTemplate):
         try:
             self.eval()
             with torch.no_grad():
-                logger.info(f"Predicting data with shape {data.shape}")
+                logger.info(f'Predicting data with shape {data.shape}')
                 data = model(data)
                 # --------------------- #
                 # TODO: Your prediction code here
                 # --------------------- #
 
-                logger.success("=> Prediction completed successfully")
+                logger.success('=> Prediction completed successfully')
                 return data
         except (
             NameError,
@@ -109,10 +109,10 @@ class CentralProcessing(CPNeoTemplate):
             AttributeError,
             RuntimeError,
         ) as e:
-            msg = f"I failed predicting the image with error: {e}"
+            msg = f'I failed predicting the image with error: {e}'
             logger.exception(msg)
         except Exception as e:
-            msg = f"I failed predicting the image. Unexpected exception: type={type(e)}, e:{e}"
+            msg = f'I failed predicting the image. Unexpected exception: type={type(e)}, e:{e}'
             logger.exception(msg)
 
     @timer
@@ -141,13 +141,13 @@ class CentralProcessing(CPNeoTemplate):
             the postprocessed data
         """
         try:
-            logger.info(f"Postprocessing data with shape {data.shape}")
+            logger.info(f'Postprocessing data with shape {data.shape}')
 
             # --------------------- #
             # TODO: Your postprocessing code here
             # --------------------- #
 
-            logger.success("=> Postprocessing completed successfully")
+            logger.success('=> Postprocessing completed successfully')
             return data
         except (
             NameError,
@@ -156,8 +156,8 @@ class CentralProcessing(CPNeoTemplate):
             AttributeError,
             RuntimeError,
         ) as e:
-            msg = f"I failed postprocessing with error {e}"
+            msg = f'I failed postprocessing with error {e}'
             logger.exception(msg)
         except Exception as e:
-            msg = f"I failed postprocessing the image. Unexpected exception: type={type(e)}, e:{e}"
+            msg = f'I failed postprocessing the image. Unexpected exception: type={type(e)}, e:{e}'
             logger.exception(msg)

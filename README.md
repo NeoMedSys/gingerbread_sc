@@ -1,7 +1,8 @@
 # Gingerbread
-![Coverage](./coverage-badge.svg)
-![Flake8](./flake8-badge.svg)
-![Test](./tests-badge.svg)
+
+![Coverage](./badges/rt-coverage-badge.svg)
+![Flake8](./badges/rt-flake8-badge.svg)
+![Test](./badges/rt-tests-badge.svg)
 
 Template solution for model creation and data handling for NeoMedSys
 

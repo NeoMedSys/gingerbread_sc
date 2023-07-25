@@ -21,7 +21,7 @@ class MedqueryDataDownloader:
 
     def __init__(self):
         self.mq = pymq.PyMedQuery()
-        logger.info("MedqueryDataDownloader initialized.")
+        logger.info('MedqueryDataDownloader initialized.')
 
     def download_data(
         self,
@@ -66,14 +66,14 @@ class MedqueryDataDownloader:
 
             if not os.path.exists(cfg.DATA_SAVE_DIR):
                 os.makedirs(cfg.DATA_SAVE_DIR)
-            logger.info(f"Downloading data from MedQuery for project {project_id}")
-            with h5py.File(f"{cfg.DATA_SAVE_DIR}/{project_id}.hdf5", "w") as f:
-                for batch in tqdm(large_data, desc="Saving data to disk..."):
+            logger.info(f'Downloading data from MedQuery for project {project_id}')
+            with h5py.File(f'{cfg.DATA_SAVE_DIR}/{project_id}.hdf5', 'w') as f:
+                for batch in tqdm(large_data, desc='Saving data to disk...'):
                     for key, value in batch.items():
                         f.create_dataset(key, data=value)
 
         except ValueError:
-            logger.exception("Error while downloading data from MedQuery")
+            logger.exception('Error while downloading data from MedQuery')
 
     def hdf5_to_nifti_all(self, hdf5_path: str, output_dir: str) -> NoReturn:
         """Convert hdf5 file to nifti file.
@@ -97,18 +97,18 @@ class MedqueryDataDownloader:
             # make output directory if it does not exist
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
-            with h5py.File(hdf5_path, "r") as hdf5:
+            with h5py.File(hdf5_path, 'r') as hdf5:
                 for series_uid, value_ in hdf5.items():
-                    if "affine" in series_uid:
+                    if 'affine' in series_uid:
                         continue
-                    affine_uid = series_uid.replace("series", "affine")
+                    affine_uid = series_uid.replace('series', 'affine')
                     data = hdf5[series_uid]
                     affine = hdf5[affine_uid]
-                    logger.info(f"Converting {series_uid} file to nifti file...")
+                    logger.info(f'Converting {series_uid} file to nifti file...')
                     img = nib.Nifti1Image(data, affine)
-                    nib.save(img, os.path.join(output_dir, f"{series_uid}.nii.gz"))
+                    nib.save(img, os.path.join(output_dir, f'{series_uid}.nii.gz'))
         except IndexError:
-            logger.exception("Error with hdf5 indexing")
+            logger.exception('Error with hdf5 indexing')
 
     def hdf5_to_nifti_single(
         self, hdf5_path: str, output_dir: str, series_uid: str
@@ -133,12 +133,12 @@ class MedqueryDataDownloader:
         This method assumed that the hdf5 file contains affine matrices and data. If this is not the case, the method will not work.
         """
         try:
-            with h5py.File(hdf5_path, "r") as hdf5:
+            with h5py.File(hdf5_path, 'r') as hdf5:
                 data = hdf5[series_uid]
-                affine_uid = series_uid.replace("series", "affine")
+                affine_uid = series_uid.replace('series', 'affine')
                 affine = hdf5[affine_uid]
-                logger.info(f"Converting {series_uid} file to nifti file...")
+                logger.info(f'Converting {series_uid} file to nifti file...')
                 img = pymq.utils.convert2nii(img=data, affine=affine)
-                nib.save(img, os.path.join(output_dir, f"{series_uid}.nii.gz"))
+                nib.save(img, os.path.join(output_dir, f'{series_uid}.nii.gz'))
         except Exception:
-            logger.error("Error while converting hdf5 to nifti")
+            logger.error('Error while converting hdf5 to nifti')
