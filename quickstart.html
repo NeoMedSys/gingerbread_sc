@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Using Medquery" href="medquery.html" /><link rel="prev" title="What is new?" href="whatsnew.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>Quickstart - Gingerbread 0.2.6 documentation</title>
+        <title>Quickstart - Gingerbread 0.2.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Gingerbread 0.2.6 documentation</div></a>
+      <a href="index.html"><div class="brand">Gingerbread 0.2.7 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="_static/63ecff6168e0e.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gingerbread 0.2.6 documentation</span>
+  <span class="sidebar-brand-text">Gingerbread 0.2.7 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -218,68 +218,43 @@
         <article role="main">
           <section id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h1>
-<ol class="arabic">
-<li><p>Make sure you are logged in with a dockerhub account that can access our private dockerhub repository.</p>
-<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">login</span> <span class="pre">-u</span> <span class="pre">gingerbread01</span></code></p>
-</li>
+<p>To get started with Gingerbread, researchers are required to follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Clone the GitHub repository for the Gingerbread source files by executing the following command in the terminal (Note: Git needs to be installed):</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/NeoMedSys/gingerbread_sc.git</span>
+<span class="pre">`</span></code></p>
+<ol class="arabic simple">
+<li><p>Once the repository is cloned, researchers should make necessary alterations to the <em>central_processing.py</em> file, which contains the <em>prediction_step,</em> <em>preprocessing,</em> and <em>postprocessing</em> functions.</p></li>
 </ol>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>You need a password to login, please contact us if you don’t have one.</p>
+<p>In the <em>central_processing.py</em> file, researchers must fill in the required code specific to their model to ensure proper functionality.</p>
 </div>
-<ol class="arabic" start="2">
-<li><p>Download the source code from github.</p>
-<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/NeoMedSys/gingerbread_sc.git</span></code></p>
-</li>
-<li><p>Make sure you are in the root directory of the project:</p>
-<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">gingerbread_sc</span></code></p>
-</li>
+<p>Add all other code needed in a structured way, use config files and other project structures as baseline of your implementation. Tests will be ran to ensure that the code is working properly with <em>NeoGate</em> before uploading.</p>
+<ol class="arabic simple" start="2">
+<li><p>After completing the necessary changes to the <em>central_processing.py</em> file use NeoGate to confirm that the code is working properly.</p></li>
 </ol>
-<ol class="arabic" start="5">
-<li><p>Run docker compose to start the container:</p>
-<p>with cpu: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">cpu</span></code></p>
-<p>with gpu: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">gpu</span></code></p>
-</li>
-<li><p>Open a terminal in the container:</p>
-<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">ginger</span> <span class="pre">/bin/bash</span></code></p>
-</li>
+<p><code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">neogate</span> <span class="pre">test</span> <span class="pre">-p</span> <span class="pre">/gingerbread</span>
+<span class="pre">`</span></code>
+.. important:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">folder</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">named</span> <span class="o">*</span><span class="n">gingerbread</span><span class="o">*</span><span class="p">,</span> <span class="n">this</span> <span class="n">means</span> <span class="n">basically</span> <span class="n">removing</span> <span class="o">*</span><span class="n">_sc</span><span class="o">*</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">folder</span> <span class="n">name</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>If the code is working properly, researchers should see the following output:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">Test</span> <span class="pre">passed!</span>
+<span class="pre">`</span></code>
+3. The model will the be built appropriately and uploaded to the NeoMedSys Dockerhub repository. To do this, researchers should execute the following command in the terminal:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You need to have docker installed on your machine for this process to work.</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Researchers should then create a new GitHub repository for their model and push the code to the new repository.</p></li>
 </ol>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Unix systems use a very well defined user system with different permission levels. You might end up with some permission problems if you make new files inside the container and try to access them from your host machine. To avoid this, make sure you always create new files from the host machine and not from inside the container. If the docker container creates the files then you will need to change the permissions of the files to be able to access them from the host machine. To do this, run the following command from the host machine:</p>
-<p>Get your user id: <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-u</span></code> on host machine and <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-g</span></code> on host machine</p>
-<p>Change the permissions of the files: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chown</span> <span class="pre">-R</span> <span class="pre">&lt;user_id&gt;:&lt;group_id&gt;</span> <span class="pre">&lt;file_name&gt;</span></code></p>
-<p>for folders: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chown</span> <span class="pre">-R</span> <span class="pre">&lt;user_id&gt;:&lt;group_id&gt;</span> <span class="pre">&lt;folder_name&gt;</span></code></p>
-<p>We are working on a solution to make this process easier.</p>
-</div>
-<ol class="arabic" start="7">
-<li><p>Add medquery environment:</p>
-<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/certs/.env</span></code></p>
-</li>
-<li><p>Install the poetry environment:</p>
-<p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code></p>
-</li>
-</ol>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>If you want to use pytorch-lightning, you will need to add it with <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">pytorch-lightning</span></code>. If you want to use CLI version of pytorch-lightning, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">pytorch-lightning[extra]</span></code>.
-You can find the lightning template in /lightning with the corresponding data loader templates.</p>
-</div>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>The docker image contains a poetry environment:</p>
-<p>To run arbitrary code use: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">python</span> <span class="pre">SOMEFILE.py</span></code>, this will run the code in the poetry environment. To install new packages, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&lt;package&gt;</span></code> and to remove packages use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">remove</span> <span class="pre">&lt;package&gt;</span></code>. Read more on poetry here: <a class="reference external" href="https://python-poetry.org/docs/basic-usage/">https://python-poetry.org/docs/basic-usage/</a>.</p>
-</div>
-<p>You are now ready to start coding!</p>
-<p>Here is a breakdown of the files in the project:</p>
-<p><code class="docutils literal notranslate"><span class="pre">central_processing.py</span></code>: This is the model template, it uses the basic <code class="docutils literal notranslate"><span class="pre">pytorch.nn</span></code> module to define the model. You can work as you would normally do with <code class="docutils literal notranslate"><span class="pre">pytorch</span></code>, the only difference is that you need to define the <code class="docutils literal notranslate"><span class="pre">preprocessing</span></code>, <code class="docutils literal notranslate"><span class="pre">postprocessing</span></code> and <code class="docutils literal notranslate"><span class="pre">predict_step</span></code>. We will be using these functions in production, so make sure they are defined correctly and do not change their method names.</p>
-<p><code class="docutils literal notranslate"><span class="pre">cli_main.py</span></code>: This a template for using cli arguments. You can costumize as you want and if you want to use it.</p>
-<p><code class="docutils literal notranslate"><span class="pre">data_download.py</span></code>: With this you can download data from medquery, check out the documentation here: <a class="reference internal" href="medquery.html"><span class="doc">Using Medquery</span></a></p>
-<p><code class="docutils literal notranslate"><span class="pre">central_processing_handler.py</span></code>: This is the bridge between the researchers model and production.</p>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>Do not make any changes to <code class="docutils literal notranslate"><span class="pre">central_processing_handler.py</span></code>.</p>
-</div>
 </section>
 
         </article>

@@ -1,6 +1,10 @@
 What is new?
 ============
 
+v0.2.7
+------
+* Updated Quickstart guide, releasing only inference version of Gingerbread as of now.
+
 v0.2.6
 ------
 * New test structure made in anticipation of NeoGate

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="central_processing module" href="central_processing.html" /><link rel="prev" title="Code structure" href="code_structure.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>gingerbread_sc - Gingerbread 0.2.7 documentation</title>
+        <title>Quickstart - Gingerbread 0.2.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -158,13 +158,13 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="whatsnew.html">What is new?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="medquery.html">Using Medquery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conduct_and_info.html">General Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_structure.html">Code structure</a></li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">gingerbread_sc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">gingerbread_sc</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="central_processing.html">central_processing module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_download.html">data_download module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="neotemplate.html">neotemplate package</a></li>
@@ -216,84 +216,69 @@
           </label>
         </div>
         <article role="main">
-          <section id="gingerbread-sc">
-<h1>gingerbread_sc<a class="headerlink" href="#gingerbread-sc" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="central_processing.html">central_processing module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="central_processing.html#central_processing.CentralProcessing"><code class="docutils literal notranslate"><span class="pre">CentralProcessing</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="central_processing.html#central_processing.CentralProcessing.postprocess"><code class="docutils literal notranslate"><span class="pre">CentralProcessing.postprocess()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="central_processing.html#central_processing.CentralProcessing.predict_step"><code class="docutils literal notranslate"><span class="pre">CentralProcessing.predict_step()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="central_processing.html#central_processing.CentralProcessing.preprocess"><code class="docutils literal notranslate"><span class="pre">CentralProcessing.preprocess()</span></code></a></li>
-</ul>
+          <section id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h1>
+<ol class="arabic">
+<li><p>Make sure you are logged in with a dockerhub account that can access our private dockerhub repository.</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">login</span> <span class="pre">-u</span> <span class="pre">gingerbread01</span></code></p>
 </li>
-</ul>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You need a password to login, please contact us if you don’t have one.</p>
+</div>
+<ol class="arabic" start="2">
+<li><p>Download the source code from github.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/NeoMedSys/gingerbread_sc.git</span></code></p>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="data_download.html">data_download module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader.mq"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.mq</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader.download_data"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.download_data()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader.hdf5_to_nifti_all"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.hdf5_to_nifti_all()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_download.html#data_download.MedqueryDataDownloader.hdf5_to_nifti_single"><code class="docutils literal notranslate"><span class="pre">MedqueryDataDownloader.hdf5_to_nifti_single()</span></code></a></li>
-</ul>
+<li><p>Make sure you are in the root directory of the project:</p>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">gingerbread_sc</span></code></p>
 </li>
-</ul>
+</ol>
+<ol class="arabic" start="5">
+<li><p>Run docker compose to start the container:</p>
+<p>with cpu: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">cpu</span></code></p>
+<p>with gpu: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">gpu</span></code></p>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="neotemplate.html">neotemplate package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="neotemplate.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="neotemplate.html#module-neotemplate.base_central_processing">neotemplate.base_central_processing module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.check_version"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.check_version()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.load_from_checkpoint"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.load_from_checkpoint()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.postprocess"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.postprocess()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.predict_step"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.predict_step()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.preprocess"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.preprocess()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.save_checkpoint"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.save_checkpoint()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="neotemplate.html#neotemplate.base_central_processing.CPNeoTemplate.save_hyperparams"><code class="docutils literal notranslate"><span class="pre">CPNeoTemplate.save_hyperparams()</span></code></a></li>
-</ul>
+<li><p>Open a terminal in the container:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">ginger</span> <span class="pre">/bin/bash</span></code></p>
 </li>
-</ul>
+</ol>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Unix systems use a very well defined user system with different permission levels. You might end up with some permission problems if you make new files inside the container and try to access them from your host machine. To avoid this, make sure you always create new files from the host machine and not from inside the container. If the docker container creates the files then you will need to change the permissions of the files to be able to access them from the host machine. To do this, run the following command from the host machine:</p>
+<p>Get your user id: <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-u</span></code> on host machine and <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-g</span></code> on host machine</p>
+<p>Change the permissions of the files: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chown</span> <span class="pre">-R</span> <span class="pre">&lt;user_id&gt;:&lt;group_id&gt;</span> <span class="pre">&lt;file_name&gt;</span></code></p>
+<p>for folders: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">chown</span> <span class="pre">-R</span> <span class="pre">&lt;user_id&gt;:&lt;group_id&gt;</span> <span class="pre">&lt;folder_name&gt;</span></code></p>
+<p>We are working on a solution to make this process easier.</p>
+</div>
+<ol class="arabic" start="7">
+<li><p>Add medquery environment:</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/certs/.env</span></code></p>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="neotemplate.html#module-neotemplate">Module contents</a></li>
-</ul>
+<li><p>Install the poetry environment:</p>
+<p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code></p>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="noxfile.html">noxfile module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tests.html">tests package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests.general_test">tests.general_test module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.general_test.Test_General"><code class="docutils literal notranslate"><span class="pre">Test_General</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.general_test.Test_General.test_central_processing"><code class="docutils literal notranslate"><span class="pre">Test_General.test_central_processing()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.general_test.Test_General.test_imports"><code class="docutils literal notranslate"><span class="pre">Test_General.test_imports()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils.helpers">utils.helpers module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utils.html#utils.helpers.timer"><code class="docutils literal notranslate"><span class="pre">timer()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#module-utils">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="xmodules.html">xmodules package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="xmodules.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="xmodules.models.html">xmodules.models package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="xmodules.models.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="xmodules.models.html#module-xmodules.models.mock_model">xmodules.models.mock_model module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="xmodules.models.html#module-xmodules.models">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="xmodules.html#module-xmodules">Module contents</a></li>
-</ul>
-</li>
-</ul>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you want to use pytorch-lightning, you will need to add it with <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">pytorch-lightning</span></code>. If you want to use CLI version of pytorch-lightning, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">pytorch-lightning[extra]</span></code>.
+You can find the lightning template in /lightning with the corresponding data loader templates.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The docker image contains a poetry environment:</p>
+<p>To run arbitrary code use: <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">python</span> <span class="pre">SOMEFILE.py</span></code>, this will run the code in the poetry environment. To install new packages, use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&lt;package&gt;</span></code> and to remove packages use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">remove</span> <span class="pre">&lt;package&gt;</span></code>. Read more on poetry here: <a class="reference external" href="https://python-poetry.org/docs/basic-usage/">https://python-poetry.org/docs/basic-usage/</a>.</p>
+</div>
+<p>You are now ready to start coding!</p>
+<p>Here is a breakdown of the files in the project:</p>
+<p><code class="docutils literal notranslate"><span class="pre">central_processing.py</span></code>: This is the model template, it uses the basic <code class="docutils literal notranslate"><span class="pre">pytorch.nn</span></code> module to define the model. You can work as you would normally do with <code class="docutils literal notranslate"><span class="pre">pytorch</span></code>, the only difference is that you need to define the <code class="docutils literal notranslate"><span class="pre">preprocessing</span></code>, <code class="docutils literal notranslate"><span class="pre">postprocessing</span></code> and <code class="docutils literal notranslate"><span class="pre">predict_step</span></code>. We will be using these functions in production, so make sure they are defined correctly and do not change their method names.</p>
+<p><code class="docutils literal notranslate"><span class="pre">cli_main.py</span></code>: This a template for using cli arguments. You can costumize as you want and if you want to use it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">data_download.py</span></code>: With this you can download data from medquery, check out the documentation here: <a class="reference internal" href="medquery.html"><span class="doc">Using Medquery</span></a></p>
+<p><code class="docutils literal notranslate"><span class="pre">central_processing_handler.py</span></code>: This is the bridge between the researchers model and production.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not make any changes to <code class="docutils literal notranslate"><span class="pre">central_processing_handler.py</span></code>.</p>
 </div>
 </section>
 
@@ -302,26 +287,8 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="central_processing.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">central_processing module</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="code_structure.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Code structure</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
