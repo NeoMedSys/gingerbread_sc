@@ -81,6 +81,8 @@ docs/*
 !docs/conduct_and_info.rst
 !docs/whatsnew.rst
 !docs/code_structure.rst
+!docs/quickstart_legacy_running_compose.rst
+!docs/design1.svg
 # PyBuilder
 target/
 
