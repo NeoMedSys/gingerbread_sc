@@ -14,10 +14,6 @@ def clean(session):
 @nox.session()
 def tests(session):
     session.run(
-        'ls',
-        external=True,
-    )
-    session.run(
         'poetry',
         'install',
         '--with',
@@ -28,7 +24,7 @@ def tests(session):
         'poetry',
         'run',
         'pytest',
-        '/tests',
+        './tests',
         '--junitxml=./reports/junit/junit.xml',
         external=True,
     )
@@ -40,10 +36,10 @@ def tests(session):
         'run',
         '--source=.',
         '--data-file',
-        '/.coverage',
+        './.coverage',
         '-m',
         'pytest',
-        '/tests',
+        './tests',
         external=True,
     )
     session.run(
@@ -70,20 +66,20 @@ def tests(session):
     session.run(
         'mv',
         '.coverage',
-        '/reports/coverage',
+        './reports/coverage',
         external=True,
     )
     session.run(
         'mv',
         'coverage.xml',
-        '/reports/coverage',
+        './reports/coverage',
         external=True,
     )
     session.run(
         'cp',
         '-R',
         'htmlcov/',
-        '/reports/coverage',
+        './reports/coverage',
         external=True,
     )
     
@@ -107,7 +103,7 @@ def lint(session):
         '--statistics',
         '--tee',
         '--output-file',
-        '/reports/flake8/flake8.txt',
+        './reports/flake8/flake8.txt',
     )
 
 
@@ -116,26 +112,41 @@ def gen_badge(session):
     session.install('genbadge[tests,coverage,flake8]')
 
     session.run(
+        'ls',
+        external=True,
+    )
+    session.run(
+        'ls',
+        './reports',
+        external=True,
+    )
+    session.run(
+        'ls',
+        './reports/junit',
+        external=True,
+    )
+
+    session.run(
         'genbadge',
         'tests',
         '-i',
-        '/reports/junit/junit.xml',
+        './reports/junit/junit.xml',
         '-o',
-        '/badges/rt-tests-badge.svg',
+        './badges/rt-tests-badge.svg',
     )
     session.run(
         'genbadge',
         'coverage',
         '-i',
-        '/reports/coverage/coverage.xml',
+        './reports/coverage/coverage.xml',
         '-o',
-        '/badges/rt-coverage-badge.svg',
+        './badges/rt-coverage-badge.svg',
     )
     session.run(
         'genbadge',
         'flake8',
         '-i',
-        '/reports/flake8/flake8.txt',
+        './reports/flake8/flake8.txt',
         '-o',
-        '/badges/rt-flake8-badge.svg',
+        './badges/rt-flake8-badge.svg',
     )
