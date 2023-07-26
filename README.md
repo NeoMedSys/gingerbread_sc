@@ -1,5 +1,6 @@
 # Gingerbread
 
+![Gingerbread-Version: 0.2.7](https://img.shields.io/badge/Gingerbread-0.2.7-informational?style=flat-square)
 ![Coverage](./badges/rt-coverage-badge.svg)
 ![Flake8](./badges/rt-flake8-badge.svg)
 ![Test](./badges/rt-tests-badge.svg)
