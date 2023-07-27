@@ -3,11 +3,14 @@ from typing import Dict, Any
 import numpy as np
 from beartype.typing import Dict, Optional, Any, NoReturn
 from loguru import logger
+import sys
 
 from utils.helpers import timer
 from config import config
 from neotemplate.base_central_processing import CPNeoTemplate
 
+
+logger.add(sys.stdout, format=" level={level} | {time:YYYY-MM-DD at HH:mm:ss} | {message}", level="INFO")
 
 class CentralProcessing(CPNeoTemplate):
     """

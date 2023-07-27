@@ -3,6 +3,9 @@ from typing import Callable
 from functools import wraps
 from time import time
 from loguru import logger
+import sys
+
+logger.add(sys.stdout, format=" level={level} | {time:YYYY-MM-DD at HH:mm:ss} | {message}", level="INFO")
 
 
 def timer(orig_func: Callable):

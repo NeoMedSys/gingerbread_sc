@@ -6,8 +6,11 @@ import numpy as np
 import yaml
 import toml
 import requests
+import sys
 
 from config import config as cfg
+
+logger.add(sys.stdout, format=" level={level} | {time:YYYY-MM-DD at HH:mm:ss} | {message}", level="INFO")
 
 
 class CPNeoTemplate(nn.Module):
