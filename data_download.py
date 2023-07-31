@@ -75,7 +75,7 @@ class MedqueryDataDownloader:
                         f.create_dataset(key, data=value)
 
         except ValueError:
-            logger.exception('Error while downloading data from MedQuery')
+            logger.error('Error while downloading data from MedQuery')
 
     def hdf5_to_nifti_all(self, hdf5_path: str, output_dir: str) -> NoReturn:
         """Convert hdf5 file to nifti file.
@@ -110,7 +110,7 @@ class MedqueryDataDownloader:
                     img = nib.Nifti1Image(data, affine)
                     nib.save(img, os.path.join(output_dir, f'{series_uid}.nii.gz'))
         except IndexError:
-            logger.exception('Error with hdf5 indexing')
+            logger.error('Error with hdf5 indexing')
 
     def hdf5_to_nifti_single(
         self, hdf5_path: str, output_dir: str, series_uid: str

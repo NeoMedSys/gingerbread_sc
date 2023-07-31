@@ -143,7 +143,7 @@ class CPNeoTemplate(nn.Module):
         try:
             raise NotImplementedError
         except Exception:
-            logger.exception('preproccessing failed')
+            logger.error('preproccessing failed')
 
     def predict_step(self, data: np.ndarray) -> np.ndarray:
         """
@@ -163,7 +163,7 @@ class CPNeoTemplate(nn.Module):
         try:
             raise NotImplementedError
         except Exception:
-            logger.exception('predict_step failed')
+            logger.error('predict_step failed')
 
     def check_version(self):
         try:

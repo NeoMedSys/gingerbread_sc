@@ -73,10 +73,10 @@ class CentralProcessing(CPNeoTemplate):
             return data
         except (NameError, ValueError, TypeError, AttributeError, RuntimeError) as e:
             msg = f'I failed preprocessing the image with error: {e}'
-            logger.exception(msg)
+            logger.error(msg)
         except Exception as e:
             msg = f'I failed preprocessing the image. Unexpected exception: type={type(e)}, e:{e}'
-            logger.exception(msg)
+            logger.error(msg)
 
     @timer
     def predict_step(self, data: np.ndarray, model: config.ModelInput) -> np.ndarray:
@@ -112,10 +112,10 @@ class CentralProcessing(CPNeoTemplate):
             RuntimeError,
         ) as e:
             msg = f'I failed predicting the image with error: {e}'
-            logger.exception(msg)
+            logger.error(msg)
         except Exception as e:
             msg = f'I failed predicting the image. Unexpected exception: type={type(e)}, e:{e}'
-            logger.exception(msg)
+            logger.error(msg)
 
     @timer
     def postprocess(
@@ -159,7 +159,7 @@ class CentralProcessing(CPNeoTemplate):
             RuntimeError,
         ) as e:
             msg = f'I failed postprocessing with error {e}'
-            logger.exception(msg)
+            logger.error(msg)
         except Exception as e:
             msg = f'I failed postprocessing the image. Unexpected exception: type={type(e)}, e:{e}'
-            logger.exception(msg)
+            logger.error(msg)
