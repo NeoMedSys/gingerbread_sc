@@ -9,7 +9,7 @@ from config import config
 from neotemplate.base_central_processing import CPNeoTemplate
 
 
-logger = NeoLogger(__name__).get_logger()
+logger = NeoLogger(__name__)
 
 class CentralProcessing(CPNeoTemplate):
     """

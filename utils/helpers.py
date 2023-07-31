@@ -3,9 +3,8 @@ from typing import Callable
 from functools import wraps
 from time import time
 from neolibrary.monitoring.logger import NeoLogger
-import sys
 
-logger = NeoLogger(__name__).get_logger()
+logger = NeoLogger(__name__)
 
 
 def timer(orig_func: Callable):

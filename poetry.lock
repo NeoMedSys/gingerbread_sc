@@ -1109,13 +1109,13 @@ retry = ">=0.9.2,<0.10.0"
 
 [[package]]
 name = "neolibrary"
-version = "0.1.2b0"
+version = "0.1.4b0"
 description = "The general utils library for neomedsys development"
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "neolibrary-0.1.2b0-py3-none-any.whl", hash = "sha256:d9bd57f715cc02296caaf13b78359b5960f6a459f95558d23493c5c7fb7edd7c"},
-    {file = "neolibrary-0.1.2b0.tar.gz", hash = "sha256:216eead8504b24b82f70a7fe18a0ef5fb536bf28ce11f17e35af1d54fd37cfd2"},
+    {file = "neolibrary-0.1.4b0-py3-none-any.whl", hash = "sha256:d2129e3a8eea4e0804ce203ec3744d778d480fc3c11a68a9236b22e741bd19e1"},
+    {file = "neolibrary-0.1.4b0.tar.gz", hash = "sha256:68482c7b4a627fe889a93512040c7f0f24dc4681329460bb7450a48457137ce7"},
 ]
 
 [package.dependencies]

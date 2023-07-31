@@ -8,7 +8,7 @@ from typing import NoReturn
 
 import config.config as cfg
 
-logger = NeoLogger(__name__).get_logger()
+logger = NeoLogger(__name__)
 
 
 class MedqueryDataDownloader:

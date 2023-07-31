@@ -11,7 +11,7 @@ import sys
 from config import config as cfg
 
 
-logger = NeoLogger(__name__).get_logger()
+logger = NeoLogger(__name__)
 
 
 class CPNeoTemplate(nn.Module):
