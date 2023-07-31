@@ -1,12 +1,14 @@
 from pymedquery import pymq
 import os
-from loguru import logger
 from tqdm import tqdm
 import h5py
+from neolibrary.monitoring.logger import NeoLogger
 import nibabel as nib
 from typing import NoReturn
 
 import config.config as cfg
+
+logger = NeoLogger(__name__).get_logger()
 
 
 class MedqueryDataDownloader:

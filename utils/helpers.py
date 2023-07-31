@@ -2,10 +2,10 @@
 from typing import Callable
 from functools import wraps
 from time import time
-from loguru import logger
+from neolibrary.monitoring.logger import NeoLogger
 import sys
 
-logger.add(sys.stdout, format=" level={level} | {time:YYYY-MM-DD at HH:mm:ss} | {message}", level="INFO")
+logger = NeoLogger(__name__).get_logger()
 
 
 def timer(orig_func: Callable):

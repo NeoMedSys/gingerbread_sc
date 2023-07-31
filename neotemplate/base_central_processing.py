@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from loguru import logger
+from neolibrary.monitoring.logger import NeoLogger
 from beartype.typing import Dict, Optional, Any, NoReturn
 import numpy as np
 import yaml
@@ -10,7 +10,8 @@ import sys
 
 from config import config as cfg
 
-logger.add(sys.stdout, format=" level={level} | {time:YYYY-MM-DD at HH:mm:ss} | {message}", level="INFO")
+
+logger = NeoLogger(__name__).get_logger()
 
 
 class CPNeoTemplate(nn.Module):
