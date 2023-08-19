@@ -1,0 +1,31 @@
+gingerbread.central\_processing\_handler package
+================================================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gingerbread.central_processing_handler.config
+   gingerbread.central_processing_handler.sql
+   gingerbread.central_processing_handler.utils
+
+Submodules
+----------
+
+gingerbread.central\_processing\_handler.central\_processing\_handler module
+----------------------------------------------------------------------------
+
+.. automodule:: gingerbread.central_processing_handler.central_processing_handler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: gingerbread.central_processing_handler
+   :members:
+   :undoc-members:
+   :show-inheritance:

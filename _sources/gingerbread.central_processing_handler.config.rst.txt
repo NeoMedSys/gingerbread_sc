@@ -1,0 +1,29 @@
+gingerbread.central\_processing\_handler.config package
+=======================================================
+
+Submodules
+----------
+
+gingerbread.central\_processing\_handler.config.config module
+-------------------------------------------------------------
+
+.. automodule:: gingerbread.central_processing_handler.config.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+gingerbread.central\_processing\_handler.config.exceptions module
+-----------------------------------------------------------------
+
+.. automodule:: gingerbread.central_processing_handler.config.exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: gingerbread.central_processing_handler.config
+   :members:
+   :undoc-members:
+   :show-inheritance:

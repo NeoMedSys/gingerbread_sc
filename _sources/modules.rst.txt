@@ -1,13 +1,7 @@
-gingerbread_sc
-==============
+gingerbread
+===========
 
 .. toctree::
    :maxdepth: 4
 
-   central_processing
-   data_download
-   neotemplate
-   noxfile
-   tests
-   utils
-   xmodules
+   gingerbread

@@ -1,0 +1,21 @@
+gingerbread.rest package
+========================
+
+Submodules
+----------
+
+gingerbread.rest.rest module
+----------------------------
+
+.. automodule:: gingerbread.rest.rest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: gingerbread.rest
+   :members:
+   :undoc-members:
+   :show-inheritance:

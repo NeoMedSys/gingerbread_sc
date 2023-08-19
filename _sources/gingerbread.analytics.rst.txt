@@ -1,0 +1,21 @@
+gingerbread.analytics package
+=============================
+
+Submodules
+----------
+
+gingerbread.analytics.analytics\_module module
+----------------------------------------------
+
+.. automodule:: gingerbread.analytics.analytics_module
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: gingerbread.analytics
+   :members:
+   :undoc-members:
+   :show-inheritance:
