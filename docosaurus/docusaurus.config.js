@@ -70,6 +70,7 @@ const config = {
           src: 'img/favicon.png',
         },
         items: [
+          {to: '/reference', label: 'Reference', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
@@ -78,7 +79,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/NeoMedSys/gingerbread_sc',
             label: 'GitHub',
             position: 'right',
           },
