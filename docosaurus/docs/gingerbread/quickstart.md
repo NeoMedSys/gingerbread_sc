@@ -50,4 +50,4 @@ gingerbread-bake
 poetry run gingerbread-bake
 ```
 
-This will generate a folder with three words, "something-like-this. This folder will contain the central_processing.py file and a models folder containing example model setup. These files are altered according to the researchers need. The config file needs to be in the format generated. The folder will also include poetry project files that is needed for the specific model.
+This will generate a folder with three words, "something-like-this". This folder will contain the central_processing.py file and a models folder containing example model setup. These files are altered according to the researchers need. The config file needs to be in the format generated. The folder will also include poetry project files that is needed for the specific model.
