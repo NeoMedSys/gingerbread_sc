@@ -2,11 +2,9 @@
 Gingerbread
 ======================
 
-.. image:: https://img.shields.io/badge/Python-3.9-blue
-    :target: https://www.python.org/downloads/release/python-390
-.. image:: https://img.shields.io/badge/PyTorch-1.13.1-blue
-    :target: https://pytorch.org/
-.. image:: https://img.shields.io/badge/Poetry-1.3.2-blue
+.. image:: https://img.shields.io/badge/Python-3.10-blue
+    :target: https://www.python.org/downloads/release/python-3100/
+.. image:: https://img.shields.io/badge/Poetry-1.5.1-blue
     :target: https://python-poetry.org/
 .. image:: https://img.shields.io/badge/Monai-1.1.0-blue
     :target: https://monai.io/
