@@ -8,10 +8,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'NeoMedSys',
   tagline: 'NeoMedSys is cool',
-  favicon: 'img/favicon.png',
+  favicon: 'img/favicon2.png',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'http://gingerbread-sc.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'gingerbread', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -70,7 +70,7 @@ const config = {
           src: 'img/favicon.png',
         },
         items: [
-          {to: '/reference', label: 'Reference', position: 'left'},
+          // {to: '/reference', label: 'Reference', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
@@ -128,7 +128,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Neomedsys, Gingerbread.`,
       },
       prism: {
         theme: lightCodeTheme,

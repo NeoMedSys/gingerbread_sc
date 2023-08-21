@@ -6,9 +6,11 @@ tags: [welcome, gingerbread, neomedsys, neogate]
 ---
 
 
-![NomedsysLogo](./259079067-c1fb68e7-a618-452b-a40f-518e5fee577a.jpg)
+![NomedsysLogo](./A@1200x.png)
 
 Welcome to the **Gingerbread** blog!
+
+In this blog we will post updates about the projects concerning the researchers.
 
 
 <!-- [Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).

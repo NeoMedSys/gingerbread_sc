@@ -1,11 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .features {
   display: flex;
   align-items: center;
   padding: 2rem 0;
-  width: 100%;
+  width: 144%;
 }
 
 .featureSvg {
   height: 200px;
   width: 200px;
 }
+
