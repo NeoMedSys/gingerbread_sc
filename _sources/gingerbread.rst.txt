@@ -15,6 +15,7 @@ Subpackages
    gingerbread.realtime
    gingerbread.rest
    gingerbread.system_conf
+   gingerbread.user_package_files
    gingerbread.utils
 
 Submodules

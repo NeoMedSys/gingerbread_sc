@@ -1,0 +1,29 @@
+gingerbread.user\_package\_files package
+========================================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gingerbread.user_package_files.models
+
+Submodules
+----------
+
+gingerbread.user\_package\_files.central\_processing module
+-----------------------------------------------------------
+
+.. automodule:: gingerbread.user_package_files.central_processing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: gingerbread.user_package_files
+   :members:
+   :undoc-members:
+   :show-inheritance:

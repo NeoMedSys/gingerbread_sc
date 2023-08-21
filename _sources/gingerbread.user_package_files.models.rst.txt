@@ -1,0 +1,29 @@
+gingerbread.user\_package\_files.models package
+===============================================
+
+Submodules
+----------
+
+gingerbread.user\_package\_files.models.config module
+-----------------------------------------------------
+
+.. automodule:: gingerbread.user_package_files.models.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+gingerbread.user\_package\_files.models.mock\_model module
+----------------------------------------------------------
+
+.. automodule:: gingerbread.user_package_files.models.mock_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: gingerbread.user_package_files.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
