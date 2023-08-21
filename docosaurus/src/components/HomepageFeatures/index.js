@@ -28,7 +28,7 @@ const FeatureList = [
     Svg: require('@site/static/img/63ecff6168e0e_resized.svg').default,
     description: (
       <>
-        Gingerbread is made for our love of the AI research community.❤️
+        Gingerbread is made with our love for the AI research community.❤️
       </>
     ),
   },
