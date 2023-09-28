@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="gingerbread.config package" href="gingerbread.config.html" /><link rel="prev" title="gingerbread.central_processing_handler.sql package" href="gingerbread.central_processing_handler.sql.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2022.12.07 -->
-        <title>gingerbread.central_processing_handler.utils package - Gingerbread 0.4.45 documentation</title>
+        <title>gingerbread.central_processing_handler.utils package - Gingerbread 0.4.81 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Gingerbread 0.4.45 documentation</div></a>
+      <a href="index.html"><div class="brand">Gingerbread 0.4.81 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="_static/63ecff6168e0e.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gingerbread 0.4.45 documentation</span>
+  <span class="sidebar-brand-text">Gingerbread 0.4.81 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -240,6 +240,92 @@
 <dd class="field-odd"><p><ul class="simple">
 <li><p><strong>labels</strong> (<em>List[Dict[str, Union[int, str, bool]]]</em>)</p></li>
 <li><p><em>The list of dictionaries containing the labels</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.db_helpers.generate_cls_meta_records">
+<span class="sig-prename descclassname"><span class="pre">gingerbread.central_processing_handler.utils.db_helpers.</span></span><span class="sig-name descname"><span class="pre">generate_cls_meta_records</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measure_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_cls_meta_records" title="Permalink to this definition">#</a></dt>
+<dd><p>This function generates a dictionary with the cls records for cls_meta_table table in MQ.
+:param version_uid: This is the version uid of the data
+:type version_uid: str
+:param cls_name: This is the cls name of the data
+:type cls_name: str
+:param measure_unit: This is the measure unit of the data
+:type measure_unit: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>cls_record</strong> (<em>Dict[str, Tuple]</em>)</p></li>
+<li><p><em>The dictionary containing the cls record</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.db_helpers.generate_cls_predicted_table_records">
+<span class="sig-prename descclassname"><span class="pre">gingerbread.central_processing_handler.utils.db_helpers.</span></span><span class="sig-name descname"><span class="pre">generate_cls_predicted_table_records</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcls_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_cls_predicted_table_records" title="Permalink to this definition">#</a></dt>
+<dd><p>This function generates a dictionary with the prediction records.
+:param pcls_uid: This is the prediction uid of the data
+:type pcls_uid: str
+:param cls_uid: This is the cls uid of the data
+:type cls_uid: str
+:param model_id: This is the model id of the data
+:type model_id: str
+:param model_version: This is the model version of the data
+:type model_version: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>prediction_record</strong> (<em>Dict[str, Tuple]</em>)</p></li>
+<li><p><em>The dictionary containing the prediction record</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.db_helpers.generate_cls_records">
+<span class="sig-prename descclassname"><span class="pre">gingerbread.central_processing_handler.utils.db_helpers.</span></span><span class="sig-name descname"><span class="pre">generate_cls_records</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">study_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_cls_records" title="Permalink to this definition">#</a></dt>
+<dd><p>This function generates a dictionary with the prediction records.
+:param series_uid: This is the series uid of the data
+:type series_uid: str
+:param study_uid: This is the study uid of the data
+:type study_uid: str
+:param cls_uid: This is the cls uid of the data
+:type cls_uid: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>cls_record</strong> (<em>Dict[str, Tuple]</em>)</p></li>
+<li><p><em>The dictionary containing the cls record</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.db_helpers.generate_cls_version_records">
+<span class="sig-prename descclassname"><span class="pre">gingerbread.central_processing_handler.utils.db_helpers.</span></span><span class="sig-name descname"><span class="pre">generate_cls_version_records</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_cls_version_records" title="Permalink to this definition">#</a></dt>
+<dd><p>This function generates a dictionary with the mask version records for mask_version_table in MQ.
+:param version_uid: This is the version uid of the prediction.
+:type version_uid: str
+:param cls_uid: This is the cls uid of the data
+:type cls_uid: str
+:param pcls: This is the actual image of the cls
+:type pcls: np.ndarray</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>cls_version_record</strong> (<em>Dict[str, Tuple]</em>)</p></li>
+<li><p><em>The dictionary containing the cls version record</em></p></li>
 </ul>
 </p>
 </dd>
@@ -432,8 +518,24 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.db_helpers.prepare_for_upload">
-<span class="sig-prename descclassname"><span class="pre">gingerbread.central_processing_handler.utils.db_helpers.</span></span><span class="sig-name descname"><span class="pre">prepare_for_upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">study_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.db_helpers.prepare_for_upload" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.db_helpers.prepare_for_classification_upload">
+<span class="sig-prename descclassname"><span class="pre">gingerbread.central_processing_handler.utils.db_helpers.</span></span><span class="sig-name descname"><span class="pre">prepare_for_classification_upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">study_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_series_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.db_helpers.prepare_for_classification_upload" title="Permalink to this definition">#</a></dt>
+<dd><p>Prepare the response from the model for upload to the database.
+:param response: The response from the model
+:type response: Dict[str, Any]
+:param model_id: The model id
+:type model_id: str
+:param series_uid: The series uid
+:type series_uid: str
+:param study_uid: The study uid
+:type study_uid: str
+:param project_series_uid: The project series uid
+:type project_series_uid: Optional[str | None]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.db_helpers.prepare_for_segmentation_upload">
+<span class="sig-prename descclassname"><span class="pre">gingerbread.central_processing_handler.utils.db_helpers.</span></span><span class="sig-name descname"><span class="pre">prepare_for_segmentation_upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">study_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_series_uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.db_helpers.prepare_for_segmentation_upload" title="Permalink to this definition">#</a></dt>
 <dd><p>Prepare the response from the model for upload to the database.</p>
 </dd></dl>
 
@@ -595,280 +697,6 @@ to use for back tracing to the original source.</p>
 </dd></dl>
 
 </section>
-<section id="module-gingerbread.central_processing_handler.utils.thumbnail_creator">
-<span id="gingerbread-central-processing-handler-utils-thumbnail-creator-module"></span><h2>gingerbread.central_processing_handler.utils.thumbnail_creator module<a class="headerlink" href="#module-gingerbread.central_processing_handler.utils.thumbnail_creator" title="Permalink to this heading">#</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gingerbread.central_processing_handler.utils.thumbnail_creator.</span></span><span class="sig-name descname"><span class="pre">ThumbnailCreator</span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>ThumbnailCreator is a class for creating thumbnails from the image.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.convert_all_axes_to_hex">
-<span class="sig-name descname"><span class="pre">convert_all_axes_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imgs_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'jpeg'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.convert_all_axes_to_hex" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts all images to hex strings.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>imgs_dict</strong> (<em>dict</em>) – The images to convert.</p></li>
-<li><p><strong>_format</strong> (<em>str</em><em>, </em><em>optional</em>) – The _format of the images, by default “jpeg”.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The hex strings.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.convert_to_hex">
-<span class="sig-name descname"><span class="pre">convert_to_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'jpeg'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.convert_to_hex" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts an image to a hex string.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>img</strong> (<em>np.ndarray</em>) – The image to convert.</p></li>
-<li><p><strong>_format</strong> (<em>str</em><em>, </em><em>optional</em>) – The _format of the image, by default “jpeg”.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The hex string.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.create_img">
-<span class="sig-name descname"><span class="pre">create_img</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msk_arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[500,</span> <span class="pre">500]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.6</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.create_img" title="Permalink to this definition">#</a></dt>
-<dd><p>Create the image.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>img_arr</strong> (<em>np.ndarray</em>) – The image array.</p></li>
-<li><p><strong>msk_arr</strong> (<em>np.ndarray</em>) – The mask array.</p></li>
-<li><p><strong>spacing</strong> (<em>list</em>) – The spacing of the image.</p></li>
-<li><p><strong>labels</strong> (<em>dict</em>) – The labels of the image.</p></li>
-<li><p><strong>axis</strong> (<em>int</em><em>, </em><em>optional</em>) – The axis to create the image from, by default 0.</p></li>
-<li><p><strong>img_shape</strong> (<em>list</em><em>, </em><em>optional</em>) – The shape of the image, by default [500, 500].</p></li>
-<li><p><strong>opacity</strong> (<em>float</em><em>, </em><em>optional</em>) – The opacity of the mask, by default 0.6.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The image.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.get_plane_dims">
-<span class="sig-name descname"><span class="pre">get_plane_dims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.get_plane_dims" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the dimensions of the plane.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>spacing</strong> (<em>list</em>) – The spacing of the image.</p></li>
-<li><p><strong>plane</strong> (<em>int</em>) – The plane to get the dimensions of.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>col_dim</strong> (<em>float</em>) – The column dimension of the plane.</p></li>
-<li><p><strong>row_dim</strong> (<em>float</em>) – The row dimension of the plane.</p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.hex_to_rgba">
-<span class="sig-name descname"><span class="pre">hex_to_rgba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.hex_to_rgba" title="Permalink to this definition">#</a></dt>
-<dd><p>Converts a hex color string to an RGBA list.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>hex_string</strong> (<em>str</em>) – The hex color string.</p></li>
-<li><p><strong>alpha</strong> (<em>float</em><em>, </em><em>optional</em>) – The alpha value, by default 1.0.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The RGBA list.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.make_uint">
-<span class="sig-name descname"><span class="pre">make_uint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.make_uint" title="Permalink to this definition">#</a></dt>
-<dd><p>Make the image uint8.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>img</strong> (<em>np.ndarray</em>) – The image to make uint8.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The uint8 image.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.manage_save_cache">
-<span class="sig-name descname"><span class="pre">manage_save_cache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.manage_save_cache" title="Permalink to this definition">#</a></dt>
-<dd><p>Manages the cache of saved images.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.most_segmented">
-<span class="sig-name descname"><span class="pre">most_segmented</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.most_segmented" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the most segmented slice.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>msk</strong> (<em>np.ndarray</em>) – The mask to get the most segmented slice from.</p></li>
-<li><p><strong>axis</strong> (<em>int</em><em>, </em><em>optional</em>) – The axis to get the most segmented slice from, by default 0.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The most segmented slice.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.orient_volume">
-<span class="sig-name descname"><span class="pre">orient_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.orient_volume" title="Permalink to this definition">#</a></dt>
-<dd><p>Orients a volume to RPI.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>image</strong> (<em>np.ndarray</em>) – The image array.</p></li>
-<li><p><strong>affine</strong> (<em>np.ndarray</em>) – The affine array.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The oriented image array.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.overlay_rgb_mask">
-<span class="sig-name descname"><span class="pre">overlay_rgb_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thumbnail_slice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msk_arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seg_slice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.6</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.overlay_rgb_mask" title="Permalink to this definition">#</a></dt>
-<dd><p>Overlay the RGB mask.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>thumbnail_slice</strong> (<em>np.ndarray</em>) – The thumbnail slice.</p></li>
-<li><p><strong>msk_arr</strong> (<em>np.ndarray</em><em> | </em><em>None</em>) – The mask array.</p></li>
-<li><p><strong>labels</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – The labels.</p></li>
-<li><p><strong>seg_slice</strong> (<em>np.ndarray</em>) – The segmentation slice.</p></li>
-<li><p><strong>opacity</strong> (<em>float</em><em>, </em><em>optional</em>) – The opacity, by default 0.6.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The overlayed RGB mask.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.resize_and_transform">
-<span class="sig-name descname"><span class="pre">resize_and_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thumbnail_slice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.resize_and_transform" title="Permalink to this definition">#</a></dt>
-<dd><p>Resize and transform the image.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>img_shape</strong> (<em>list</em>) – The shape of the image.</p></li>
-<li><p><strong>spacing</strong> (<em>list</em>) – The spacing of the image.</p></li>
-<li><p><strong>thumbnail_slice</strong> (<em>np.ndarray</em>) – The thumbnail slice to resize and transform.</p></li>
-<li><p><strong>axis</strong> (<em>int</em><em>, </em><em>optional</em>) – The axis to resize and transform, by default 0.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>resized_slice</strong> – The resized and transformed slice.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The resized and transformed slice.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.thumbnail_all_axis">
-<span class="sig-name descname"><span class="pre">thumbnail_all_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.6</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.thumbnail_all_axis" title="Permalink to this definition">#</a></dt>
-<dd><p>Creates a thumbnail for each axis.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>image</strong> (<em>np.ndarray</em>) – The image array.</p></li>
-<li><p><strong>mask</strong> (<em>np.ndarray</em>) – The mask array.</p></li>
-<li><p><strong>spacing</strong> (<em>list</em>) – The spacing of the image.</p></li>
-<li><p><strong>labels</strong> (<em>dict</em>) – The labels of the image.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The thumbnails in the _format {“dim_1”: np.ndarray, “dim_2”: np.ndarray, “dim_3”: np.ndarray}.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dict[str, np.ndarray]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.transform_rgb_array">
-<span class="sig-name descname"><span class="pre">transform_rgb_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relevant_slice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msk_arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.transform_rgb_array" title="Permalink to this definition">#</a></dt>
-<dd><p>Transform the RGB array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>relevant_slice</strong> (<em>int</em>) – The relevant slice.</p></li>
-<li><p><strong>img_arr</strong> (<em>np.ndarray</em>) – The image array.</p></li>
-<li><p><strong>msk_arr</strong> (<em>np.ndarray</em>) – The mask array.</p></li>
-<li><p><strong>axis</strong> (<em>int</em><em>, </em><em>optional</em>) – The axis to transform the RGB array, by default 0.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The transformed RGB array.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
 <section id="module-gingerbread.central_processing_handler.utils">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-gingerbread.central_processing_handler.utils" title="Permalink to this heading">#</a></h2>
 </section>
@@ -933,6 +761,10 @@ to use for back tracing to the original source.</p>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-gingerbread.central_processing_handler.utils.db_helpers">gingerbread.central_processing_handler.utils.db_helpers module</a><ul>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.correct_label_format"><code class="docutils literal notranslate"><span class="pre">correct_label_format()</span></code></a></li>
+<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_cls_meta_records"><code class="docutils literal notranslate"><span class="pre">generate_cls_meta_records()</span></code></a></li>
+<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_cls_predicted_table_records"><code class="docutils literal notranslate"><span class="pre">generate_cls_predicted_table_records()</span></code></a></li>
+<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_cls_records"><code class="docutils literal notranslate"><span class="pre">generate_cls_records()</span></code></a></li>
+<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_cls_version_records"><code class="docutils literal notranslate"><span class="pre">generate_cls_version_records()</span></code></a></li>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_imported_records"><code class="docutils literal notranslate"><span class="pre">generate_imported_records()</span></code></a></li>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_mask_meta_table"><code class="docutils literal notranslate"><span class="pre">generate_mask_meta_table()</span></code></a></li>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_mask_records"><code class="docutils literal notranslate"><span class="pre">generate_mask_records()</span></code></a></li>
@@ -942,7 +774,8 @@ to use for back tracing to the original source.</p>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_pastel_color"><code class="docutils literal notranslate"><span class="pre">generate_pastel_color()</span></code></a></li>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_project_series_meta_records"><code class="docutils literal notranslate"><span class="pre">generate_project_series_meta_records()</span></code></a></li>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.generate_thumb_mask_version_records"><code class="docutils literal notranslate"><span class="pre">generate_thumb_mask_version_records()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.prepare_for_upload"><code class="docutils literal notranslate"><span class="pre">prepare_for_upload()</span></code></a></li>
+<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.prepare_for_classification_upload"><code class="docutils literal notranslate"><span class="pre">prepare_for_classification_upload()</span></code></a></li>
+<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.prepare_for_segmentation_upload"><code class="docutils literal notranslate"><span class="pre">prepare_for_segmentation_upload()</span></code></a></li>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.db_helpers.upload_to_mq"><code class="docutils literal notranslate"><span class="pre">upload_to_mq()</span></code></a></li>
 </ul>
 </li>
@@ -957,25 +790,6 @@ to use for back tracing to the original source.</p>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.helpers.nested_dict"><code class="docutils literal notranslate"><span class="pre">nested_dict()</span></code></a></li>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.helpers.str2bool"><code class="docutils literal notranslate"><span class="pre">str2bool()</span></code></a></li>
 <li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.helpers.timer"><code class="docutils literal notranslate"><span class="pre">timer()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-gingerbread.central_processing_handler.utils.thumbnail_creator">gingerbread.central_processing_handler.utils.thumbnail_creator module</a><ul>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator</span></code></a><ul>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.convert_all_axes_to_hex"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.convert_all_axes_to_hex()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.convert_to_hex"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.convert_to_hex()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.create_img"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.create_img()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.get_plane_dims"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.get_plane_dims()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.hex_to_rgba"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.hex_to_rgba()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.make_uint"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.make_uint()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.manage_save_cache"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.manage_save_cache()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.most_segmented"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.most_segmented()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.orient_volume"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.orient_volume()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.overlay_rgb_mask"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.overlay_rgb_mask()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.resize_and_transform"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.resize_and_transform()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.thumbnail_all_axis"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.thumbnail_all_axis()</span></code></a></li>
-<li><a class="reference internal" href="#gingerbread.central_processing_handler.utils.thumbnail_creator.ThumbnailCreator.transform_rgb_array"><code class="docutils literal notranslate"><span class="pre">ThumbnailCreator.transform_rgb_array()</span></code></a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-gingerbread.central_processing_handler.utils">Module contents</a></li>

@@ -20,14 +20,6 @@ gingerbread.central\_processing\_handler.utils.helpers module
    :undoc-members:
    :show-inheritance:
 
-gingerbread.central\_processing\_handler.utils.thumbnail\_creator module
-------------------------------------------------------------------------
-
-.. automodule:: gingerbread.central_processing_handler.utils.thumbnail_creator
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 
