@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="gingerbread.central_processing_handler.config package" href="gingerbread.central_processing_handler.config.html" /><link rel="prev" title="gingerbread.analytics package" href="gingerbread.analytics.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2022.12.07 -->
-        <title>gingerbread.central_processing_handler package - Gingerbread 0.5.3 documentation</title>
+        <title>gingerbread.central_processing_handler package - Gingerbread 0.5.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Gingerbread 0.5.3 documentation</div></a>
+      <a href="index.html"><div class="brand">Gingerbread 0.5.8 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo" src="_static/63ecff6168e0e.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gingerbread 0.5.3 documentation</span>
+  <span class="sidebar-brand-text">Gingerbread 0.5.8 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -275,7 +275,7 @@
 <li class="toctree-l2"><a class="reference internal" href="gingerbread.central_processing_handler.utils.html#module-gingerbread.central_processing_handler.utils.helpers">gingerbread.central_processing_handler.utils.helpers module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="gingerbread.central_processing_handler.utils.html#gingerbread.central_processing_handler.utils.helpers.copy_obj"><code class="docutils literal notranslate"><span class="pre">copy_obj()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gingerbread.central_processing_handler.utils.html#gingerbread.central_processing_handler.utils.helpers.decode_payload"><code class="docutils literal notranslate"><span class="pre">decode_payload()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="gingerbread.central_processing_handler.utils.html#gingerbread.central_processing_handler.utils.helpers.decode_weights"><code class="docutils literal notranslate"><span class="pre">decode_weights()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gingerbread.central_processing_handler.utils.html#gingerbread.central_processing_handler.utils.helpers.decode_weights_pickled"><code class="docutils literal notranslate"><span class="pre">decode_weights_pickled()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gingerbread.central_processing_handler.utils.html#gingerbread.central_processing_handler.utils.helpers.encode_payload"><code class="docutils literal notranslate"><span class="pre">encode_payload()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gingerbread.central_processing_handler.utils.html#gingerbread.central_processing_handler.utils.helpers.encode_weights"><code class="docutils literal notranslate"><span class="pre">encode_weights()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gingerbread.central_processing_handler.utils.html#gingerbread.central_processing_handler.utils.helpers.get_img_info"><code class="docutils literal notranslate"><span class="pre">get_img_info()</span></code></a></li>
@@ -344,14 +344,14 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>np.ndarray</em>) – The data to be processed.</p></li>
+<li><p><strong>data</strong> (<em>np.ndarray</em>) – The data to be processed. THIS NEEDS TO BE (C, D, H, W) or (C, H, W)</p></li>
 <li><p><strong>extras</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Any extra data that is needed for the processing.</p></li>
 <li><p><strong>montecarlo_loop</strong> (<em>int</em>) – The number of times the data should be processed. If not specified, it will be 1 by default which means the data will be processed only once.</p></li>
 <li><p><strong>weights_ensemble</strong> (<em>bool</em>) – The weights of the model to be used for processing. If not specified, the weights will be fetched from MQ.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>result</strong> – The processed data.</p>
+<dd class="field-even"><p><strong>result</strong> – The processed data. (C, D, H, W) or (C, H, W)</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
